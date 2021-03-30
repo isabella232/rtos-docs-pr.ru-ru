@@ -1,0 +1,33 @@
+### YamlMime:Landing
+title: Документация по USBX в ОСРВ Azure
+summary: USBX в ОСРВ Azure — это высокопроизводительный USB-узел, устройство и встроенный стек оперативных средств (OTG). Решение USBX в ОСРВ Azure полностью интегрировано с ThreadX в ОСРВ Azure и доступно для всех процессоров, поддерживаемых ThreadX в ОСРВ Azure.
+metadata:
+  title: Что такое USBX в ОСРВ Azure?
+  description: USBX в ОСРВ Azure — это высокопроизводительный USB-узел, устройство и встроенный стек оперативных средств (OTG). Решение USBX в ОСРВ Azure полностью интегрировано с ThreadX в ОСРВ Azure и доступно для всех процессоров, поддерживаемых ThreadX в ОСРВ Azure.
+  services: rtos
+  ms.service: rtos
+  ms.topic: landing-page
+  author: philmea
+  ms.author: philmea
+  ms.date: 5/19/2020
+  ms.openlocfilehash: 05ff41048304d3cb66b74cbf342de664e8ad88ab
+  ms.sourcegitcommit: e3d42e1f2920ec9cb002634b542bc20754f9544e
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 03/22/2021
+  ms.locfileid: "104797692"
+landingContent:
+- title: Знакомство с USBX в ОСРВ Azure
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое USBX в ОСРВ Azure?
+      url: overview-usbx.md
+- title: Начало работы с USBX в ОСРВ Azure
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: Руководство пользователя по стеку устройств USBX в ОСРВ Azure
+      url: usbx-device-stack-about.md
+    - text: Руководство пользователя по стеку узлов USBX в ОСРВ Azure
+      url: usbx-host-stack-about.md

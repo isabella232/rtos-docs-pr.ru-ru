@@ -1,0 +1,34 @@
+- name: Документация по ОСРВ Microsoft Azure
+  href: index.yml
+- name: Общие сведения об ОСРВ Microsoft Azure
+  href: overview-rtos.md
+- name: Руководства по началу работы
+  href: getting-started.md
+- name: Репозитории ОСРВ Microsoft Azure
+  href: 'https://github.com/azure-rtos/'
+- name: Связанные службы
+  items:
+    - name: "Azure Defender для Интернета вещей\_— ОСРВ (предварительная версия)"
+      href: 'https://docs.microsoft.com/azure/defender-for-iot/iot-security-azure-rtos'
+- name: Компоненты ОСРВ Microsoft Azure
+  items:
+    - name: ОСРВ Microsoft Azure
+      href: ./index.yml
+    - name: ThreadX
+      href: ./threadx/index.yml
+    - name: Модули ThreadX
+      href: ./threadx-modules/index.yml
+    - name: NetX Duo
+      href: ./netx-duo/index.yml
+    - name: NetX
+      href: ./netx/index.yml
+    - name: GUIX
+      href: ./guix/index.yml
+    - name: FileX
+      href: ./filex/index.yml
+    - name: LevelX
+      href: ./levelx/index.yml
+    - name: USBX
+      href: ./usbx/index.yml
+    - name: TraceX
+      href: ./tracex/index.yml

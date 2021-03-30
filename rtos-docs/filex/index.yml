@@ -1,0 +1,31 @@
+### YamlMime:Landing
+title: Документация по FileX в ОСРВ Azure
+summary: FileX в ОСРВ Azure — это совместимая с FAT высокопроизводительная файловая система, полностью интегрированная с ThreadX в ОСРВ Azure и доступная для всех поддерживаемых процессоров. Как и ThreadX в ОСРВ Azure, FileX в ОСРВ Azure использует небольшой объем памяти и работает с высокой производительностью. Это делает решение идеальным для современных глубоко внедренных приложений, требующих операций управления файлами. FileX поддерживает большинство физических носителей, включая ОЗУ, USBX в ОСРВ Azure, SD-карты, а также флэш-память NAND или NOR с использованием LevelX в ОСРВ Azure.
+metadata:
+  title: Что такое FileX в ОСРВ Azure?
+  description: FileX в ОСРВ Azure — это совместимая с FAT высокопроизводительная файловая система, полностью интегрированная с ThreadX в ОСРВ Azure и доступная для всех поддерживаемых процессоров. Как и ThreadX в ОСРВ Azure, FileX в ОСРВ Azure использует небольшой объем памяти и работает с высокой производительностью. Это делает решение идеальным для современных глубоко внедренных приложений, требующих операций управления файлами. FileX поддерживает большинство физических носителей, включая ОЗУ, USBX в ОСРВ Azure, SD-карты, а также флэш-память NAND или NOR с использованием LevelX в ОСРВ Azure.
+  services: rtos
+  ms.service: rtos
+  ms.topic: landing-page
+  author: philmea
+  ms.author: philmea
+  ms.date: 05/19/2020
+  ms.openlocfilehash: bf7fd9f842c363b753f8acd52f54b9f8e462616c
+  ms.sourcegitcommit: e3d42e1f2920ec9cb002634b542bc20754f9544e
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 03/22/2021
+  ms.locfileid: "104797649"
+landingContent:
+- title: Знакомство с FileX в ОСРВ Azure
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое FileX в ОСРВ Azure?
+      url: overview-filex.md
+- title: Начало работы с FileX в ОСРВ Azure
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: Руководство пользователя по FileX в ОСРВ Azure
+      url: about-this-guide.md

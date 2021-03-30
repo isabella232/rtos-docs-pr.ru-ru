@@ -1,0 +1,86 @@
+- name: Документация по USBX в ОСРВ Azure
+  href: index.yml
+- name: Общие сведения о USBX
+  href: overview-usbx.md
+- name: Руководство пользователя по стеку устройств USBX
+  items:
+    - name: Об этом руководстве
+      href: usbx-device-stack-about.md
+    - name: "Гл. 1.\_Знакомство с USBX"
+      href: usbx-device-stack-1.md
+    - name: "Гл. 2.\_Установка USBX"
+      href: usbx-device-stack-2.md
+    - name: "Гл. 3.\_Функциональные компоненты стека устройств USBX"
+      href: usbx-device-stack-3.md
+    - name: "Гл. 4.\_Описание служб устройств USBX"
+      href: usbx-device-stack-4.md
+    - name: "Гл. 5.\_Сведения о классах устройств USBX"
+      href: usbx-device-stack-5.md
+- name: Дополнительный стек устройств USBX
+  items:
+    - name: "Гл. 1.\_Приложение к руководству пользователя с вводными сведениями о стеке устройств USBX"
+      href: usbx-device-stack-supplemental-1.md
+    - name: "Гл. 2.\_Сведения о классах устройств USBX"
+      href: usbx-device-stack-supplemental-2.md
+    - name: "Гл. 3.\_Сведения о классах DPUMP USBX"
+      href: usbx-device-stack-supplemental-3.md
+    - name: "Гл. 4.\_Реализация Pictbridge в USBX"
+      href: usbx-device-stack-supplemental-4.md
+    - name: "Гл. 5.\_OTG USBX"
+      href: usbx-device-stack-supplemental-5.md
+- name: Руководство пользователя по стеку узлов USBX
+  items:
+    - name: Об этом руководстве
+      href: usbx-host-stack-about.md
+    - name: "Гл. 1.\_Знакомство с USBX"
+      href: usbx-host-stack-1.md
+    - name: "Гл. 2.\_Установка USBX"
+      href: usbx-host-stack-2.md
+    - name: "Гл. 3.\_Функциональные компоненты стека узлов USBX"
+      href: usbx-host-stack-3.md
+    - name: "Гл. 4.\_Описание служб узлов USBX"
+      href: usbx-host-stack-4.md
+    - name: Гл. 5. API классов узлов USBX
+      href: usbx-host-stack-5.md
+    - name: "Гл. 6.\_Использование класса CDC-ECM USBX"
+      href: usbx-host-stack-6.md
+- name: Дополнительный стек узлов USBX
+  items:
+    - name: "Гл. 1.\_Приложение к руководству пользователя с вводными сведениями о стеке узлов USBX"
+      href: usbx-host-stack-supplemental-1.md
+    - name: "Гл. 2.\_API классов узлов USBX"
+      href: usbx-host-stack-supplemental-2.md
+    - name: "Гл. 3.\_Сведения о классах DPUMP USBX"
+      href: usbx-host-stack-supplemental-3.md
+    - name: "Гл. 4.\_Реализация Pictbridge в USBX"
+      href: usbx-host-stack-supplemental-4.md
+    - name: "Гл. 5.\_OTG USBX"
+      href: usbx-host-stack-supplemental-5.md
+- name: Репозиторий USBX
+  href: 'https://github.com/azure-rtos/usbx/'
+- name: Связанные службы
+  items:
+    - name: "Azure Defender для Интернета вещей\_— ОСРВ (предварительная версия)"
+      href: 'https://docs.microsoft.com/azure/defender-for-iot/iot-security-azure-rtos'
+- name: Компоненты ОСРВ Microsoft Azure
+  items:
+    - name: ОСРВ Microsoft Azure
+      href: ../index.yml
+    - name: ThreadX
+      href: ../threadx/index.yml
+    - name: Модули ThreadX
+      href: ../threadx-modules/index.yml
+    - name: NetX Duo
+      href: ../netx-duo/index.yml
+    - name: NetX
+      href: ../netx/index.yml
+    - name: GUIX
+      href: ../guix/index.yml
+    - name: FileX
+      href: ../filex/index.yml
+    - name: LevelX
+      href: ../levelx/index.yml
+    - name: USBX
+      href: ../usbx/index.yml
+    - name: TraceX
+      href: ../tracex/index.yml

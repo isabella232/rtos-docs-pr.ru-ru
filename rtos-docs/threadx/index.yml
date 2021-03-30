@@ -1,0 +1,31 @@
+### YamlMime:Landing
+title: Документация по ThreadX в ОСРВ Azure
+summary: ОСРВ Azure ThreadX — это усовершенствованная операционная система реального времени (ОСРВ), разработанная специально для глубоко встраиваемых приложений.
+metadata:
+  title: Что такое ThreadX в ОСРВ Azure?
+  description: ОСРВ Azure ThreadX — это усовершенствованная операционная система реального времени (ОСРВ), разработанная специально для глубоко встраиваемых приложений.
+  services: rtos
+  ms.service: rtos
+  ms.topic: landing-page
+  author: philmea
+  ms.author: philmea
+  ms.date: 5/19/2020
+  ms.openlocfilehash: 0c1a69535f8d3b61702dd862801540b8d0bf35b3
+  ms.sourcegitcommit: e3d42e1f2920ec9cb002634b542bc20754f9544e
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 03/22/2021
+  ms.locfileid: "104797669"
+landingContent:
+- title: Знакомство с ThreadX в ОСРВ Azure
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое ThreadX в ОСРВ Azure?
+      url: overview-threadx.md
+- title: Начало работы с ThreadX в ОСРВ Azure
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: Руководство пользователя по ThreadX в ОСРВ Azure
+      url: about-this-guide.md

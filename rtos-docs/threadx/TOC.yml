@@ -1,0 +1,81 @@
+- name: Документация по ThreadX в ОСРВ Azure
+  href: index.yml
+- name: Общие сведения о ThreadX
+  href: overview-threadx.md
+- name: Руководство пользователя по ThreadX
+  expanded: true
+  items:
+    - name: Об этом руководстве
+      href: about-this-guide.md
+    - name: "Гл. 1.\_Знакомство с ThreadX"
+      href: chapter1.md
+    - name: "Гл. 2.\_Установка и использование ThreadX"
+      href: chapter2.md
+    - name: "Гл. 3.\_Функциональные компоненты ThreadX"
+      href: chapter3.md
+    - name: "Гл. 4.\_Описание служб ThreadX"
+      href: chapter4.md
+    - name: "Гл. 5.\_Драйверы устройств для ThreadX"
+      href: chapter5.md
+    - name: "Гл. 6.\_Демонстрационная система для ThreadX"
+      href: chapter6.md
+    - name: "Прил. A.\_Службы API ThreadX"
+      href: appendix-a.md
+    - name: "Прил. Б.\_Константы ThreadX"
+      href: appendix-b.md
+    - name: "Прил. В.\_Типы данных ThreadX"
+      href: appendix-c.md
+    - name: "Прил. Г.\_Коды знаков ASCII"
+      href: appendix-d.md
+- name: Руководство пользователя по SMP для ThreadX
+  items:
+    - name: Информация о руководстве
+      href: ./threadx-smp/about-this-guide.md
+    - name: "Гл. 1.\_Знакомство с SMP для ThreadX"
+      href: ./threadx-smp/chapter1.md
+    - name: "Гл. 2.\_Установка и использование SMP для ThreadX"
+      href: ./threadx-smp/chapter2.md
+    - name: "Гл. 3.\_Функциональные компоненты SMP для ThreadX"
+      href: ./threadx-smp/chapter3.md
+    - name: "Гл. 4.\_Описание служб SMP для ThreadX"
+      href: ./threadx-smp/chapter4.md
+    - name: "Гл. 5.\_Драйверы устройств для SMP для ThreadX"
+      href: ./threadx-smp/chapter5.md
+    - name: "Гл. 6.\_Демонстрационная система для SMP для ThreadX"
+      href: ./threadx-smp/chapter6.md
+    - name: "Прил. A.\_Службы API SMP для ThreadX"
+      href: ./threadx-smp/appendix-a.md
+    - name: "Прил. Б.\_Константы SMP для ThreadX"
+      href: ./threadx-smp/appendix-b.md
+    - name: "Прил. В.\_Типы данных SMP для ThreadX"
+      href: ./threadx-smp/appendix-c.md
+    - name: "Прил. Г.\_Коды знаков ASCII"
+      href: ./threadx-smp/appendix-d.md
+- name: Репозиторий ThreadX
+  href: 'https://github.com/azure-rtos/threadx'
+- name: Связанные службы
+  items:
+    - name: "Azure Defender для Интернета вещей\_— ОСРВ (предварительная версия)"
+      href: 'https://docs.microsoft.com/azure/defender-for-iot/iot-security-azure-rtos'
+- name: Компоненты ОСРВ Microsoft Azure
+  items:
+    - name: ОСРВ Microsoft Azure
+      href: ../index.yml
+    - name: ThreadX
+      href: ../threadx/index.yml
+    - name: Модули ThreadX
+      href: ../threadx-modules/index.yml
+    - name: NetX Duo
+      href: ../netx-duo/index.yml
+    - name: NetX
+      href: ../netx/index.yml
+    - name: GUIX
+      href: ../guix/index.yml
+    - name: FileX
+      href: ../filex/index.yml
+    - name: LevelX
+      href: ../levelx/index.yml
+    - name: USBX
+      href: ../usbx/index.yml
+    - name: TraceX
+      href: ../tracex/index.yml

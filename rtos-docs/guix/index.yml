@@ -1,0 +1,41 @@
+### YamlMime:Landing
+title: Документация по GUIX в ОСРВ Azure
+summary: GUIX в ОСРВ Azure — это пакет профессионального качества, созданный в соответствии с потребностями разработчиков внедренных систем.
+metadata:
+  title: Что такое GUIX в ОСРВ Azure?
+  description: GUIX в ОСРВ Azure — это пакет профессионального качества, созданный в соответствии с потребностями разработчиков внедренных систем.
+  services: rtos
+  ms.service: rtos
+  ms.topic: landing-page
+  author: philmea
+  ms.author: philmea
+  ms.date: 5/19/2020
+  ms.openlocfilehash: 5e3215a54a9d1d23e7f238e4bc6ffeafffdc75b4
+  ms.sourcegitcommit: e3d42e1f2920ec9cb002634b542bc20754f9544e
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 03/22/2021
+  ms.locfileid: "104797645"
+landingContent:
+- title: Знакомство с GUIX в ОСРВ Azure
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое GUIX в ОСРВ Azure?
+      url: overview-guix.md
+- title: Начало работы с GUIX в ОСРВ Azure
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: Руководство пользователя по GUIX в ОСРВ Azure
+      url: about-guix.md
+- title: Начало работы с GUIX Studio в ОСРВ Azure
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: Краткое руководство по началу работы с GUIX Studio в ОСРВ Azure
+      url: guix-studio-quick-start.md
+    - text: Руководство пользователя по GUIX Studio в ОСРВ Azure
+      url: about-guix-studio.md
+    - text: Установщик GUIX Studio в ОСРВ Azure
+      url: https://aka.ms/azrtos-guix-installer

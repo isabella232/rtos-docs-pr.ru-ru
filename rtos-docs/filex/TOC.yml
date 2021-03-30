@@ -1,0 +1,57 @@
+- name: Документация по FileX в ОСРВ Azure
+  href: index.yml
+- name: Общие сведения о FileX
+  href: overview-filex.md
+- name: Руководство пользователя по FileX
+  expanded: true
+  items:
+    - name: Об этом руководстве
+      href: about-this-guide.md
+    - name: "Гл. 1.\_Знакомство с FileX"
+      href: chapter1.md
+    - name: "Гл. 2.\_Установка и использование FileX"
+      href: chapter2.md
+    - name: "Гл. 3.\_Функциональные компоненты FileX"
+      href: chapter3.md
+    - name: "Гл. 4.\_Описание служб FileX"
+      href: chapter4.md
+    - name: "Гл. 5.\_Драйверы ввода-вывода для FileX"
+      href: chapter5.md
+    - name: "Гл. 6.\_Отказоустойчивый модуль FileX"
+      href: chapter6.md
+    - name: "Прил. A.\_Службы FileX"
+      href: appendix-a.md
+    - name: "Прил. Б.\_Константы FileX"
+      href: appendix-b.md
+    - name: "Прил. В.\_Типы данных FileX"
+      href: appendix-c.md
+    - name: "Прил. Г.\_Коды знаков ASCII"
+      href: appendix-d.md
+- name: Репозиторий FileX
+  href: 'https://github.com/azure-rtos/filex'
+- name: Связанные службы
+  items:
+    - name: "Azure Defender для Интернета вещей\_— ОСРВ (предварительная версия)"
+      href: 'https://docs.microsoft.com/azure/defender-for-iot/iot-security-azure-rtos'
+- name: Компоненты ОСРВ Microsoft Azure
+  items:
+    - name: ОСРВ Microsoft Azure
+      href: ../index.yml
+    - name: ThreadX
+      href: ../threadx/index.yml
+    - name: Модули ThreadX
+      href: ../threadx-modules/index.yml
+    - name: NetX Duo
+      href: ../netx-duo/index.yml
+    - name: NetX
+      href: ../netx/index.yml
+    - name: GUIX
+      href: ../guix/index.yml
+    - name: FileX
+      href: ../filex/index.yml
+    - name: LevelX
+      href: ../levelx/index.yml
+    - name: USBX
+      href: ../usbx/index.yml
+    - name: TraceX
+      href: ../tracex/index.yml
