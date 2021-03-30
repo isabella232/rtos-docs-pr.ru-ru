@@ -1,0 +1,31 @@
+### YamlMime:Landing
+title: Документация по LevelX в ОСРВ Azure
+summary: LevelX в ОСРВ Azure предоставляет возможности выравнивания износа флэш-памяти NAND и NOR для внедренных приложений.
+metadata:
+  title: Что такое LevelX в ОСРВ Azure?
+  description: LevelX в ОСРВ Azure предоставляет возможности выравнивания износа флэш-памяти NAND и NOR для внедренных приложений.
+  services: rtos
+  ms.service: rtos
+  ms.topic: landing-page
+  author: philmea
+  ms.author: philmea
+  ms.date: 07/10/2020
+  ms.openlocfilehash: 27ce4d34d53b2a6daec651dd83c648024aad0291
+  ms.sourcegitcommit: e3d42e1f2920ec9cb002634b542bc20754f9544e
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 03/22/2021
+  ms.locfileid: "104797637"
+landingContent:
+- title: Знакомство с LevelX в ОСРВ Azure
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое LevelX в ОСРВ Azure?
+      url: chapter1.md
+- title: Установка и использование LevelX в ОСРВ Azure
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: Руководство пользователя по LevelX в ОСРВ Azure
+      url: chapter2.md

@@ -1,0 +1,31 @@
+### YamlMime:Landing
+title: Документация по NetX Duo в ОСРВ Azure
+summary: NetX Duo в ОСРВ Azure — это расширенный сетевой стек TCP/IP промышленного класса, предназначенный специально для глубоко внедренных приложений, работающих в реальном времени и приложений Интернета вещей.
+metadata:
+  title: Что такое NetX Duo в ОСРВ Azure?
+  description: NetX Duo в ОСРВ Azure — это расширенный сетевой стек TCP/IP промышленного класса, предназначенный специально для глубоко внедренных приложений, работающих в реальном времени и приложений Интернета вещей.
+  services: rtos
+  ms.service: rtos
+  ms.topic: landing-page
+  author: philmea
+  ms.author: philmea
+  ms.date: 5/19/2020
+  ms.openlocfilehash: 6eca4b135a5cfa3413fc0828de4caeffa734d90a
+  ms.sourcegitcommit: e3d42e1f2920ec9cb002634b542bc20754f9544e
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 03/22/2021
+  ms.locfileid: "104797653"
+landingContent:
+- title: Знакомство с NetX Duo в ОСРВ Azure
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое NetX Duo в ОСРВ Azure?
+      url: overview-netx-duo.md
+- title: Начало работы с NetX Duo в ОСРВ Azure
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: Руководство пользователя по NetX Duo в ОСРВ Azure
+      url: about-this-guide.md

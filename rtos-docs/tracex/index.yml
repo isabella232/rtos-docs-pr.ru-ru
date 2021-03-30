@@ -1,0 +1,33 @@
+### YamlMime:Landing
+title: Документация по TraceX в ОСРВ Azure
+summary: TraceX в ОСРВ Azure — это средство анализа на основе Windows. Оно предоставляет разработчикам внедренных приложений графическое представление системных событий в реальном времени и позволяет им визуализировать и лучше понимать поведение систем в реальном времени.
+metadata:
+  title: Что такое TraceX в ОСРВ Azure?
+  description: TraceX в ОСРВ Azure — это средство анализа на основе Windows. Оно предоставляет разработчикам внедренных приложений графическое представление системных событий в реальном времени и позволяет им визуализировать и лучше понимать поведение систем в реальном времени.
+  services: rtos
+  ms.service: rtos
+  ms.topic: landing-page
+  author: philmea
+  ms.author: philmea
+  ms.date: 5/19/2020
+  ms.openlocfilehash: 021890aefbfdcdda14dd66483cc76f81d400c0d6
+  ms.sourcegitcommit: e3d42e1f2920ec9cb002634b542bc20754f9544e
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 03/22/2021
+  ms.locfileid: "104797687"
+landingContent:
+- title: Знакомство с TraceX в ОСРВ Azure
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое TraceX в ОСРВ Azure?
+      url: overview-tracex.md
+- title: Начало работы с TraceX в ОСРВ Azure
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: Руководство пользователя по TraceX в ОСРВ Azure
+      url: about-this-guide.md
+    - text: Установщик TraceX в ОСРВ Azure
+      url: https://aka.ms/azrtos-tracex-installer

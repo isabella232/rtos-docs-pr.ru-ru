@@ -1,0 +1,31 @@
+### YamlMime:Landing
+title: Документация по NetX в ОСРВ Azure
+summary: NetX в ОСРВ Azure — это высокопроизводительная реализация стандартов протокола TCP/IP, полностью интегрированная с ThreadX в ОСРВ Azure и доступная для всех поддерживаемых процессоров.
+metadata:
+  title: Что такое NetX в ОСРВ Azure?
+  description: NetX в ОСРВ Azure — это высокопроизводительная реализация стандартов протокола TCP/IP, полностью интегрированная с ThreadX в ОСРВ Azure и доступная для всех поддерживаемых процессоров.
+  services: rtos
+  ms.service: rtos
+  ms.topic: landing-page
+  author: philmea
+  ms.author: philmea
+  ms.date: 5/19/2020
+  ms.openlocfilehash: e8af2831320e21bd0e3a197125f97991b14125b8
+  ms.sourcegitcommit: e3d42e1f2920ec9cb002634b542bc20754f9544e
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 03/22/2021
+  ms.locfileid: "104797625"
+landingContent:
+- title: Знакомство с NetX в ОСРВ Azure
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое NetX в ОСРВ Azure?
+      url: overview-netx.md
+- title: Начало работы с NetX в ОСРВ Azure
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: Руководство пользователя по NetX в ОСРВ Azure
+      url: about-this-guide.md

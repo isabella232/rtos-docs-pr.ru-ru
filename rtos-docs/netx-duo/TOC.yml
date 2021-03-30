@@ -1,0 +1,275 @@
+- name: Документация по NetX Duo в ОСРВ Azure
+  href: index.yml
+- name: Общие сведения о NetX Duo
+  href: overview-netx-duo.md
+- name: Руководство пользователя по NetX Duo
+  expanded: true
+  items:
+    - name: Информация о руководстве
+      href: about-this-guide.md
+    - name: "Гл. 1.\_Знакомство с NetX Duo"
+      href: chapter1.md
+    - name: "Гл. 2.\_Установка и использование NetX Duo"
+      href: chapter2.md
+    - name: "Гл. 3.\_Функциональные компоненты NetX Duo"
+      href: chapter3.md
+    - name: "Гл. 4.\_Описание служб NetX Duo"
+      href: chapter4.md
+    - name: "Гл. 5.\_Сетевые драйверы NetX Duo"
+      href: chapter5.md
+    - name: "Прил. A.\_Службы NetX Duo"
+      href: appendix-a.md
+    - name: "Прил. Б.\_Константы NetX Duo"
+      href: appendix-b.md
+    - name: "Прил. В.\_Типы данных NetX Duo"
+      href: appendix-c.md
+    - name: "Прил. Г.\_API сокета, совместимого с BSD"
+      href: appendix-d.md
+    - name: "Прил. Д.\_Коды символов ASCII"
+      href: appendix-e.md
+- name: Надстройки NetX Duo
+  items:
+    - name: Руководство пользователя по AutoIP для NetX Duo
+      items:
+        - name: "Гл. 1.\_Знакомство с AutoIP для NetX Duo"
+          href: netx-duo-auto-ip/chapter1.md
+        - name: "Гл. 2.\_Установка и использование AutoIP для NetX Duo"
+          href: netx-duo-auto-ip/chapter2.md
+        - name: "Гл. 3.\_Описание служб AutoIP для NetX Duo"
+          href: netx-duo-auto-ip/chapter3.md
+    - name: Руководство пользователя по службам BSD для NetX Duo
+      items:
+        - name: "Гл. 1.\_Знакомство с BSD для NetX Duo"
+          href: netx-duo-bsd/chapter1.md
+        - name: "Гл. 2.\_Установка и использование BSD для NetX Duo"
+          href: netx-duo-bsd/chapter2.md
+        - name: "Гл. 3.\_Службы BSD для NetX Duo"
+          href: netx-duo-bsd/chapter3.md
+    - name: Руководство пользователя по NetX Crypto
+      items:
+        - name: "Гл. 1.\_Знакомство с NetX Crypto"
+          href: ../netx/netx-crypto/chapter1.md
+        - name: "Гл. 2.\_Установка и использование NetX Crypto"
+          href: ../netx/netx-crypto/chapter2.md
+        - name: "Гл. 3.\_Функциональные компоненты NetX Crypto"
+          href: ../netx/netx-crypto/chapter3.md
+        - name: "Гл. 3.\_Описание API NetX Crypto"
+          href: ../netx/netx-crypto/chapter4.md
+    - name: Руководство пользователя по клиенту DHCP для NetX Duo
+      items:
+        - name: "Гл. 1.\_Знакомство с клиентом DHCP для NetX Duo"
+          href: netx-duo-dhcp-client/chapter1.md
+        - name: "Гл. 2.\_Установка и использование клиента DHCP для NetX Duo"
+          href: netx-duo-dhcp-client/chapter2.md
+        - name: "Гл. 3.\_Описание служб клиента DHCP для NetX Duo"
+          href: netx-duo-dhcp-client/chapter3.md
+        - name: "Прил. А.\_Описание функции восстановления состояния для служб клиента DHCP для NetX Duo"
+          href: netx-duo-dhcp-client/appendixA.md
+    - name: Руководство пользователя по серверу DHCP для NetX Duo
+      items:
+        - name: "Гл. 1.\_Знакомство с сервером DHCP для NetX Duo"
+          href: netx-duo-dhcp-server/chapter1.md
+        - name: "Гл. 2.\_Установка и использование сервера DHCP для NetX Duo"
+          href: netx-duo-dhcp-server/chapter2.md
+        - name: "Гл. 3.\_Описание служб сервера DHCP для NetX Duo"
+          href: netx-duo-dhcp-server/chapter3.md
+    - name: Руководство пользователя по клиенту DHCPv6 для NetX Duo
+      items:
+        - name: "Гл. 1.\_Знакомство с клиентом DHCPv6 для NetX Duo"
+          href: netx-duo-dhcpv6-client/chapter1.md
+        - name: "Гл. 2.\_Установка и использование клиента DHCPv6 для NetX Duo"
+          href: netx-duo-dhcpv6-client/chapter2.md
+        - name: "Гл. 3.\_Параметры конфигурации DHCPv6 для NetX Duo"
+          href: netx-duo-dhcpv6-client/chapter3.md
+        - name: "Гл. 4.\_Службы клиента DHCPv6 для NetX Duo"
+          href: netx-duo-dhcpv6-client/chapter4.md
+        - name: "Прил. А.\_Описание функции восстановления состояния"
+          href: netx-duo-dhcpv6-client/appendix-a.md
+    - name: Руководство пользователя по серверу DHCPv6 для NetX Duo
+      items:
+        - name: "Гл. 1.\_Знакомство с сервером DHCPv6 для NetX Duo"
+          href: netx-duo-dhcpv6-server/chapter1.md
+        - name: "Гл. 2.\_Установка и использование сервера DHCPv6 для NetX Duo"
+          href: netx-duo-dhcpv6-server/chapter2.md
+        - name: "Гл. 3.\_Параметры конфигурации сервера DHCPv6 для NetX Duo"
+          href: netx-duo-dhcpv6-server/chapter3.md
+        - name: "Гл. 4.\_Службы сервера DHCPv6 для NetX Duo"
+          href: netx-duo-dhcpv6-server/chapter4.md
+        - name: "Прил. A.\_Коды параметров DHCPv6 для NetX Duo"
+          href: netx-duo-dhcpv6-server/appendix-a.md
+        - name: "Прил. Б.\_Коды состояний сервера DHCPv6 для NetX Duo"
+          href: netx-duo-dhcpv6-server/appendix-b.md
+        - name: "Прил. В.\_Уникальные идентификаторы (DUID) DHCPv6 для NetX Duo"
+          href: netx-duo-dhcpv6-server/appendix-c.md
+        - name: "Прил. Г.\_Пример расширенного сервера DHCPv6 для NetX Duo"
+          href: netx-duo-dhcpv6-server/appendix-d.md
+    - name: Руководство пользователя по DNS-клиенту для NetX Duo
+      items:
+        - name: "Гл. 1.\_Знакомство с DNS-клиентом для NetX Duo"
+          href: netx-duo-dns/chapter1.md
+        - name: "Гл. 2.\_Установка и использование DNS-клиента для NetX Duo"
+          href: netx-duo-dns/chapter2.md
+        - name: "Гл. 3.\_Описание служб DNS-клиента для NetX Duo"
+          href: netx-duo-dns/chapter3.md
+    - name: Руководство пользователя по FTP для NetX Duo
+      items:
+        - name: "Гл. 1.\_Знакомство с FTP для NetX Duo"
+          href: netx-duo-ftp/chapter1.md
+        - name: "Гл. 2.\_Установка и использование FTP"
+          href: netx-duo-ftp/chapter2.md
+        - name: "Гл. 3.\_Описание служб FTP"
+          href: netx-duo-ftp/chapter3.md
+    - name: Руководство пользователя по HTTP для NetX Duo
+      items:
+        - name: "Глава\_1.\_Знакомство с HTTP для NetX Duo"
+          href: netx-duo-http/chapter1.md
+        - name: "Глава\_2.\_Установка и использование HTTP для NetX Duo"
+          href: netx-duo-http/chapter2.md
+        - name: "Глава\_3.\_Описание служб HTTP для NetX"
+          href: netx-duo-http/chapter3.md
+    - name: Руководство пользователя по mDNS/DNS-SD для NetX Duo
+      items:
+        - name: "Гл. 1.\_Знакомство с mDNS/DNS-SD для NetX Duo"
+          href: netx-duo-mdns/chapter1.md
+        - name: "Гл. 2.\_Установка и использование mDNS"
+          href: netx-duo-mdns/chapter2.md
+        - name: "Гл. 3.\_Описание внутреннего кэша служб"
+          href: netx-duo-mdns/chapter3.md
+        - name: "Гл. 4.\_Описание служб mDNS"
+          href: netx-duo-mdns/chapter4.md
+    - name: Руководство пользователя по клиенту MQTT для NetX Duo
+      items:
+        - name: "Гл. 1.\_Знакомство с клиентом MQTT для NetX Duo"
+          href: netx-duo-mqtt/chapter1.md
+        - name: "Гл. 2.\_Установка и использование клиента MQTT для NetX Duo"
+          href: netx-duo-mqtt/chapter2.md
+        - name: "Гл. 3.\_Описание служб клиента MQTT для NetX Duo"
+          href: netx-duo-mqtt/chapter3.md
+    - name: Руководство пользователя по NAT для NetX Duo
+      items:
+        - name: "Гл. 1.\_Знакомство с NAT для NetX Duo"
+          href: chapter1.md
+        - name: "Гл. 2.\_Установка и использование NAT"
+          href: chapter2.md
+        - name: "Гл. 3.\_Параметры конфигурации NAT"
+          href: chapter3.md
+        - name: "Гл. 4.\_Описание служб NAT"
+          href: chapter4.md
+    - name: Руководство пользователя по клиенту POP3 для NetX Duo
+      items:
+        - name: "Гл. 1.\_Знакомство с клиентом POP3 для NetX Duo"
+          href: netx-duo-pop3-client/chapter1.md
+        - name: "Гл. 2.\_Установка и использование клиента POP3 для NetX Duo"
+          href: netx-duo-pop3-client/chapter2.md
+        - name: "Гл. 3.\_Описание служб клиента POP3"
+          href: netx-duo-pop3-client/chapter3.md
+    - name: Руководство пользователя по PPP для NetX Duo
+      items:
+        - name: "Гл. 1.\_Знакомство с PPP для NetX Duo"
+          href: netx-duo-ppp/chapter1.md
+        - name: "Гл. 2.\_Установка и использование PPP для NetX Duo"
+          href: netx-duo-ppp/chapter2.md
+        - name: "Гл. 3.\_Описание служб PPP для NetX Duo"
+          href: netx-duo-ppp/chapter3.md
+    - name: Руководство пользователя по клиенту SMTP для NetX Duo
+      items:
+        - name: "Гл. 1.\_Знакомство с клиентом SMTP для NetX Duo"
+          href: netx-duo-smtp-client/chapter1.md
+        - name: "Гл. 2.\_Установка и использование клиента SMTP для NetX Duo"
+          href: netx-duo-smtp-client/chapter2.md
+        - name: "Гл. 3.\_Описание служб клиента SMTP"
+          href: netx-duo-smtp-client/chapter3.md
+    - name: Руководство пользователя по SNMP для NetX Duo
+      items:
+        - name: "Гл. 1.\_Знакомство с SNMP для NetX Duo"
+          href: netx-duo-snmp/chapter1.md
+        - name: "Гл. 2.\_Установка и использование агента SNMP для NetX Duo"
+          href: netx-duo-snmp/chapter2.md
+        - name: "Гл. 3.\_Описание служб агента SNMP для NetX Duo"
+          href: netx-duo-snmp/chapter3.md
+    - name: Клиент SNTP для NetX Duo
+      items:
+        - name: "Гл. 1.\_Знакомство с клиентом SNTP для NetX Duo"
+          href: netx-duo-sntp-client/chapter1.md
+        - name: "Гл. 2.\_Установка и использование клиента SNTP для NetX Duo"
+          href: netx-duo-sntp-client/chapter2.md
+        - name: "Гл. 3.\_Описание служб клиента SNTP для NetX Duo"
+          href: netx-duo-sntp-client/chapter3.md
+        - name: "Прил. А.\_Коды неустранимых ошибок SNTP для NetX Duo"
+          href: netx-duo-sntp-client/appendix-a.md
+    - name: Руководство пользователя по Telnet для NetX Duo
+      items:
+        - name: "Гл. 1.\_Знакомство с Telnet для NetX Duo"
+          href: netx-duo-telnet/chapter1.md
+        - name: "Гл. 2.\_Установка и использование Telnet для NetX Duo"
+          href: netx-duo-telnet/chapter2.md
+        - name: "Гл. 3.\_Описание служб Telnet для NetX Duo"
+          href: netx-duo-telnet/chapter3.md
+    - name: TFTP для NetX Duo
+      items:
+        - name: "Гл. 1.\_Знакомство с TFTP для NetX Duo"
+          href: netx-duo-tftp/chapter1.md
+        - name: "Гл. 2.\_Установка и использование TFTP для NetX Duo"
+          href: netx-duo-tftp/chapter2.md
+        - name: "Гл. 3.\_Описание служб TFTP для NetX Duo"
+          href: netx-duo-tftp/chapter3.md
+    - name: Руководство пользователя по веб-протоколам HTTP и HTTPS для NetX Duo
+      items:
+        - name: "Гл. 1.\_Знакомство с HTTP и HTTPS для NetX Duo"
+          href: netx-duo-web-http/chapter1.md
+        - name: "Гл. 2.\_Установка и использование HTTP и HTTPS для NetX Duo"
+          href: netx-duo-web-http/chapter2.md
+        - name: "Гл. 3.\_Описание служб HTTP"
+          href: netx-duo-web-http/chapter3.md
+    - name: Руководство пользователя по DTLS для NetX Secure
+      items:
+        - name: "Гл. 1.\_Знакомство с DTLS для NetX Secure"
+          href: netx-secure-dtls/chapter1.md
+        - name: "Гл. 2.\_Установка и использование DTLS для NetX Secure"
+          href: netx-secure-dtls/chapter2.md
+        - name: Гл. 3. Функциональное описание DTLS для NetX Secure
+          href: netx-secure-dtls/chapter3.md
+        - name: "Гл. 4.\_Описание служб DTLS для NetX Secure"
+          href: netx-secure-dtls/chapter4.md
+        - name: "Прил. А.\_Коды возврата и ошибок DTLS для NetX Secure"
+          href: netx-secure-dtls/appendix-a.md
+    - name: Руководство пользователя по TLS для NetX Secure
+      items:
+        - name: "Гл. 1.\_Знакомство с NetX Secure"
+          href: netx-secure-tls/chapter1.md
+        - name: "Гл. 2.\_Установка и использование NetX Secure"
+          href: netx-secure-tls/chapter2.md
+        - name: Гл. 3. Функциональное описание NetX Secure
+          href: netx-secure-tls/chapter3.md
+        - name: "Гл. 4.\_Описание служб NetX Secure"
+          href: netx-secure-tls/chapter4.md
+        - name: "Прил. А.\_Коды возврата и ошибок NetX Secure"
+          href: netx-secure-tls/appendix-a.md
+- name: Репозиторий NetX Duo
+  href: 'https://github.com/azure-rtos/netxduo'
+- name: Связанные службы
+  items:
+    - name: "Azure Defender для Интернета вещей\_— ОСРВ (предварительная версия)"
+      href: 'https://docs.microsoft.com/azure/defender-for-iot/iot-security-azure-rtos'
+- name: Компоненты ОСРВ Microsoft Azure
+  items:
+    - name: ОСРВ Microsoft Azure
+      href: ../index.yml
+    - name: ThreadX
+      href: ../threadx/index.yml
+    - name: Модули ThreadX
+      href: ../threadx-modules/index.yml
+    - name: NetX Duo
+      href: ../netx-duo/index.yml
+    - name: NetX
+      href: ../netx/index.yml
+    - name: GUIX
+      href: ../guix/index.yml
+    - name: FileX
+      href: ../filex/index.yml
+    - name: LevelX
+      href: ../levelx/index.yml
+    - name: USBX
+      href: ../usbx/index.yml
+    - name: TraceX
+      href: ../tracex/index.yml

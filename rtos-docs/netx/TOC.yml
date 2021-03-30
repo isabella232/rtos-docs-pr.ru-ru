@@ -1,0 +1,159 @@
+- name: Документация по NetX
+  href: index.yml
+- name: Общие сведения о NetX
+  href: overview-netx.md
+- name: Руководство пользователя по NetX
+  expanded: true
+  items:
+    - name: Информация о руководстве
+      href: about-this-guide.md
+    - name: "Гл. 1.\_Знакомство с NetX"
+      href: chapter1.md
+    - name: "Гл. 2.\_Установка и использование NetX"
+      href: chapter2.md
+    - name: "Гл. 3.\_Функциональные компоненты NetX"
+      href: chapter3.md
+    - name: "Гл. 4.\_Описание служб NetX"
+      href: chapter4.md
+    - name: "Гл. 5.\_Сетевые драйверы NetX"
+      href: chapter5.md
+    - name: "Прил. A.\_Службы NetX"
+      href: appendix-a.md
+    - name: "Прил. Б.\_Константы NetX"
+      href: appendix-b.md
+    - name: "Прил. В.\_Типы данных NetX"
+      href: appendix-c.md
+    - name: "Прил. Г.\_API сокета, совместимого с BSD"
+      href: appendix-d.md
+    - name: "Прил. Д.\_Коды символов ASCII"
+      href: appendix-e.md
+- name: Надстройки NetX
+  items:
+    - name: Руководство пользователя по AutoIP для NetX
+      items:
+        - name: "Гл. 1.\_Знакомство с AutoIP для NetX"
+          href: netx-auto-ip/chapter1.md
+        - name: "Гл. 2.\_Установка и использование AutoIP для NetX"
+          href: netx-auto-ip/chapter2.md
+        - name: "Гл. 3.\_Описание служб AutoIP для NetX"
+          href: netx-auto-ip/chapter3.md
+    - name: Руководство пользователя по BSD для NetX
+      items:
+        - name: "Гл. 1.\_Знакомство с BSD для NetX"
+          href: netx-bsd/chapter1.md
+        - name: "Гл. 2.\_Установка и использование BSD для NetX"
+          href: netx-bsd/chapter2.md
+        - name: "Гл. 3.\_Службы BSD для NetX"
+          href: netx-bsd/chapter3.md
+    - name: Клиент DHCP для NetX
+      items:
+        - name: "Гл. 1.\_Знакомство с клиентом DHCP для NetX"
+          href: netx-dhcp-client/chapter1.md
+        - name: "Гл. 2.\_Установка и использование клиента DHCP для NetX"
+          href: netx-dhcp-client/chapter2.md
+        - name: "Гл. 3.\_Описание служб клиента DHCP для NetX"
+          href: netx-dhcp-client/chapter3.md
+        - name: "Прил. А.\_Описание функции восстановления состояния"
+          href: netx-dhcp-client/appendix-a.md
+    - name: Руководство пользователя по серверу DHCP для NetX
+      items:
+        - name: "Гл. 1.\_Знакомство с сервером DHCP для NetX"
+          href: netx-dhcp-server/chapter1.md
+        - name: "Гл. 2.\_Установка и использование сервера DHCP для NetX"
+          href: netx-dhcp-server/chapter2.md
+        - name: "Гл. 3.\_Описание служб сервера DHCP для NetX"
+          href: netx-dhcp-server/chapter3.md
+    - name: Руководство пользователя по DNS-клиенту для NetX
+      items:
+        - name: "Гл. 1.\_Знакомство с DNS-клиентом для NetX"
+          href: netx-dns/chapter1.md
+        - name: "Гл. 2.\_Установка и использование DNS-клиента для NetX"
+          href: netx-dns/chapter2.md
+        - name: "Гл. 3.\_Описание служб DNS-клиента для NetX"
+          href: netx-dns/chapter3.md
+    - name: Руководство пользователя по FTP для NetX
+      items:
+        - name: "Гл. 1.\_Знакомство с FTP для NetX"
+          href: netx-ftp/chapter1.md
+        - name: "Гл. 2.\_Установка и использование FTP для NetX"
+          href: netx-ftp/chapter2.md
+        - name: "Гл. 3.\_Описание служб FTP для NetX"
+          href: netx-ftp/chapter3.md
+    - name: HTTP для NetX
+      items:
+        - name: "Гл. 1.\_Знакомство с HTTP для NetX"
+          href: netx-http/chapter1.md
+        - name: "Гл. 2.\_Установка и использование HTTP для NetX"
+          href: netx-http/chapter2.md
+        - name: "Гл. 3.\_Описание служб HTTP для NetX"
+          href: netx-http/chapter3.md
+    - name: Руководство пользователя по LWM2M для NetX
+      items:
+        - name: "Гл. 1.\_Знакомство с LWM2M для NetX"
+          href: netx-lwm2m/chapter1.md
+        - name: "Гл. 2.\_Установка и использование LWM2M для NetX"
+          href: netx-lwm2m/chapter2.md
+        - name: Гл. 3. Функциональное описание LWM2M для NetX
+          href: netx-lwm2m/chapter3.md
+        - name: Гл. 4. Описание служб LWM2M для NetX
+          href: netx-lwm2m/chapter4.md
+    - name: Руководство пользователя по клиенту POP3 для NetX
+      items:
+        - name: "Гл. 1.\_Знакомство с POP3 для NetX"
+          href: netx-pop3-client/chapter1.md
+        - name: "Гл. 2.\_Установка и использование клиента POP3 для NetX"
+          href: netx-pop3-client/chapter2.md
+        - name: "Гл. 3.\_Описание служб клиента POP3 для NetX"
+          href: netx-pop3-client/chapter3.md
+    - name: Руководство пользователя по PPP для NetX
+      items:
+        - name: "Гл. 1.\_Знакомство с протоколом PPP для NetX"
+          href: netx-ppp/chapter1.md
+        - name: "Гл. 2.\_Установка и использование протокола PPP для NetX"
+          href: netx-ppp/chapter2.md
+        - name: Гл. 3. Описание служб протокола PPP для NetX
+          href: netx-ppp/chapter3.md
+    - name: Руководство пользователя по клиенту PPPoE для NetX
+      items:
+        - name: "Глава\_1.\_Знакомство с клиентом PPPoE для NetX"
+          href: netx-pppoe-client/chapter1.md
+        - name: "Глава\_2.\_Установка и использование клиента PPPoE для NetX"
+          href: netx-pppoe-client/chapter2.md
+        - name: "Глава\_3. Описание служб клиента PPPoE для NetX"
+          href: netx-pppoe-client/chapter3.md
+    - name: Руководство пользователя по серверу PPPoE для NetX
+      items:
+        - name: "Гл. 1.\_Знакомство с сервером PPPoE для NetX"
+          href: netx-pppoe-server/chapter1.md
+        - name: "Гл. 2.\_Установка и использование сервера PPPoE для NetX"
+          href: netx-pppoe-server/chapter2.md
+        - name: "Гл. 3.\_Описание служб сервера PPPoE для NetX"
+          href: netx-pppoe-server/chapter3.md
+- name: Репозиторий NetX
+  href: 'https://github.com/azure-rtos/netx'
+- name: Связанные службы
+  items:
+    - name: "Azure Defender для Интернета вещей\_— ОСРВ (предварительная версия)"
+      href: /azure/asc-for-iot
+- name: Компоненты Майкрософт
+  items:
+    - name: ОСРВ Microsoft Azure
+      href: ../index.yml
+    - name: ThreadX
+      href: ../threadx/index.yml
+    - name: Модули ThreadX
+      href: ../threadx-modules/index.yml
+    - name: NetX Duo
+      href: ../netx-duo/index.yml
+    - name: NetX
+      href: ../netx/index.yml
+    - name: GUIX
+      href: ../guix/index.yml
+    - name: FileX
+      href: ../filex/index.yml
+    - name: LevelX
+      href: ../levelx/index.yml
+    - name: USBX
+      href: ../usbx/index.yml
+    - name: TraceX
+      href: ../tracex/index.yml

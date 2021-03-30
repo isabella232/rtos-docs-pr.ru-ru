@@ -1,0 +1,25 @@
+### YamlMime:Landing
+title: Документация по решению "Модули ThreadX в ОСРВ Azure"
+summary: Компонент "Модули ThreadX в ОСРВ Azure" предоставляет инфраструктуру для приложений, позволяющую динамически загружать модули, созданные отдельно от резидентной части приложения.
+metadata:
+  title: Что собой представляет решение "Модули ThreadX в ОСРВ Azure"?
+  description: Компонент "Модули ThreadX в ОСРВ Azure" предоставляет динамически загружаемые модули, созданные отдельно от вашего приложения.
+  services: rtos
+  ms.service: rtos
+  ms.topic: landing-page
+  author: philmea
+  ms.author: philmea
+  ms.date: 07/10/2020
+  ms.openlocfilehash: 40958716dfaa14813279fbce3b63d696e3dc21d2
+  ms.sourcegitcommit: e3d42e1f2920ec9cb002634b542bc20754f9544e
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 03/22/2021
+  ms.locfileid: "104797605"
+landingContent:
+- title: Знакомство с решением "Модули ThreadX в ОСРВ Azure"
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что собой представляет решение "Модули ThreadX в ОСРВ Azure"?
+      url: chapter1.md

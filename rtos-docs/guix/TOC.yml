@@ -1,0 +1,93 @@
+- name: Документация по GUIX в ОСРВ Azure
+  href: index.yml
+- name: Общие сведения о GUIX
+  href: overview-guix.md
+- name: Краткое руководство по началу работы с GUIX Studio
+  href: guix-studio-quick-start.md
+- name: Руководство пользователя по GUIX
+  expanded: true
+  items:
+    - name: Об этом руководстве
+      href: about-guix.md
+    - name: "Гл. 1.\_Знакомство с GUIX"
+      href: chapter-1.md
+    - name: "Гл. 2.\_Установка и использование GUIX"
+      href: chapter-2.md
+    - name: "Гл. 3.\_Обзор функций GUIX"
+      href: chapter-3.md
+    - name: "Гл. 4.\_Описание служб GUIX"
+      href: chapter-4.md
+    - name: "Гл. 5.\_Драйверы отображения GUIX"
+      href: chapter-5.md
+    - name: Пример GUIX
+      href: guix-example.md
+    - name: "Прил. А.\_Определения цветов GUIX"
+      href: appendix-a.md
+    - name: "Прил. Б.\_Форматы цветов GUIX"
+      href: appendix-b.md
+    - name: "Прил. В.\_Стили мини-приложений GUIX"
+      href: appendix-c.md
+    - name: "Прил. Г.\_Атрибуты кисти, холста и градиента в GUIX"
+      href: appendix-d.md
+    - name: "Прил. Д.\_Описание событий GUIX"
+      href: appendix-e.md
+    - name: "Прил. Е.\_Службы привязки ОСРВ для GUIX"
+      href: appendix-f.md
+    - name: "Прил. Ж.\_Структура шрифта GUIX"
+      href: appendix-g.md
+    - name: "Прил. З.\_Флаги конфигурации времени сборки GUIX"
+      href: appendix-h.md
+    - name: "Прил. И.\_Информационные структуры в GUIX"
+      href: appendix-i.md
+- name: Руководство пользователя по GUIX Studio
+  items:
+    - name: Сведения о GUIX Studio
+      href: about-guix-studio.md
+    - name: "Гл. 1.\_Знакомство с GUIX Studio"
+      href: guix-studio-1.md
+    - name: "Гл. 2.\_Установка и использование GUIX Studio"
+      href: guix-studio-2.md
+    - name: "Гл. 3.\_Описание GUIX Studio"
+      href: guix-studio-3.md
+    - name: "Гл. 4.\_Ресурсы GUIX Studio"
+      href: guix-studio-4.md
+    - name: "Гл. 5.\_Конструктор экрана в GUIX Studio"
+      href: guix-studio-5.md
+    - name: "Гл. 6.\_Сгенерированный код GUIX Studio"
+      href: guix-studio-6.md
+    - name: "Гл. 7.\_Определение потока экрана"
+      href: guix-studio-7.md
+    - name: "Гл. 8.\_Заметки о редактировании конкретных типов мини-приложений"
+      href: guix-studio-8.md
+    - name: "Гл. 9.\_Командная строка GUIX Studio"
+      href: guix-studio-9.md
+    - name: "Гл. 10.\_Простой пример проекта"
+      href: guix-studio-10.md
+- name: Репозиторий GUIX
+  href: 'https://github.com/azure-rtos/guix'
+- name: Связанные службы
+  items:
+    - name: "Azure Defender для Интернета вещей\_— ОСРВ (предварительная версия)"
+      href: 'https://docs.microsoft.com/azure/defender-for-iot/iot-security-azure-rtos'
+- name: Компоненты ОСРВ Microsoft Azure
+  items:
+    - name: ОСРВ Microsoft Azure
+      href: ../index.yml
+    - name: ThreadX
+      href: ../threadx/index.yml
+    - name: Модули ThreadX
+      href: ../threadx-modules/index.yml
+    - name: NetX Duo
+      href: ../netx-duo/index.yml
+    - name: NetX
+      href: ../netx/index.yml
+    - name: GUIX
+      href: ../guix/index.yml
+    - name: FileX
+      href: ../filex/index.yml
+    - name: LevelX
+      href: ../levelx/index.yml
+    - name: USBX
+      href: ../usbx/index.yml
+    - name: TraceX
+      href: ../tracex/index.yml
