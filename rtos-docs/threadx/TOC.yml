@@ -27,6 +27,14 @@
       href: appendix-c.md
     - name: "Прил. Г.\_Коды знаков ASCII"
       href: appendix-d.md
+- name: Приложение к руководству пользователя по ThreadX для ARMv8-M
+  items:
+    - name: "Гл. 1.\_Знакомство с ThreadX в ОСРВ Azure для ARMv8-M"
+      href: ./user-guide-armv8m/chapter1.md
+    - name: "Гл. 2.\_Поддержка при установке ThreadX для ARMv8-M"
+      href: ./user-guide-armv8m/chapter2.md
+    - name: "Гл. 3.\_API-интерфейсы ThreadX для ARMv8-M"
+      href: ./user-guide-armv8m/chapter3.md
 - name: Руководство пользователя по SMP для ThreadX
   items:
     - name: Информация о руководстве
@@ -51,6 +59,12 @@
       href: ./threadx-smp/appendix-c.md
     - name: "Прил. Г.\_Коды знаков ASCII"
       href: ./threadx-smp/appendix-d.md
+- name: Приложение к руководству пользователя по набору профилей выполнения ThreadX для ARMv8-M
+  items:
+    - name: "Гл. 1.\_Знакомство с набором профилей выполнения"
+      href: ./epk_user_guide/chapter1.md
+    - name: "Гл. 2.\_Справочные материалы по API набора профилей выполнения"
+      href: ./epk_user_guide/chapter2.md
 - name: Репозиторий ThreadX
   href: 'https://github.com/azure-rtos/threadx'
 - name: Связанные службы
