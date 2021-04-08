@@ -137,6 +137,16 @@
           href: netx-duo-mdns/chapter3.md
         - name: "Гл. 4.\_Описание служб mDNS"
           href: netx-duo-mdns/chapter4.md
+    - name: Руководство пользователя по клиенту LWM2M для NetX Duo
+      items:
+        - name: "Гл. 1.\_Знакомство с клиентом LWM2M"
+          href: netx-duo-lwm2m/chapter1.md
+        - name: "Гл. 2.\_Установка и использование клиента LWM2M"
+          href: netx-duo-lwm2m/chapter2.md
+        - name: Гл. 3. Функциональное описание клиента LWM2M
+          href: netx-duo-lwm2m/chapter3.md
+        - name: "Гл. 4.\_Описание служб клиента LWM2M"
+          href: netx-duo-lwm2m/chapter4.md
     - name: Руководство пользователя по клиенту MQTT для NetX Duo
       items:
         - name: "Гл. 1.\_Знакомство с клиентом MQTT для NetX Duo"
@@ -171,6 +181,14 @@
           href: netx-duo-ppp/chapter2.md
         - name: "Гл. 3.\_Описание служб PPP для NetX Duo"
           href: netx-duo-ppp/chapter3.md
+    - name: Руководство пользователя по PTP для NetX Duo
+      items:
+        - name: "Гл. 1.\_Знакомство с клиентом PTP для NetX Duo"
+          href: netx-duo-ptp-client/chapter1.md
+        - name: "Гл. 2.\_Установка и использование клиента PTP для NetX Duo"
+          href: netx-duo-ptp-client/chapter2.md
+        - name: "Гл. 3.\_Описание служб клиента PTP для NetX Duo"
+          href: netx-duo-ptp-client/chapter3.md
     - name: Руководство пользователя по клиенту SMTP для NetX Duo
       items:
         - name: "Гл. 1.\_Знакомство с клиентом SMTP для NetX Duo"
