@@ -1,17 +1,17 @@
 ---
 title: Глава 1. Введение в стек узла USBX для ОСРВ Azure
-description: USBX — это полнофункциональный стек USB для глубоко встраиваемых приложений. В этой главе представлены основные сведения об USBX, в том числе области применения и преимущества.
+description: В этой главе представлены основные сведения о стеке узла USBX, в том числе об области применения и преимуществах.
 author: philmea
 ms.author: philmea
 ms.date: 5/19/2020
 ms.service: rtos
 ms.topic: article
-ms.openlocfilehash: 9ee49903e764e20316438be16b47d2d9208b1363
-ms.sourcegitcommit: e3d42e1f2920ec9cb002634b542bc20754f9544e
+ms.openlocfilehash: a9fdd86d47bd4680409cc550c87bc6f456d146a9
+ms.sourcegitcommit: d8edbb3207fe99f8afb431597dac063e73383e68
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "104816416"
+ms.lasthandoff: 04/05/2021
+ms.locfileid: "106377056"
 ---
 # <a name="chapter-1---introduction-to-azure-rtos-usbx-host-stack"></a>Глава 1. Введение в стек узла USBX для ОСРВ Azure
 
