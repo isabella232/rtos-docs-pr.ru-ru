@@ -6,12 +6,12 @@ ms.author: philmea
 ms.date: 05/19/2020
 ms.topic: article
 ms.service: rtos
-ms.openlocfilehash: 457eca2144bb0cba7cae63aa007e9cb658bbcd96
-ms.sourcegitcommit: e3d42e1f2920ec9cb002634b542bc20754f9544e
+ms.openlocfilehash: 8ee9d16c71d6c207de2098d688d49e6482c8b780
+ms.sourcegitcommit: 60ad844b58639d88830f2660ab0c4ff86b92c10f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "104815407"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106550156"
 ---
 # <a name="chapter-2---installation-and-use-of-azure-rtos-netx-duo"></a>Глава 2. Установка и использование NetX Duo в ОСРВ Azure
 
@@ -71,6 +71,7 @@ NetX Duo устанавливается путем клонирования р�
 Ниже приведены четыре простых шага, которые необходимо выполнить для создания приложения NetX Duo.
 
 [!div class="mx-tdCol2BreakAll"]
+
 | Шаг  | Описание  |
 |---|---|
 |Шаг&nbsp;1. |Добавьте файл ***nx_api.h*** во все файлы приложения, которые используют службы или структуры данных NetX Duo.|
