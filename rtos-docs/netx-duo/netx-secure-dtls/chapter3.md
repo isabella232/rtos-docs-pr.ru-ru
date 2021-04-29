@@ -6,12 +6,12 @@ ms.author: philmea
 ms.date: 06/04/2020
 ms.topic: article
 ms.service: rtos
-ms.openlocfilehash: 468f1dc8a8334dc89064594b29dc8cfabd7d8fae
-ms.sourcegitcommit: e3d42e1f2920ec9cb002634b542bc20754f9544e
+ms.openlocfilehash: 347bd83fa8c72ced2e8678a92ec5c5f8393c136d
+ms.sourcegitcommit: 60ad844b58639d88830f2660ab0c4ff86b92c10f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "104815372"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106550207"
 ---
 # <a name="chapter-3-functional-description-of-azure-rtos-netx-secure-dtls"></a>Глава 3. Функциональное описание ОСРВ Azure NetX Secure DTLS
 
@@ -64,14 +64,14 @@ TLS задает протокол для создания *ключей сеан
 
 Ниже приведены определения полей заголовка записи подтверждения DTLS.
 
-| Поле заголовка TLS | Назначение |
+| Поле заголовка TLS | Назначение  |
 | ---------------- | ------------------------------------------------ |
 | **8 разрядов: тип сообщения** | Это поле содержит тип отправляемой записи DTLS. Допустимые типы:<br />- ChangeCipherSpec: 0x14;<br />- Alert: 0x15;<br />- Handshake: 0x16;<br />- данные приложения: 0x17. |
 |  **16 разрядов: эпоха** | Это поле содержит "эпоху" DTLS. Это счетчик, который увеличивается при каждом изменении состояния шифрования (например, при создании новых ключей сеанса). |
 |  **48 разрядов: порядковый номер** | Это поле содержит порядковый номер, который определяет данную запись. Он используется протоколом DTLS для упорядочения записей и проверки необходимости повторной передачи. |
 |  **16 разрядов: версия протокола** | Это поле содержит версию протокола DTLS. Допустимы следующие значения:<br />- DTLS 1.1: 0xFEFD |
 | **16 разрядов: длина в битах** | Это поле содержит длину данных, инкапсулированных в запись DTLS. |
-| **8 разрядов: тип подтверждения** | Это поле содержит тип сообщения подтверждения. Допустимы следующие значения:<br />- HelloRequest: 0x00;<br />- ClientHello: 0x01;<br />- ServerHello: 0x02;<br />- Certificate: 0x0B;<br />- ServerKeyExchange: 0x0C;<br />- CertificateRequest: 0x0D;<br />- ServerHelloDone: 0x0E;<br />- CertificateVerify: 0x0F;<br />- ClientKeyExchange: 0x10;<br />— Finished: | 0x14. |
+| **8 разрядов: тип подтверждения** | Это поле содержит тип сообщения подтверждения. Допустимы следующие значения:<br />- HelloRequest: 0x00;<br />- ClientHello: 0x01;<br />- ServerHello: 0x02;<br />- Certificate: 0x0B;<br />- ServerKeyExchange: 0x0C;<br />- CertificateRequest: 0x0D;<br />- ServerHelloDone: 0x0E;<br />- CertificateVerify: 0x0F;<br />- ClientKeyExchange: 0x10;<br />- Finished: 0x14; |
 | **24 разряда: длина** | Это поле содержит длину данных сообщения подтверждения. |
 | **16 разрядов: порядковый номер** | Это поле содержит порядковый номер. |
 
