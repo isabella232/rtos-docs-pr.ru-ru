@@ -6,12 +6,12 @@ ms.author: philmea
 ms.date: 05/19/2020
 ms.topic: article
 ms.service: rtos
-ms.openlocfilehash: c9e91244856b322d53f85bdd572bd317a055776a
-ms.sourcegitcommit: e3d42e1f2920ec9cb002634b542bc20754f9544e
+ms.openlocfilehash: f70b8890be6b12f917ac1724a29559afab33b88d
+ms.sourcegitcommit: 0520b2afb6b7f8ae1ea48581e160459fc9292ca7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "104815083"
+ms.lasthandoff: 04/30/2021
+ms.locfileid: "108297502"
 ---
 # <a name="chapter-4--description-of-azure-rtos-filex-services"></a>Глава 4. Описание служб FileX для ОСРВ Azure
 
@@ -4105,6 +4105,9 @@ UINT fx_media_exFAT_format(
 
 > [!WARNING]
 > *Форматирование уже отформатированного носителя фактически приводит к удалению всех файлов и каталогов на нем.*
+
+> [!IMPORTANT]
+> *Размер тома exFAT должен соответствовать размеру раздела (при наличии макета MBR или GPT) или размеру всего устройства, если макет раздела отсутствует (MBR или GPT). В Windows существует ограничение, из-за которого диск exFAT не будет распознан, если он отформатирован с опреленными значениями общего числа секторов, которое меньше числа доступных секторов.*
 
 ### <a name="input-parameters"></a>Входные параметры
 
