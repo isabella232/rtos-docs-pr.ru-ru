@@ -6,12 +6,12 @@ ms.author: philmea
 ms.date: 06/04/2020
 ms.topic: article
 ms.service: rtos
-ms.openlocfilehash: 89761ec3438b1b16c1a603764bf7d4e1eac1b4ea
-ms.sourcegitcommit: e3d42e1f2920ec9cb002634b542bc20754f9544e
+ms.openlocfilehash: 80ec22058ab64ed0c6258bb3d9364ec44f9a741b
+ms.sourcegitcommit: 4ebe7c51ba850951c6a9d0f15e22d07bb752bc28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "104815352"
+ms.lasthandoff: 05/20/2021
+ms.locfileid: "110223398"
 ---
 # <a name="chapter-4---description-of-azure-rtos-netx-secure-services"></a>Глава 4. Описание служб NetX Secure для ОСРВ Azure
 
@@ -480,11 +480,11 @@ UINT  nx_secure_tls_client_psk_set(NX_SECURE_TLS_SESSION *session_ptr,
 
 - **session_ptr** — указатель на созданный ранее экземпляр сеанса TLS.
 - **pre_shared_key** — фактическое значение PSK.
-- **psk_length** — длина значения PSK.
-- **psk_identity** — строка, используемая для идентификации этого значения PSK.
-- **identity_length** — длина удостоверения PSK.
-- **hint** — строка, используемая для указания группы ключей PSK, из которой необходимо выбрать ключ на сервере TLS.
-- **hint_length** — длина строки указания.
+- **psk_length**: длина значения PSK.
+- **psk_identity**: строка, используемая для идентификации этого значения PSK.
+- **identity_length**: длина удостоверения PSK.
+- **hint**: строка, используемая для выбора группы PSK на сервере TLS.
+- **hint_length**: длина строки указания.
 
 ### <a name="return-values"></a>Возвращаемые значения
 
@@ -793,43 +793,6 @@ status =  nx_secure_tls_metadata_size_calculate(&nx_crypto_tls_ciphers,
 
 - nx_secure_tls_session_create
 
-## <a name="nx_secure_module_hash_compute"></a>nx_secure_module_hash_compute
-
-Вычисление хэш-значения подпрограмм библиотеки NetX Secure
-
-### <a name="prototype"></a>Прототип
-
-```C
-VOID nx_secure_module_hash_compute(VOID);
-```
-
-### <a name="description"></a>Описание
-
-Эта служба инициализирует модуль NetX Secure TLS. Его необходимо вызвать до доступа к другим службам NetX Secure.
-
-### <a name="parameters"></a>Параметры
-
-None
-
-### <a name="return-values"></a>Возвращаемые значения
-
-Нет
-
-### <a name="allowed-from"></a>Допустимые источники
-
-Инициализация, потоки
-
-### <a name="example"></a>Пример
-
-```C
-/* Initializes the TLS module. */
-Nx_secure_tls_initialize();
-```
-
-### <a name="see-also"></a>См. также:
-
-- nx_secure_tls_session_create
-
 ## <a name="nx_secure_tls_packet_allocate"></a>nx_secure_tls_packet_allocate
 
 Выделение пакета для сеанса NetX Secure TLS
@@ -853,8 +816,8 @@ UINT  nx_secure_tls_packet_allocate(NX_SECURE_TLS_SESSION *session_ptr,
 
 - **session_ptr** — указатель на экземпляр сеанса TLS.
 - **pool_ptr** — указатель на пул NX_PACKET_POOL, из которого выделяется пакет.
-- **packet_ptr** — указатель вывода на вновь выделенный пакет.
-- **wait_option** — параметр приостановки выделения пакетов.
+- **packet_ptr**: указатель вывода на выделенный пакет.
+- **wait_option**: параметр приостановки выделения пакетов.
 
 ### <a name="return-values"></a>Возвращаемые значения
 
@@ -913,11 +876,11 @@ UINT  nx_secure_tls_psk_add(NX_SECURE_TLS_SESSION *session_ptr,
 
 - **session_ptr** — указатель на созданный ранее экземпляр сеанса TLS.
 - **pre_shared_key** — фактическое значение PSK.
-- **psk_length** — длина значения PSK.
-- **psk_identity** — строка, используемая для идентификации этого значения PSK.
-- **identity_length** — длина удостоверения PSK.
-- **hint** — строка, используемая для указания группы ключей PSK, из которой необходимо выбрать ключ на сервере TLS.
-- **hint_length** — длина строки указания.
+- **psk_length**: длина значения PSK.
+- **psk_identity**: строка, используемая для идентификации этого значения PSK.
+- **identity_length**: длина удостоверения PSK.
+- **hint**: строка, используемая для выбора группы PSK на сервере TLS.
+- **hint_length**: длина строки указания.
 
 ### <a name="return-values"></a>Возвращаемые значения
 
@@ -2658,23 +2621,23 @@ UINT  nx_secure_tls_session_start(NX_SECURE_TLS_SESSION *session_ptr,
 
 ### <a name="return-values"></a>Возвращаемые значения
 
-- **NX_SUCCESS** (0x00) — сеанс TLS успешно инициализирован.
-- **NX_NOT_CONNECTED** (0x38) — базовый TCP-сокет больше не подключен.
-- **NX_SECURE_TLS_UNRECOGNIZED_MESSAGE_TYPE** (0x102) — получен неправильный тип сообщения TLS.
-- **NX_SECURE_TLS_UNSUPPORTED_CIPHER** (0x106) — шифр, предоставленный удаленным узлом, не поддерживается.
-- **NX_SECURE_TLS_HANDSHAKE_FAILURE** (0x107) — не удалось обработать сообщение во время подтверждения TLS.
-- **NX_SECURE_TLS_HASH_MAC_VERIFY_FAILURE** (0x108) — не удалось проверить хэш MAC во входящем сообщении.
-- **NX_SECURE_TLS_TCP_SEND_FAILED** (0x109) — не удалось отправить данные через базовый TCP-сокет.
-- **NX_SECURE_TLS_INCORRECT_MESSAGE_LENGTH** (0x10A) — входящее сообщение содержало недопустимое поле длины.
+- **TX_SUCCESS** (0x00): сеанс TLS успешно инициализирован.
+- **NX_NOT_CONNECTED** (0x38): базовый сокет TCP больше не подключен.
+- **NX_SECURE_TLS_UNRECOGNIZED_MESSAGE_TYPE** (0x102): получен неправильный тип сообщения TLS.
+- **NX_SECURE_TLS_UNSUPPORTED_CIPHER** (0x106): шифр, предоставленный удаленным узлом, не поддерживается.
+- **NX_SECURE_TLS_HANDSHAKE_FAILURE** (0x107): не удалось обработать сообщение во время подтверждения TLS.
+- **NX_SECURE_TLS_HASH_MAC_VERIFY_FAILURE** (0X108): не удалось проверить хэш MAC во входящем сообщении.
+- **NX_SECURE_TLS_TCP_SEND_FAILED** (0x109): не удалось отправить данные через базовый сокет TCP.
+- **NX_SECURE_TLS_INCORRECT_MESSAGE_LENGTH** (0x10A): входящее сообщение содержало недопустимое поле длины.
 - **NX_SECURE_TLS_BAD_CIPHERSPEC** (0x10B) — неправильное входящее сообщение ChangeCipherSpec.
 - **NX_SECURE_TLS_INVALID_SERVER_CERT** (0x10C) — входящий сертификат TLS невозможно использовать для идентификации удаленного сервера TLS.
 - **NX_SECURE_TLS_UNSUPPORTED_PUBLIC_CIPHER** (0x10D) — шифр с открытым ключом, предоставленный удаленным узлом, не поддерживается.
-- **NX_SECURE_TLS_NO_SUPPORTED_CIPHERS** (0x10E) — на удаленном узле нет ни одного комплекта шифров, поддерживаемого стеком NetX Secure TLS.
-- **NX_SECURE_TLS_UNKNOWN_TLS_VERSION** (0x10F) — в заголовке полученного сообщения TLS указана неизвестная версия TLS.
-- **NX_SECURE_TLS_UNSUPPORTED_TLS_VERSION** (0x110) — в заголовке полученного сообщения TLS указана известная, но неподдерживаемая версия TLS.
-- **NX_SECURE_TLS_ALLOCATE_PACKET_FAILED** (0x111) — не удалось выделить внутренний пакет TLS.
-- **NX_SECURE_TLS_INVALID_CERTIFICATE** (0x112) — удаленный узел предоставил недопустимый сертификат.
-- **NX_SECURE_TLS_ALERT_RECEIVED** (0x114) — удаленный узел отправил оповещение об ошибке и завершает сеанс TLS.
+- **NX_SECURE_TLS_NO_SUPPORTED_CIPHERS** (0X10E): на удаленном узле нет ни одного комплекта шифров, поддерживаемого стеком NetX Secure TLS.
+- **NX_SECURE_TLS_UNKNOWN_TLS_VERSION** (0x10F): в заголовке полученного сообщения TLS указана неизвестная версия TLS.
+- **NX_SECURE_TLS_UNSUPPORTED_TLS_VERSION** (0x110): в заголовке полученного сообщения TLS указана неподдерживаемая версия TLS.
+- **NX_SECURE_TLS_ALLOCATE_PACKET_FAILED** (0x111): не удалось выделить внутренний пакет TLS.
+- **NX_SECURE_TLS_INVALID_CERTIFICATE** (0x112): удаленный узел предоставил недопустимый сертификат.
+- **NX_SECURE_TLS_ALERT_RECEIVED** (0x114): удаленный узел отправил оповещение об ошибке и завершает сеанс TLS.
 - **NX_SECURE_TLS_MISSING_CRYPTO_ROUTINE** (0x13B) —запись в таблице комплектов шифров содержала указатель на функцию со значением NULL.
 - **NX_SECURE_TLS_INAPPROPRIATE_FALLBACK** (0x146) — удаленное ClientHello TLS включало резервное SCSV и была выполнена попытка отката версии.
 - **NX_PTR_ERROR** (0x07) — выполнена попытка использования недопустимого указателя.
