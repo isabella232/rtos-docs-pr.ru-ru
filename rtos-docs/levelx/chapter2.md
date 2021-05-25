@@ -6,12 +6,12 @@ ms.author: philmea
 ms.date: 05/19/2020
 ms.topic: article
 ms.service: rtos
-ms.openlocfilehash: 575776875452cfc718401556a6440d787cb18893
-ms.sourcegitcommit: e3d42e1f2920ec9cb002634b542bc20754f9544e
+ms.openlocfilehash: 34110e74e8ad0a6acd376c00c1284a3ea715c5f5
+ms.sourcegitcommit: 4ebe7c51ba850951c6a9d0f15e22d07bb752bc28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "104815431"
+ms.lasthandoff: 05/20/2021
+ms.locfileid: "110223321"
 ---
 # <a name="chapter-2---installation-and-use-of-azure-rtos-levelx"></a>Глава 2. Установка и использование LevelX для ОСРВ Azure
 
@@ -80,6 +80,10 @@ LevelX распространяется в формате ANSI на C, где к
 - **LX_NOR_EXTENDED_CACHE_SIZE**: по умолчанию имеет значение 8, что означает возможность кэшировать максимум 8 секторов для экземпляра NOR.
 - **LX_NOR_SECTOR_MAPPING_CACHE_SIZE**: определяет размер кэша для сопоставлений логических секторов. По умолчанию имеет значение 16. Более высокие значения повышают производительность, но увеличивают нагрузку на память. Этот размер не может быть меньше 8 и всегда должен быть степенью числа 2.
 - **LX_THREAD_SAFE_ENABLE**: если определен этот параметр, LevelX обеспечивает потокобезопасность благодаря использованию объекта мьютекса ThreadX через соответствующий API.
+- **LX_STANDALONE_ENABLE**: если этот параметр определен, он позволяет использовать LevelX в изолированном режиме (без ОСРВ Azure). По умолчанию этот символ не определен.
+
+> [!IMPORTANT]
+> При использовании LevelX в автономном режиме (должен быть задан параметр **LX_STANDALONE_ENABLE**) файлы и библиотеки ThreadX не требуются. В этом режиме функция потокобезопасного режима LevelX.
 
 ## <a name="using-levelx"></a>Использование LevelX
 
