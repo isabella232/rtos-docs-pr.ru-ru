@@ -6,12 +6,12 @@ ms.author: philmea
 ms.date: 05/19/2020
 ms.topic: article
 ms.service: rtos
-ms.openlocfilehash: 7a17ab0d2500d021bb9397dbf673427362c45173
-ms.sourcegitcommit: e3d42e1f2920ec9cb002634b542bc20754f9544e
+ms.openlocfilehash: b07e275468484ccc905655dcd13197de42b2ac86
+ms.sourcegitcommit: 4ebe7c51ba850951c6a9d0f15e22d07bb752bc28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "104815020"
+ms.lasthandoff: 05/20/2021
+ms.locfileid: "110223415"
 ---
 # <a name="chapter-4---description-of-guix-services"></a>Глава 4. Описание служб GUIX
 
@@ -27,7 +27,7 @@ ms.locfileid: "104815020"
 | gx_accordion_menu_position          | Размещение пунктов меню                                                                          |
 | gx_animation_canvas_define          | Указание памяти для контроллера анимации для холста, которую следует использовать для последующих анимаций. |
 | gx_animation_create                  | Создание контроллера анимации                                                               |
-| gx_animation_delete                  | Удаление контроллера анимации                                                               |
+| gx_animation_delete                  | Удаление одного или нескольких контроллеров анимации |
 | gx_animation_drag_disable           | Отключение перехватчика анимации перетаскивания экрана                                                           |
 | gx_animation_drag_enable            | Включение перехватчика анимации перетаскивания экрана                                                            |
 | gx_animation_landing_speed_set     | Задание стартовой скорости размещения для анимации перетаскивания экрана                                                  |
@@ -128,6 +128,12 @@ ms.locfileid: "104815020"
 | gx_drop_list_open                        | Открытие раскрывающего списка                                                        |
 | gx_drop_list_pixelmap_set               | Задание карты отображения пикселей для раскрывающего списка                                             |
 | gx_drop_list_popup_set                  | Задание всплывающего окна для раскрывающегося списка                                                |
+| gx_generic_scroll_wheel_children_position | Размещение дочерних элементов в универсальном колесе прокрутки |
+| gx_generic_scroll_wheel_create| Создание мини-приложения универсального колеса прокрутки |
+| gx_generic_scroll_wheel_draw | Отображение мини-приложения универсального колеса прокрутки |
+| gx_generic_scroll_wheel_event_process| Обработка события универсального колеса прокрутки|
+| gx_generic_scroll_wheel_row_height_set| Задание высоты строки для универсального колеса прокрутки|
+| gx_generic_scroll_wheel_total_rows_set| Задание числа строк для универсального колеса прокрутки |
 | gx_horizontal_list_children_position    | Размещение дочерних мини-приложений в горизонтальном списке                          |
 | gx_horizontal_list_create                | Создание горизонтального списка                                                |
 | gx_horizontal_list_event_process        | Обработка события в горизонтальном списке                                      |
@@ -628,7 +634,7 @@ VOID gx_accordion_menu_draw(GX_ACCORDION_MENU *accordion);
 
 ### <a name="return-values"></a>Возвращаемые значения
 
-- **Нет**
+- **None**
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -862,11 +868,11 @@ if (status == GX_SUCCESS)
 
 ### <a name="see-also"></a>См. также:
 
-- gx_animation_create,
+- gx_animation_create
 - gx_animation_delete
-- gx_animation_drag_disable,
+- gx_animation_drag_disable
 - gx_animation_drag_enable
-- gx_animation_landing_speed_set,
+- gx_animation_landing_speed_set
 - gx_animation_start
 - gx_animation_stop
 
@@ -911,7 +917,7 @@ gx_system_animation_get(&animation);
 
 if (animation)
 {
-    status = gx_animation_create(&animation);
+    status = gx_animation_create(animation);
 }
 
 /* If status is GX_SUCCESS the new animation controller was successfully created and initialized. */
@@ -920,8 +926,81 @@ if (animation)
 
 ### <a name="see-also"></a>См. также:
 
-- gx_animation_canvas_define,
+- gx_animation_canvas_define
 - gx_animation_delete
+- gx_animation_drag_disable
+- gx_animation_drag_enable
+- gx_animation_start
+- gx_animation_landing_speed_set
+- gx_animation_stop
+- gx_system_animation_get
+- gx_system_animation_free
+
+## <a name="gx_animation_delete"></a>gx_animation_delete
+
+Удаление одного или нескольких контроллеров анимации
+
+### <a name="prototype"></a>Прототип
+
+```C
+UINT gx_animation_delete(GX_ANIMATION *animation, GX_WIDGET *parent);
+```
+
+### <a name="description"></a>Описание
+
+Эта служба удаляет последовательность анимации, если задан заголовок ввода, а если он не задан, то удаляет все элементы анимации, принадлежащие указанному родительскому мини-приложению.
+
+### <a name="parameters"></a>Параметры
+
+- **animation**: указатель на блок управления анимацией
+- **parent**: указатель на родительское мини-приложение
+
+
+### <a name="return-values"></a>Возвращаемые значения
+
+- **GX_SUCCESS** (0x00) — контроллеры анимации успешно удалены.
+- **GX_PTR_ERROR** (0x07) — недопустимый указатель.
+
+### <a name="allowed-from"></a>Допустимые источники
+
+Инициализация и потоки
+
+### <a name="example"></a>Пример
+
+- Удаление одного элемента анимации
+
+```C
+GX_ANIMATION *animation;
+
+/* Allocate an animaton control from system pool */
+gx_system_animation_get(&animation);
+
+if (animation)
+{
+    /* Create an animation.  */
+    gx_animation_create(animation);
+
+    /* Delete an animation.  */
+    status = gx_animation_delete(animation, GX_NULL);
+}
+
+/* If status is GX_SUCCESS the animation controller was successfully deleted and returned back to system animation pool. */
+
+```
+
+- Удаление множества элементов анимации
+```C
+
+status = gx_animation_delete(GX_NULL, parent);
+
+/* If status is GX_SUCCESS all the animations belong to the parent were successfully deleted. */
+
+```
+
+### <a name="see-also"></a>См. также:
+
+- gx_animation_canvas_define,
+- gx_animation_create
 - gx_animation_drag_disable,
 - gx_animation_drag_enable
 - gx_animation_start
@@ -977,14 +1056,15 @@ status = gx_animation_drag_disable(&animation, animation_parent);
 
 ### <a name="see-also"></a>См. также:
 
-- gx_animation_canvas_define,
-- gx__animation_create
+- gx_animation_canvas_define
+- gx_animation_create
+- gx_animation_delete
 - gx_animation_drag_enable
-- gx_animation_landing_speed_set,
-- gx__animation_start
+- gx_animation_landing_speed_set
+- gx_animation_start
 - gx_animation_stop
-- gx_system_animation_get,
-- gx__system_animation_free
+- gx_system_animation_get
+- gx_system_animation_free
 
 ## <a name="gx_animation_drag_enable"></a>gx_animation_drag_enable
 
@@ -1056,13 +1136,14 @@ status = gx_animation_drag_enable(&animation, animation_parent,
 
 ### <a name="see-also"></a>См. также:
 
-- gx_animation_canvas_define,
-- gx__animation_create
-- gx_animation_drag_disable,
-- gx__animation_landing_speed_set
-- gx_animation_start,
-- gx__animation_stop,
-- gx__system_animation_get
+- gx_animation_canvas_define
+- gx_animation_create
+- gx_animation_delete
+- gx_animation_drag_disable
+- gx_animation_landing_speed_set
+- gx_animation_start
+- gx_animation_stop
+- gx_system_animation_get
 - gx_system_animation_free
 
 ## <a name="gx_animation_landing_speed_set"></a>gx_animation_landing_speed_set
@@ -1106,13 +1187,14 @@ status = gx_animation_landing_peed_set(&my_animation, 20);
 
 ### <a name="see-also"></a>См. также:
 
-- gx_animation_canvas_define,
-- gx__animation_create
-- gx_animation_slide_disable,
-- gx__animation_slide_enable
-- gx_animation_start,
-- gx__animation_stop,
-- gx__system_animation_get
+- gx_animation_canvas_define
+- gx_animation_create
+- gx_animation_delete
+- gx_animation_slide_disable
+- gx_animation_slide_enable
+- gx_animation_start
+- gx_animation_stop
+- gx_system_animation_get
 - gx_system_animation_free
 
 ## <a name="gx_animation_start"></a>gx_animation_start
@@ -1236,12 +1318,13 @@ status = gx_animation_stop(&animation);
 
 ### <a name="see-also"></a>См. также:
 
-- gx_animation_canvas_define,
-- gx__animation_create
-- gx_animation_drag_disable,
-- gx__animation_drag_enable
-- gx_animation_start,
-- gx__system_animation_get
+- gx_animation_canvas_define
+- gx_animation_create
+- gx_animation_delete
+- gx_animation_drag_disable
+- gx_animation_drag_enable
+- gx_animation_start
+- gx_system_animation_get
 - gx_system_animation_free
 
 ## <a name="gx_binres_language_count_get"></a>gx_binres_language_count_get
@@ -1634,7 +1717,7 @@ VOID gx_button_background_draw(GX_BUTTON *button);
 
 ### <a name="return-values"></a>Возвращаемые значения
 
-- **Нет**
+- **None**
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -1829,7 +1912,7 @@ VOID gx_button_draw(GX_BUTTON *button);
 
 ### <a name="return-values"></a>Возвращаемые значения
 
-- **Нет**
+- **None**
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -3929,7 +4012,7 @@ VOID gx_checkbox_draw(GX_CHECKBOX *checkbox);
 
 ### <a name="return-values"></a>Возвращаемые значения
 
-- **Нет**
+- **None**
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -4297,7 +4380,7 @@ VOID gx_circular_gauge_background_draw(GX_CIRCULAR_GAUGE *gauge);
 
 ### <a name="return-values"></a>Возвращаемые значения
 
-- **Нет**
+- **None**
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -4418,7 +4501,7 @@ VOID gx_circular_gauge_draw(GX_CIRCULAR_GAUGE *gauge);
 
 ### <a name="return-values"></a>Возвращаемые значения
 
-- **Нет**
+- **None**
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -6842,6 +6925,405 @@ status = gx_drop_list_popup_get(&drop_list, &vertical_list)
 - gx_drop_list_open
 - gx_drop_list_pixelmap_set
 
+## <a name="gx_generic_scroll_wheel_children_position"></a>gx_generic_scroll_wheel_children_position
+### <a name="position-children-for-the-generic-scroll-wheel"></a>Размещение дочерних элементов для универсального колеса прокрутки
+
+### <a name="prototype"></a>Прототип
+
+```C
+UINT gx_generic_scroll_wheel_children_position(
+    GX_GENERIC_SCROLL_WHEEL *wheel)
+```
+
+### <a name="description"></a>Описание
+
+Эта функция размещает дочерние элементы для универсального колеса прокрутки в соответствии с заданной для него высотой строки. Функция вызывается по умолчанию при отображении такого колеса.
+
+### <a name="parameters"></a>Параметры
+
+- **wheel**: указатель на блок управления универсального колеса прокрутки
+
+### <a name="return-values"></a>Возвращаемые значения
+
+- **GX_SUCCESS** (0x00) — дочерние элементы для универсального колеса прокрутки успешно размещены.
+- **GX_CALLER_ERROR** (0x11) — недопустимый вызывающий объект для этой функции.
+- **GX_PTR_ERROR** (0x07) — недопустимый указатель.
+- **GX_INVALID_WIDGET** (0x12) — недопустимое мини-приложение.
+
+### <a name="allowed-from"></a>Допустимые источники
+
+Инициализация и потоки
+
+### <a name="example"></a>Пример
+
+```C
+/* Position children in the generic scroll wheel. */
+status = gx_generic_scroll_wheel_children_position (&wheel);
+
+/* If status is GX_SUCCESS the children in the generic scroll wheel are positioned. */
+```
+
+### <a name="see-also"></a>См. также:
+
+- gx_scroll_wheel_create
+- gx_scroll_wheel_event_process
+- gx_scroll_wheel_gradient_alpha_set
+- gx_scroll_wheel_selected_background_set
+- gx_scroll_wheel_selected_get
+- gx_scroll_wheel_selected_set
+- gx_generic_scroll_wheel_create
+- gx_generic_scroll_wheel_draw
+- gx_generic_scroll_wheel_event_process
+- gx_generic_scroll_wheel_row_height_set
+- gx_generic_scroll_wheel_total_rows_set
+
+## <a name="gx_generic_scroll_wheel_create"></a>gx_generic_scroll_wheel_create
+
+
+Создание универсального колеса прокрутки.
+
+### <a name="prototype"></a>Прототип
+
+```C
+UINT gx_generic_scroll_wheel_create(
+    GX_GENERIC_SCROLL_WHEEL *wheel,
+    GX_CONST GX_CHAR *name,
+    GX_WIDGET *parent,
+    INT total_rows,
+    VOID (*callback)(GX_GENERIC_SCROLL_WHEEL *, GX_WIDGET *, INT),
+    ULONG style,
+    USHORT id,
+    GX_CONST GX_RECTANGLE *size);
+```
+
+### <a name="description"></a>Описание
+
+Эта служба создает универсальное мини-приложение колесика прокрутки.
+
+Универсальное колесо прокрутки — это тип мини-приложения колеса прокрутки, которое содержит дочерние мини-приложения. Также доступны другие типы мини-приложений колесика прокрутки. Дополнительные сведения об иерархии мини-приложений колеса прокрутки, их типах и производных вариантах см. в справке по API-интерфейсу gx_scroll_wheel_create().
+
+Метод GX_GENERIC_SCROLL_WHEEL является производным от GX_SCROLL_WHEEL и поддерживает все службы gx_scroll_wheel.
+
+Все типы колесика прокрутки создают события GX_EVENT_LIST_SELECT для их родительских элементов при прокрутке колесика прокрутки.
+
+### <a name="parameters"></a>Параметры
+
+- **wheel**: указатель на блок управления универсального колесика прокрутки
+- **name**: логическое имя мини-приложения универсального колеса прокрутки
+- **parent**: указатель на родительское мини-приложение
+- **total_rows**: общее число строк колеса прокрутки
+- **callback**: функция обратного вызова для создания строки колеса прокрутки. Она может иметь значение GX_NULL, если общее число строк совпадает с числом дочерних элементов. Ее необходимо предоставить для повторного использования мини-приложения, когда число дочерних элементов меньше общего числа строк или когда задан стиль GX_STYLE_WRAP. В этом случае число дочерних элементов должно быть на единицу больше, чем число видимых строк.
+- **style**: стиль универсального колеса прокрутки. Предварительно заданные общие стили для всех и для конкретных мини-приложений см. в **Приложении D**.
+- **id**: определяемый приложением идентификатор универсального колеса прокрутки
+- **size**: размеры мини-приложения универсального колеса прокрутки
+
+### <a name="return-values"></a>Возвращаемые значения
+
+- **GX_SUCCESS** (0x00) — универсальное колесо прокрутки успешно создано.
+- **GX_CALLER_ERROR** (0x11) — недопустимый вызывающий объект для этой функции.
+- **GX_PTR_ERROR** (0x07) — недопустимый указатель.
+- **GX_ALREADY_CREATED** (0x13) — мини-приложение уже создано.
+- **GX_INVALID_SIZE** (0x19) — недопустимый размер блока управления мини-приложения.
+- **GX_INVALID_VALUE** (0x22) — недопустимое число строк.
+- **GX_INVALID_WIDGET** (0x12) — недопустимое родительское мини-приложение.
+
+### <a name="allowed-from"></a>Допустимые источники
+
+Инициализация и потоки
+
+### <a name="example"></a>Пример
+
+```C
+
+/* Define visible rows.  */
+#define VISIBLE_ROWS 5
+
+/* Define row memory.  */
+GX_NUMERIC_PROMPT row_memory[VISIBLE_ROWS + 1];
+
+/* Define callback function.  */
+VOID row_create(GX_GENERIC_SCROLL_WHEEL *wheel, GX_WIDGET *widget, INT index)
+{
+GX_NUMERIC_PROMPT *row = (GX_PROMPT *)widget;
+GX_BOOL result;
+GX_RECTANGLE size;
+
+    gx_widget_created_test(widget, &result);
+
+    if(!result)
+    {
+        gx_numeric_prompt_create(row, "", wheel, 0, GX_STYLE_ENABLED, 0, &size);
+    }
+
+    gx_numeric_prompt_value_set(row, index);
+}
+
+/* Create "generic_wheel” with 20 rows.  */
+status = gx_generic_scroll_wheel_create(&generic_wheel, “generic_wheel”, &parent, 20, row_create,
+                                       GX_STYLE_ENABLED, WHEEL_ID, &size);
+
+/* If status is GX_SUCCESS the generic scroll wheel "generic_wheel”" has been created. */
+
+/* Create children for generic scroll wheel.  */
+for(index = 0; index <= VISIBLE_ROWS; index++)
+{
+    row_create(generic_wheel, (GX_WIDGET *)&row_memory[index], index);
+}
+```
+
+### <a name="see-also"></a>См. также:
+
+- gx_scroll_wheel_create
+- gx_scroll_wheel_event_process
+- gx_scroll_wheel_gradient_alpha_set
+- gx_scroll_wheel_selected_background_set
+- gx_scroll_wheel_selected_get
+- gx_scroll_wheel_selected_set
+- gx_generic_scroll_wheel_children_position
+- gx_generic_scroll_wheel_draw
+- gx_generic_scroll_wheel_event_process
+- gx_generic_scroll_wheel_row_height_set
+- gx_generic_scroll_wheel_total_rows_set
+
+## <a name="gx_generic_scroll_wheel_draw"></a>gx_generic_scroll_wheel_draw
+### <a name="draw-window"></a>Вывод окна
+
+### <a name="prototype"></a>Прототип
+
+```C
+VOID gx_generic_scroll_wheel_draw(GX_GENERIC_SCROLL_WHEEL *wheel);
+```
+
+### <a name="description"></a>Описание
+
+Эта служба отображает универсальное колесо прокрутки. Обычно она вызывается изнутри при обновлении холста, но ее также можно вызывать и из пользовательских функций отображения универсального колеса прокрутки.
+
+### <a name="parameters"></a>Параметры
+
+- **wheel**: указатель на блок управления универсального колесика прокрутки
+
+### <a name="return-values"></a>Возвращаемые значения
+
+- **None**
+
+### <a name="allowed-from"></a>Допустимые источники
+
+Потоки
+
+### <a name="example"></a>Пример
+
+```C
+/* Write a custom generic scroll wheel draw function. */
+
+VOID my_custom_generic_scroll_wheel_draw(GX_GENERIC_SCROLL_WHEEL *wheel)
+{
+    /* Call default generic scroll wheel draw. */
+    gx_generic_scroll_wheel_draw(wheel);
+
+    /* Add your own drawing here. */
+}
+```
+
+### <a name="see-also"></a>См. также:
+
+- gx_scroll_wheel_create
+- gx_scroll_wheel_event_process
+- gx_scroll_wheel_gradient_alpha_set
+- gx_scroll_wheel_selected_background_set
+- gx_scroll_wheel_selected_get
+- gx_scroll_wheel_selected_set
+- gx_generic_scroll_wheel_children_position
+- gx_generic_scroll_wheel_create
+- gx_generic_scroll_wheel_event_process
+- gx_generic_scroll_wheel_row_height_set
+- gx_generic_scroll_wheel_total_rows_set
+
+## <a name="gx_generic_scroll_wheel_event_process"></a>gx_generic_scroll_wheel_event_process
+### <a name="process-generic-scroll-wheel-event"></a>Обработка события универсального колеса прокрутки
+
+### <a name="prototype"></a>Прототип
+
+```C
+UINT gx_generic_scroll_wheel_event_process(
+    GX_GENERIC_SCROLL_WHEEL *wheel, 
+    GX_EVENT *event);
+```
+
+### <a name="description"></a>Описание
+
+Эта служба обрабатывает событие для окна.
+
+### <a name="parameters"></a>Параметры
+
+- **wheel**: указатель на блок управления универсального колесика прокрутки
+- **event**: указатель на событие для обработки
+
+### <a name="return-values"></a>Возвращаемые значения
+
+- **GX_SUCCESS** (0x00) — событие универсального колеса прокрутки успешно обработано.
+- **GX_CALLER_ERROR** (0x11) — недопустимый вызывающий объект для этой функции.
+- **GX_PTR_ERROR** (0x07) — недопустимый указатель.
+- **GX_INVALID_WIDGET** (0x12) — недопустимое мини-приложение.
+
+### <a name="allowed-from"></a>Допустимые источники
+
+Потоки
+
+### <a name="example"></a>Пример
+
+```C
+/* Call generic generic scroll wheel event processing as part of custom event processing function. */
+
+UINT custom_generic_scroll_wheel_event_process(GX_GENERIC_SCROLL_WHEEL *wheel,
+                                               GX_EVENT *event)
+{
+    UINT status = GX_SUCCESS;
+
+    switch(event->gx_event_type)
+    {
+        case xyz:
+
+            /* Insert custom event handling here */
+            break;
+
+        default:
+
+            /* Pass all other events to the default generic scroll wheel
+            event processing */
+            status = gx_generic_scroll_wheel_event_process(wheel, event);
+            break;
+        }
+        return status;
+}
+```
+
+### <a name="see-also"></a>См. также:
+
+- gx_scroll_wheel_create
+- gx_scroll_wheel_event_process
+- gx_scroll_wheel_gradient_alpha_set
+- gx_scroll_wheel_selected_background_set
+- gx_scroll_wheel_selected_get
+- gx_scroll_wheel_selected_set
+- gx_generic_scroll_wheel_children_position
+- gx_generic_scroll_wheel_create
+- gx_generic_scroll_wheel_draw
+- gx_generic_scroll_wheel_row_height_set
+- gx_generic_scroll_wheel_total_rows_set
+
+## <a name="gx_generic_scroll_wheel_row_height_set"></a>gx_generic_scroll_wheel_row_height_set
+
+
+Назначение высоты строки для каждой строки колесика
+
+### <a name="prototype"></a>Прототип
+
+```C
+UINT gx_generic_scroll_wheel_row_height_set(
+    GX_GENERIC_SCROLL_WHEEL *wheel,
+    GX_VALUE row_height);
+```
+
+### <a name="description"></a>Описание
+
+Эта служба назначает высоту для каждой строки колесика прокрутки.
+
+### <a name="parameters"></a>Параметры
+
+- **wheel**: указатель на блок управления универсального колеса прокрутки
+- **row_height**: значение высоты строки (в пикселях)
+
+### <a name="return-values"></a>Возвращаемые значения
+
+- **GX_SUCCESS** (0x00) — высота строк колесика прокрутки успешно задана.
+- **GX_CALLER_ERROR** (0x11) — недопустимый вызывающий объект для этой функции.
+- **GX_PTR_ERROR** (0x07) — недопустимый указатель.
+- **GX_INVALID_WIDGET** (0x12) — недопустимое мини-приложение.
+- **GX_INVALID_VALUE** (0x22) — недопустимая высота строки.
+
+### <a name="allowed-from"></a>Допустимые источники
+
+Инициализация и потоки
+
+### <a name="example"></a>Пример
+
+```C
+status = gx_generic_scroll_wheel_row_height_set(&wheel, 40);
+
+/* if status == GX_SUCCESS the wheel row height has been set to 40
+pixels. */
+```
+
+### <a name="see-also"></a>См. также:
+
+- gx_scroll_wheel_create
+- gx_scroll_wheel_event_process
+- gx_scroll_wheel_gradient_alpha_set
+- gx_scroll_wheel_selected_background_set
+- gx_scroll_wheel_selected_get
+- gx_scroll_wheel_selected_set
+- gx_generic_scroll_wheel_children_position
+- gx_generic_scroll_wheel_create
+- gx_generic_scroll_wheel_draw
+- gx_generic_scroll_wheel_event_process
+- gx_generic_scroll_wheel_total_rows_set
+
+## <a name="gx_generic_scroll_wheel_total_rows_set"></a>gx_generic_scroll_wheel_total_rows_set
+
+
+Назначение общего числа доступных строк колесика прокрутки
+
+### <a name="prototype"></a>Прототип
+
+```C
+UINT gx_generic_scroll_wheel_total_rows_set(
+    GX_GENERIC_SCROLL_WHEEL *wheel,
+    INT total_rows);
+```
+
+### <a name="description"></a>Описание
+
+Эта служба назначает или изменяет общее число строк универсального колеса прокрутки.
+
+### <a name="parameters"></a>Параметры
+
+- **wheel**: указатель на блок управления универсального колеса прокрутки
+- **total_rows**: общее число строк колесика, которое будет представлено пользователю
+
+### <a name="return-values"></a>Возвращаемые значения
+
+- **GX_SUCCESS** (0x00) — общее число строк универсального колеса прокрутки успешно задано.
+- **GX_CALLER_ERROR** (0x11) — недопустимый вызывающий объект для этой функции.
+- **GX_PTR_ERROR** (0x07) — недопустимый указатель.
+- **GX_INVALID_WIDGET** (0x12) — недопустимое мини-приложение.
+- **GX_INVALID_VALUE** (0x22) — недопустимое общее число строк.
+
+### <a name="allowed-from"></a>Допустимые источники
+
+Инициализация и потоки
+
+### <a name="example"></a>Пример
+
+```C
+status = gx_generic_scroll_wheel_total_rows_set(&wheel, 20);
+
+/* if status == GX_SUCCESS the scroll wheel has been changed to
+display 20 total rows */
+```
+### <a name="see-also"></a>См. также:
+
+- gx_scroll_wheel_create
+- gx_scroll_wheel_event_process
+- gx_scroll_wheel_gradient_alpha_set
+- gx_scroll_wheel_selected_background_set
+- gx_scroll_wheel_selected_get
+- gx_scroll_wheel_selected_set
+- gx_generic_scroll_wheel_children_position
+- gx_generic_scroll_wheel_create
+- gx_generic_scroll_wheel_draw
+- gx_generic_scroll_wheel_event_process
+- gx_generic_scroll_wheel_row_height_set
+
 ## <a name="gx_horizontal_list_children_position"></a>gx_horizontal_list_children_position
 
 
@@ -7446,7 +7928,7 @@ VOID gx_icon_button_draw(GX_ICON_BUTTON *button);
 
 ### <a name="return-values"></a>Возвращаемые значения
 
-- **Нет**
+- **None**
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -7564,7 +8046,7 @@ VOID gx_icon_background_draw(GX_ICON *icon);
 
 ### <a name="return-values"></a>Возвращаемые значения
 
-- **Нет**
+- **None**
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -7677,7 +8159,7 @@ VOID gx_icon_draw(GX_ICON *icon);
 
 ### <a name="return-values"></a>Возвращаемые значения
 
-- **Нет**
+- **None**
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -7992,7 +8474,7 @@ VOID gx_line_chart_axis_draw(GX_LINE_CHART *chart);
 
 ### <a name="return-values"></a>Возвращаемые значения
 
-- **Нет**
+- **None**
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -8136,7 +8618,7 @@ VOID gx_line_chart_data_draw(GX_LINE_CHART *chart);
 
 ### <a name="return-values"></a>Возвращаемые значения
 
-- **Нет**
+- **None**
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -8190,7 +8672,7 @@ UINT gx_line_chart_draw(GX_LINE_CHART *chart);
 
 ### <a name="return-values"></a>Возвращаемые значения
 
-- **Нет**
+- **None**
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -8414,7 +8896,7 @@ VOID gx_menu_draw(GX_MENU *menu);
 
 ### <a name="return-values"></a>Возвращаемые значения
 
-- **Нет**
+- **None**
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -8644,7 +9126,7 @@ VOID gx_menu_text_draw(GX_MENU *menu);
 
 ### <a name="return-values"></a>Возвращаемые значения
 
-- **Нет**
+- **None**
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -8825,7 +9307,7 @@ VOID gx_multi_line_text_button_draw(GX_MULTI_LINE_TEXT_BUTTON *button);
 
 ### <a name="return-values"></a>Возвращаемые значения
 
-- **Нет**
+- **None**
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -8935,7 +9417,7 @@ VOID gx_multi_line_text_button_text_draw(GX_MULTI_LINE_TEXT_BUTTON *text_button)
 
 ### <a name="return-values"></a>Возвращаемые значения
 
-- **Нет**
+- **None**
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -10981,7 +11463,7 @@ VOID gx_multi_line_text_view_draw(GX_MULTI_LINE_TEXT_VIEW * text_view);
 
 ### <a name="return-values"></a>Возвращаемые значения
 
-- **Нет**
+- **None**
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -12258,7 +12740,7 @@ VOID gx_pixelmap_button_draw(GX_PIXELMAP_BUTTON *button);
 
 ### <a name="return-values"></a>Возвращаемые значения
 
-- **Нет**
+- **None**
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -12538,7 +13020,7 @@ VOID gx_pixelmap_prompt_draw(GX_PIXELMAP_PROMPT *prompt);
 
 ### <a name="return-values"></a>Возвращаемые значения
 
-- **Нет**
+- **None**
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -12773,7 +13255,7 @@ VOID gx_pixelmap_slider_draw(GX_PIXELMAP_SLIDER *slider);
 
 ### <a name="return-values"></a>Возвращаемые значения
 
-- **Нет**
+- **None**
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -12990,7 +13472,7 @@ VOID gx_progress_bar_background_draw(GX_PROGRESS_BAR *progress_bar)
 
 ### <a name="return-values"></a>Возвращаемые значения
 
-- **Нет**
+- **None**
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -13130,7 +13612,7 @@ VOID gx_progress_bar_draw(GX_PROGRESS_BAR *progress_bar);
 
 ### <a name="return-values"></a>Возвращаемые значения
 
-- **Нет**
+- **None**
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -13534,7 +14016,7 @@ VOID gx_progress_bar_text_draw(GX_PROGRESS_BAR *progress_bar)
 
 ### <a name="return-values"></a>Возвращаемые значения
 
-- **Нет**
+- **None**
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -13710,7 +14192,7 @@ VOID gx_prompt_draw(GX_PROMPT *prompt);
 
 ### <a name="return-values"></a>Возвращаемые значения
 
-- **Нет**
+- **None**
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -13949,7 +14431,7 @@ VOID gx_prompt_text_draw(GX_PROMPT *prompt);
 
 ### <a name="return-values"></a>Возвращаемые значения
 
-- **Нет**
+- **None**
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -14353,7 +14835,7 @@ VOID gx_radial_progress_bar_background_draw(GX_RADIAL_PROGRESS_BAR *progress_bar
 
 ### <a name="return-values"></a>Возвращаемые значения
 
-- **Нет**
+- **None**
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -14501,7 +14983,7 @@ VOID gx_radial_progress_bar_draw(GX_RADIAL_PROGRESS_BAR *progress_bar);
 
 ### <a name="return-values"></a>Возвращаемые значения
 
-- **Нет**
+- **None**
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -14817,7 +15299,7 @@ VOID gx_radial_progress_bar_text_draw(GX_RADIAL_PROGRESS_BAR *progress_bar);
 
 ### <a name="return-values"></a>Возвращаемые значения
 
-- **Нет**
+- **None**
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -15009,7 +15491,7 @@ VOID gx_radio_button_draw(GX_RADIO_BUTTON *button);
 
 ### <a name="return-values"></a>Возвращаемые значения
 
-- **Нет**
+- **None**
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -15521,7 +16003,7 @@ VOID gx_radial_slider_draw(GX_RADIAL_SLIDER *slider);
 
 ### <a name="return-values"></a>Возвращаемые значения
 
-- **Нет**
+- **None**
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -15945,7 +16427,7 @@ VOID gx_rich_text_view_draw(GX_RICH_TEXT_VIEW *text_view);
 
 ### <a name="return-values"></a>Возвращаемые значения
 
-- **Нет**
+- **None**
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -16045,7 +16527,7 @@ VOID gx_rich_text_view_text_draw(GX_RICH_TEXT_VIEW *text_view);
 
 ### <a name="return-values"></a>Возвращаемые значения
 
-- **Нет**
+- **None**
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -16354,7 +16836,7 @@ VOID gx_scroll_thumb_draw(GX_SCROLL_THUMB *scroll_thumb);
 
 ### <a name="return-values"></a>Возвращаемые значения
 
-- **Нет**
+- **None**
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -16460,9 +16942,9 @@ UINT gx_scroll_wheel_create(
 
 ### <a name="description"></a>Описание
 
-Эта служба создает универсальное мини-приложение колесика прокрутки.
+Эта служба создает мини-приложение базового колеса прокрутки.
 
-Универсальное колесико прокрутки является базовым мини-приложением для всех типов мини-приложений колесика прокрутки, включая *gx_text_scroll_wheel***, который является основой для мини-приложений *gx_numeric_scroll_wheel*** и *gx_string_ scroll_wheel***. Мини-приложение колесика прокрутки обеспечивает обработку событий, анимацию прокрутки и вычисление выбранных строк для всех типов мини-приложений колесика прокрутки.
+Базовое колесо прокрутки — это базовое мини-приложение для всех типов колес прокрутки, включая **gx_generic_scroll_wheel** и мини-приложение **gx_text_scroll_wheel**, являющееся базой для **gx_numeric_scroll_wheel** и **gx_string_ scroll_wheel**. Мини-приложение колесика прокрутки обеспечивает обработку событий, анимацию прокрутки и вычисление выбранных строк для всех типов мини-приложений колесика прокрутки.
 
 Приложения обычно не создают экземпляр универсального мини-приложения колесика прокрутки, поскольку этот тип мини-приложений не предоставляет функцию рисования. Однако доступ к этому API предоставляется для помощи приложениям, которым необходимо создать настраиваемый тип мини-приложения колесика прокрутки.
 
@@ -17091,7 +17573,7 @@ VOID gx_scrollbar_draw(GX_SCROLLBAR *scrollbar);
 
 ### <a name="return-values"></a>Возвращаемые значения
 
-- **Нет**
+- **None**
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -17782,7 +18264,7 @@ VOID gx_single_line_text_input_draw(GX_SINGLE_LINE_TEXT_INPUT *text_input);
 
 ### <a name="return-values"></a>Возвращаемые значения
 
-- **Нет**
+- **None**
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -18936,7 +19418,7 @@ VOID gx_slider_draw(GX_SLIDER *slider);
 
 ### <a name="return-values"></a>Возвращаемые значения
 
-- **Нет**
+- **None**
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -19132,7 +19614,7 @@ VOID gx_slider_needle_draw(GX_SLIDER *slider);
 
 ### <a name="return-values"></a>Возвращаемые значения
 
-- **Нет**
+- **None**
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -19253,7 +19735,7 @@ VOID gx_slider_tickmarks_draw(GX_SLIDER *slider);
 
 ### <a name="return-values"></a>Возвращаемые значения
 
-- **Нет**
+- **None**
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -22399,7 +22881,7 @@ VOID gx_text_button_draw(GX_TEXT_BUTTON *button);
 
 ### <a name="return-values"></a>Возвращаемые значения
 
-- **Нет**
+- **None**
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -22660,7 +23142,7 @@ VOID gx_text_button_text_draw(GX_TEXT_BUTTON *text_button);
 
 ### <a name="return-values"></a>Возвращаемые значения
 
-- **Нет**
+- **None**
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -23462,7 +23944,7 @@ GX_STRING_SCROLL_WHEEL и GX_NUMERIC_SCROLL_WHEEL основаны на GX_TEXT_
 
 ### <a name="return-values"></a>Возвращаемые значения
 
-- **Нет**
+- **None**
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -23792,7 +24274,7 @@ VOID gx_tree_view_draw(GX_TREE_VIEW *tree);
 
 ### <a name="return-values"></a>Возвращаемые значения
 
-- **Нет**
+- **None**
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -26775,7 +27257,7 @@ VOID gx_widget_background_draw(GX_WIDGET *widget);
 
 ### <a name="return-values"></a>Возвращаемые значения
 
-- **Нет**
+- **None**
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -27102,7 +27584,7 @@ VOID gx_widget_border_draw(
 
 ### <a name="return-values"></a>Возвращаемые значения
 
-- **Нет**
+- **None**
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -27498,7 +27980,7 @@ VOID gx_widget_children_draw(GX_WIDGET *widget);
 
 ### <a name="return-values"></a>Возвращаемые значения
 
-- **Нет**
+- **None**
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -28023,7 +28505,7 @@ VOID gx_widget_draw(GX_WIDGET *widget);
 
 ### <a name="return-values"></a>Возвращаемые значения
 
-- **Нет**
+- **None**
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -30540,7 +31022,7 @@ VOID gx_widget_text_draw(
 
 ### <a name="return-values"></a>Возвращаемые значения
 
-- **Нет**
+- **None**
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -30596,7 +31078,7 @@ VOID gx_widget_text_draw(
 
 ### <a name="return-values"></a>Возвращаемые значения
 
-- **Нет**
+- **None**
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -30656,7 +31138,7 @@ VOID gx_widget_text_id_draw(
 
 ### <a name="return-values"></a>Возвращаемые значения
 
-- **Нет**
+- **None**
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -31223,7 +31705,7 @@ VOID gx_window_draw(GX_WINDOW *window);
 
 ### <a name="return-values"></a>Возвращаемые значения
 
-- **Нет**
+- **None**
 
 ### <a name="allowed-from"></a>Допустимые источники
 
