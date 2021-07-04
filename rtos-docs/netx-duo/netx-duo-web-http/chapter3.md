@@ -6,12 +6,12 @@ ms.author: philmea
 ms.date: 07/14/2020
 ms.topic: article
 ms.service: rtos
-ms.openlocfilehash: 30168ad5a564b0f4c0a8c999046c5103385f4f90
-ms.sourcegitcommit: e3d42e1f2920ec9cb002634b542bc20754f9544e
+ms.openlocfilehash: 6bb2743f05c5b56331d1c0e948601ad23bf340d1
+ms.sourcegitcommit: 95f4ae0842a486fec8f10d1480203695faa9592d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "104815376"
+ms.lasthandoff: 06/09/2021
+ms.locfileid: "111875278"
 ---
 # <a name="chapter-3---description-of-http-services"></a>Глава 3. Описание служб HTTP
 
@@ -79,7 +79,7 @@ nx_web_http_client_connect(&my_client, &server_ip_address,
 /* Create a new GET request on the HTTP client instance. */
 nx_web_http_client_request_initialize(&my_client,
     NX_WEB_HTTP_METHOD_GET,
-    "https://192.168.1.150/test.txt ",
+    "https://192.168.1.150/test.txt ", "host.com",
     0, /* Used by PUT and POST only */
     NX_FALSE,
     NX_NULL, /* username */
@@ -94,7 +94,7 @@ status = nx_web_http_client_request_header_add(&my_client, "Server", 6,
 status = nx_web_http_client_request_send(&my_client, 1000);
 
 /* At this point, we need to handle the response from the server by repeatedly
-    calling *nx_web_http_client_response_body_get* until the entire response is retrieved. *./
+    calling *nx_web_http_client_response_body_get* until the entire response is retrieved. */
 
 get_status = NX_SUCCESS;
 
@@ -125,9 +125,9 @@ UINT nx_web_http_client_create(NX_WEB_HTTP_CLIENT *client_ptr,
 ### <a name="input-parameters"></a>Входные параметры
 
 - **client_ptr**: указатель на блок управления HTTP-клиентом.
-- **client_name**: имя экземпляра HTTP-клиента.
-- **ip_ptr**: указатель на экземпляр IP.
-- **pool_ptr**: указатель на пул пакетов по умолчанию. Обратите внимание, что пакеты в этом пуле должны иметь объем полезных данных, достаточный для работы с полным заголовком ответа. Это определяет параметр *NX_WEB_HTTP_CLIENT_MIN_PACKET_SIZE* в файле *nx_web_http_client.h*.
+- **client_name**: имя экземпляра HTTP-клиента
+- **ip_ptr**: указатель на экземпляр IP
+- **pool_ptr**: указатель на пул пакетов по умолчанию Обратите внимание, что пакеты в этом пуле должны иметь объем полезных данных, достаточный для работы с полным заголовком ответа. Это определяет параметр *NX_WEB_HTTP_CLIENT_MIN_PACKET_SIZE* в файле *nx_web_http_client.h*.
 - **window_size**: размер окна приема сокета TCP клиента.
 
 ### <a name="return-values"></a>Возвращаемые значения
@@ -138,7 +138,7 @@ UINT nx_web_http_client_create(NX_WEB_HTTP_CLIENT *client_ptr,
 
 ### <a name="allowed-from"></a>Допустимые источники
 
-Инициализация, потоки.
+Инициализация, потоки
 
 ### <a name="example"></a>Например, .
 
@@ -162,7 +162,7 @@ UINT nx_web_http_client_delete(NX_WEB_HTTP_CLIENT *client_ptr);
 
 ### <a name="description"></a>Описание
 
-Эта служба удаляет созданный ранее экземпляр HTTP-клиента.
+Эта служба удаляет ранее созданный экземпляр HTTP-клиента.
 
 ### <a name="input-parameters"></a>Входные параметры
 
@@ -171,8 +171,8 @@ UINT nx_web_http_client_delete(NX_WEB_HTTP_CLIENT *client_ptr);
 ### <a name="return-values"></a>Возвращаемые значения
 
 - **NX_SUCCESS** (0x00): HTTP-клиент успешно удален.
-- NX_PTR_ERROR (0x16): недопустимый указатель на HTTP.
-- NX_CALLER_ERROR (0x11): недопустимый вызывающий объект этой службы.
+- NX_PTR_ERROR (0x16) — недопустимый указатель на HTTP.
+- NX_CALLER_ERROR (0x11) — недопустимый вызывающий объект этой службы.
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -232,7 +232,7 @@ UINT nx_web_http_client_delete_start(NX_WEB_HTTP_CLIENT *client_ptr,
 - **NX_WEB_HTTP_FAILED** (0x30002): ошибка HTTP-клиента при взаимодействии с HTTP-сервером.
 - **NX_WEB_HTTP_AUTHENTICATION_ERROR** (0x3000B): недопустимое имя и (или) пароль.
 - NX_PTR_ERROR (0x07): недопустимые входные данные указателя.
-- NX_CALLER_ERROR (0x11): недопустимый вызывающий объект этой службы.
+- NX_CALLER_ERROR (0x11) — недопустимый вызывающий объект этой службы.
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -308,7 +308,7 @@ UINT nx_web_http_client_delete_start_extended(
 - **NX_WEB_HTTP_FAILED** (0x30002): ошибка HTTP-клиента при взаимодействии с HTTP-сервером.
 - **NX_WEB_HTTP_AUTHENTICATION_ERROR** (0x3000B): недопустимое имя и (или) пароль.
 - NX_PTR_ERROR (0x07): недопустимые входные данные указателя.
-- NX_CALLER_ERROR (0x11): недопустимый вызывающий объект этой службы.
+- NX_CALLER_ERROR (0x11) — недопустимый вызывающий объект этой службы.
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -384,7 +384,7 @@ UINT nx_web_http_client_delete_secure_start(
 - **NX_WEB_HTTP_FAILED** (0x30002): ошибка HTTP-клиента при взаимодействии с HTTP-сервером.
 - **NX_WEB_HTTP_AUTHENTICATION_ERROR** (0x3000B): недопустимое имя и (или) пароль.
 - NX_PTR_ERROR (0x07): недопустимые входные данные указателя.
-- NX_CALLER_ERROR (0x11): недопустимый вызывающий объект этой службы.
+- NX_CALLER_ERROR (0x11) — недопустимый вызывающий объект этой службы.
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -462,7 +462,7 @@ UINT nx_web_http_client_delete_secure_start_extended(
 - **NX_WEB_HTTP_FAILED** (0x30002): ошибка HTTP-клиента при взаимодействии с HTTP-сервером.
 - **NX_WEB_HTTP_AUTHENTICATION_ERROR** (0x3000B): недопустимое имя и (или) пароль.
 - NX_PTR_ERROR (0x07): недопустимые входные данные указателя.
-- NX_CALLER_ERROR (0x11): недопустимый вызывающий объект этой службы.
+- NX_CALLER_ERROR (0x11) — недопустимый вызывающий объект этой службы.
 
 
 ### <a name="allowed-from"></a>Допустимые источники
@@ -533,7 +533,7 @@ UINT nx_web_http_client_get_start(NX_WEB_HTTP_CLIENT *client_ptr,
 - **NX_WEB_HTTP_FAILED** (0x30002): ошибка HTTP-клиента при взаимодействии с HTTP-сервером.
 - **NX_WEB_HTTP_AUTHENTICATION_ERROR** (0x3000B): недопустимое имя и (или) пароль.
 - NX_PTR_ERROR (0x07): недопустимые входные данные указателя.
-- NX_CALLER_ERROR (0x11): недопустимый вызывающий объект этой службы.
+- NX_CALLER_ERROR (0x11) — недопустимый вызывающий объект этой службы.
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -609,7 +609,7 @@ UINT nx_web_http_client_get_start_extended(
 - **NX_WEB_HTTP_FAILED** (0x30002): ошибка HTTP-клиента при взаимодействии с HTTP-сервером.
 - **NX_WEB_HTTP_AUTHENTICATION_ERROR** (0x3000B): недопустимое имя и (или) пароль.
 - NX_PTR_ERROR (0x07): недопустимые входные данные указателя.
-- NX_CALLER_ERROR (0x11): недопустимый вызывающий объект этой службы.
+- NX_CALLER_ERROR (0x11) — недопустимый вызывающий объект этой службы.
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -684,7 +684,7 @@ UINT nx_web_http_client_get_secure_start(
 - **NX_WEB_HTTP_FAILED** (0x30002): ошибка HTTP-клиента при взаимодействии с HTTP-сервером.
 - **NX_WEB_HTTP_AUTHENTICATION_ERROR** (0x3000B): недопустимое имя и (или) пароль.
 - NX_PTR_ERROR (0x07): недопустимые входные данные указателя.
-- NX_CALLER_ERROR (0x11): недопустимый вызывающий объект этой службы.
+- NX_CALLER_ERROR (0x11) — недопустимый вызывающий объект этой службы.
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -764,7 +764,7 @@ UINT nx_web_http_client_get_secure_start_extended(
 - **NX_WEB_HTTP_FAILED** (0x30002): ошибка HTTP-клиента при взаимодействии с HTTP-сервером.
 - **NX_WEB_HTTP_AUTHENTICATION_ERROR** (0x3000B): недопустимое имя и (или) пароль.
 - NX_PTR_ERROR (0x07): недопустимые входные данные указателя.
-- NX_CALLER_ERROR (0x11): недопустимый вызывающий объект этой службы.
+- NX_CALLER_ERROR (0x11) — недопустимый вызывающий объект этой службы.
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -836,7 +836,7 @@ UINT nx_web_http_client_head_start(NX_WEB_HTTP_CLIENT *client_ptr,
 - **NX_WEB_HTTP_FAILED** (0x30002): ошибка HTTP-клиента при взаимодействии с HTTP-сервером.
 - **NX_WEB_HTTP_AUTHENTICATION_ERROR** (0x3000B): недопустимое имя и (или) пароль.
 - NX_PTR_ERROR (0x07): недопустимые входные данные указателя.
-- NX_CALLER_ERROR (0x11): недопустимый вызывающий объект этой службы.
+- NX_CALLER_ERROR (0x11) — недопустимый вызывающий объект этой службы.
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -912,7 +912,7 @@ UINT nx_web_http_client_head_start_extended(
 - **NX_WEB_HTTP_FAILED** (0x30002): ошибка HTTP-клиента при взаимодействии с HTTP-сервером.
 - **NX_WEB_HTTP_AUTHENTICATION_ERROR** (0x3000B): недопустимое имя и (или) пароль.
 - NX_PTR_ERROR (0x07): недопустимые входные данные указателя.
-- NX_CALLER_ERROR (0x11): недопустимый вызывающий объект этой службы.
+- NX_CALLER_ERROR (0x11) — недопустимый вызывающий объект этой службы.
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -987,7 +987,7 @@ UINT nx_web_http_client_head_secure_start(
 - **NX_WEB_HTTP_FAILED** (0x30002): ошибка HTTP-клиента при взаимодействии с HTTP-сервером.
 - **NX_WEB_HTTP_AUTHENTICATION_ERROR** (0x3000B): недопустимое имя и (или) пароль.
 - NX_PTR_ERROR (0x07): недопустимые входные данные указателя.
-- NX_CALLER_ERROR (0x11): недопустимый вызывающий объект этой службы.
+- NX_CALLER_ERROR (0x11) — недопустимый вызывающий объект этой службы.
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -1066,7 +1066,7 @@ CHAR *host, UINT host_length, CHAR *username,
 - **NX_WEB_HTTP_FAILED** (0x30002): ошибка HTTP-клиента при взаимодействии с HTTP-сервером.
 - **NX_WEB_HTTP_AUTHENTICATION_ERROR** (0x3000B): недопустимое имя и (или) пароль.
 - NX_PTR_ERROR (0x07): недопустимые входные данные указателя.
-- NX_CALLER_ERROR (0x11): недопустимый вызывающий объект этой службы.
+- NX_CALLER_ERROR (0x11) — недопустимый вызывающий объект этой службы.
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -1126,7 +1126,7 @@ UINT nx_web_http_client_request_packet_allocate(
 - **NX_WAIT_ABORTED** (0x1A): запрошенная приостановка прервана вызовом *tx_thread_wait_abort*.
 - **NX_INVALID_PARAMETERS** (0x4D): размер пакета не поддерживается протоколом.
 - NX_PTR_ERROR (0x07): недопустимые входные данные указателя.
-- NX_CALLER_ERROR (0x11): недопустимый вызывающий объект этой службы.
+- NX_CALLER_ERROR (0x11) — недопустимый вызывающий объект этой службы.
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -1175,7 +1175,7 @@ UINT nx_web_http_client_post_start(NX_WEB_HTTP_CLIENT *client_ptr,
 - **resource**: указатель на строку URL-адреса для ресурса, отправляемого на сервер.
 - **host**: строка доменного имени сервера, оканчивающаяся нулевым символом. Эта строка передается в поле заголовка узла HTTP. Строка узла не может иметь значение NULL.
 - **username**: указатель на необязательное имя пользователя для проверки подлинности.
-- **password**: указатель на необязательный пароль для проверки подлинности.
+- **password**: указатель на необязательный пароль для проверки подлинности
 - **total_bytes**: общее число отправляемых байтов ресурса. Обратите внимание на то, что совокупная длина всех пакетов, отправленных последующими вызовами *nx_web_http_client_put_packet()* , должна быть равна этому значению.
 - **wait_option**: определяет, как долго служба будет ожидать запуска запроса GET HTTP-клиента. Параметры ожидания определяются следующим образом:
   - **значение времени ожидания** (0x00000001–0xFFFFFFFE): если указано числовое значение (0x1–0xFFFFFFFE), то оно задает максимальное число тактов таймера для приостановки работы при ожидании ответа HTTP-сервера.
@@ -1187,8 +1187,8 @@ UINT nx_web_http_client_post_start(NX_WEB_HTTP_CLIENT *client_ptr,
 - **NX_WEB_HTTP_USERNAME_TOO_LONG** (0x30012): слишком длинное имя пользователя для буфера.
 - **NX_WEB_HTTP_NOT_READY** (0x3000A): HTTP-клиент не готов.
 - NX_PTR_ERROR (0x07): недопустимые входные данные указателя.
-- NX_SIZE_ERROR (0x09): недопустимый общий размер ресурса.
-- NX_CALLER_ERROR (0x11): недопустимый вызывающий объект этой службы.
+- NX_SIZE_ERROR (0x09) — недопустимый общий размер ресурса.
+- NX_CALLER_ERROR (0x11) — недопустимый вызывающий объект этой службы.
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -1263,8 +1263,8 @@ UINT nx_web_http_client_post_start_extended(
 - **NX_WEB_HTTP_USERNAME_TOO_LONG** (0x30012): слишком длинное имя пользователя для буфера.
 - **NX_WEB_HTTP_NOT_READY** (0x3000A): HTTP-клиент не готов.
 - NX_PTR_ERROR (0x07): недопустимые входные данные указателя.
-- NX_SIZE_ERROR (0x09): недопустимый общий размер ресурса.
-- NX_CALLER_ERROR (0x11): недопустимый вызывающий объект этой службы.
+- NX_SIZE_ERROR (0x09) — недопустимый общий размер ресурса.
+- NX_CALLER_ERROR (0x11) — недопустимый вызывающий объект этой службы.
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -1326,7 +1326,7 @@ UINT nx_web_http_client_post_secure_start(
 - **resource**: указатель на строку URL-адреса для ресурса, отправляемого на сервер.
 - **host**: строка доменного имени сервера, оканчивающаяся нулевым символом. Эта строка передается в поле заголовка узла HTTP. Строка узла не может иметь значение NULL.
 - **username**: указатель на необязательное имя пользователя для проверки подлинности.
-- **password**: указатель на необязательный пароль для проверки подлинности.
+- **password**: указатель на необязательный пароль для проверки подлинности
 - **total_bytes**: общее число отправляемых байтов ресурса. Обратите внимание на то, что совокупная длина всех пакетов, отправленных последующими вызовами *nx_web_http_client_put_packet()* , должна быть равна этому значению.
 - **tls_setup**: обратный вызов, используемый для настройки конфигурации TLS. Приложение определяет этот обратный вызов для инициализации шифрования и учетных данных TLS (например, сертификатов).
 - **wait_option**: определяет, как долго служба будет ожидать запуска запроса GET HTTP-клиента. Параметры ожидания определяются следующим образом:
@@ -1339,8 +1339,8 @@ UINT nx_web_http_client_post_secure_start(
 - **NX_WEB_HTTP_USERNAME_TOO_LONG** (0x30012): слишком длинное имя пользователя для буфера.
 - **NX_WEB_HTTP_NOT_READY** (0x3000A): HTTP-клиент не готов.
 - NX_PTR_ERROR (0x07): недопустимые входные данные указателя.
-- NX_SIZE_ERROR (0x09): недопустимый общий размер ресурса.
-- NX_CALLER_ERROR (0x11): недопустимый вызывающий объект этой службы.
+- NX_SIZE_ERROR (0x09) — недопустимый общий размер ресурса.
+- NX_CALLER_ERROR (0x11) — недопустимый вызывающий объект этой службы.
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -1419,8 +1419,8 @@ UINT nx_web_http_client_post_secure_start_extended(
 - **NX_WEB_HTTP_USERNAME_TOO_LONG** (0x30012): слишком длинное имя пользователя для буфера.
 - **NX_WEB_HTTP_NOT_READY** (0x3000A): HTTP-клиент не готов.
 - NX_PTR_ERROR (0x07): недопустимые входные данные указателя.
-- NX_SIZE_ERROR (0x09): недопустимый общий размер ресурса.
-- NX_CALLER_ERROR (0x11): недопустимый вызывающий объект этой службы.
+- NX_SIZE_ERROR (0x09) — недопустимый общий размер ресурса.
+- NX_CALLER_ERROR (0x11) — недопустимый вызывающий объект этой службы.
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -1480,7 +1480,7 @@ UINT nx_web_http_client_put_start(NX_WEB_HTTP_CLIENT *client_ptr,
 - **resource**: указатель на строку URL-адреса для ресурса, отправляемого на сервер.
 - **host**: строка доменного имени сервера, оканчивающаяся нулевым символом. Эта строка передается в поле заголовка узла HTTP. Строка узла не может иметь значение NULL.
 - **username**: указатель на необязательное имя пользователя для проверки подлинности.
-- **password**: указатель на необязательный пароль для проверки подлинности.
+- **password**: указатель на необязательный пароль для проверки подлинности
 - **total_bytes**: общее число отправляемых байтов ресурса. Обратите внимание на то, что совокупная длина всех пакетов, отправленных последующими вызовами *nx_web_http_client_put_packet()* , должна быть равна этому значению.
 - **wait_option**: определяет, как долго служба будет ожидать запуска запроса GET HTTP-клиента. Параметры ожидания определяются следующим образом:
   - **значение времени ожидания** (0x00000001–0xFFFFFFFE): если указано числовое значение (0x1–0xFFFFFFFE), то оно задает максимальное число тактов таймера для приостановки работы при ожидании ответа HTTP-сервера.
@@ -1492,8 +1492,8 @@ UINT nx_web_http_client_put_start(NX_WEB_HTTP_CLIENT *client_ptr,
 - **NX_WEB_HTTP_USERNAME_TOO_LONG** (0x30012): слишком длинное имя пользователя для буфера.
 - **NX_WEB_HTTP_NOT_READY** (0x3000A): HTTP-клиент не готов.
 - NX_PTR_ERROR (0x07): недопустимые входные данные указателя.
-- NX_SIZE_ERROR (0x09): недопустимый общий размер ресурса.
-- NX_CALLER_ERROR (0x11): недопустимый вызывающий объект этой службы.
+- NX_SIZE_ERROR (0x09) — недопустимый общий размер ресурса.
+- NX_CALLER_ERROR (0x11) — недопустимый вызывающий объект этой службы.
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -1569,8 +1569,8 @@ UINT nx_web_http_client_put_start(
 - **NX_WEB_HTTP_USERNAME_TOO_LONG** (0x30012): слишком длинное имя пользователя для буфера.
 - **NX_WEB_HTTP_NOT_READY** (0x3000A): HTTP-клиент не готов.
 - NX_PTR_ERROR (0x07): недопустимые входные данные указателя.
-- NX_SIZE_ERROR (0x09): недопустимый общий размер ресурса.
-- NX_CALLER_ERROR (0x11): недопустимый вызывающий объект этой службы.
+- NX_SIZE_ERROR (0x09) — недопустимый общий размер ресурса.
+- NX_CALLER_ERROR (0x11) — недопустимый вызывающий объект этой службы.
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -1633,7 +1633,7 @@ UINT nx_web_http_client_put_secure_start(
 - **resource**: указатель на строку URL-адреса для ресурса, отправляемого на сервер.
 - **host**: строка доменного имени сервера, оканчивающаяся нулевым символом. Эта строка передается в поле заголовка узла HTTP. Строка узла не может иметь значение NULL.
 - **username**: указатель на необязательное имя пользователя для проверки подлинности.
-- **password**: указатель на необязательный пароль для проверки подлинности.
+- **password**: указатель на необязательный пароль для проверки подлинности
 - **total_bytes**: общее число отправляемых байтов ресурса. Обратите внимание на то, что совокупная длина всех пакетов, отправленных последующими вызовами *nx_web_http_client_put_packet()* , должна быть равна этому значению.
 - **tls_setup**: обратный вызов, используемый для настройки конфигурации TLS. Приложение определяет этот обратный вызов для инициализации шифрования и учетных данных TLS (например, сертификатов).
 - **wait_option**: определяет, как долго служба будет ожидать запуска запроса GET HTTP-клиента. Параметры ожидания определяются следующим образом:
@@ -1646,8 +1646,8 @@ UINT nx_web_http_client_put_secure_start(
 - **NX_WEB_HTTP_USERNAME_TOO_LONG** (0x30012): слишком длинное имя пользователя для буфера.
 - **NX_WEB_HTTP_NOT_READY** (0x3000A): HTTP-клиент не готов.
 - NX_PTR_ERROR (0x07): недопустимые входные данные указателя.
-- NX_SIZE_ERROR (0x09): недопустимый общий размер ресурса.
-- NX_CALLER_ERROR (0x11): недопустимый вызывающий объект этой службы.
+- NX_SIZE_ERROR (0x09) — недопустимый общий размер ресурса.
+- NX_CALLER_ERROR (0x11) — недопустимый вызывающий объект этой службы.
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -1726,8 +1726,8 @@ UINT nx_web_http_client_put_secure_start(
 - **NX_WEB_HTTP_USERNAME_TOO_LONG** (0x30012): слишком длинное имя пользователя для буфера.
 - **NX_WEB_HTTP_NOT_READY** (0x3000A): HTTP-клиент не готов.
 - NX_PTR_ERROR (0x07): недопустимые входные данные указателя.
-- NX_SIZE_ERROR (0x09): недопустимый общий размер ресурса.
-- NX_CALLER_ERROR (0x11): недопустимый вызывающий объект этой службы.
+- NX_SIZE_ERROR (0x09) — недопустимый общий размер ресурса.
+- NX_CALLER_ERROR (0x11) — недопустимый вызывающий объект этой службы.
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -1789,8 +1789,8 @@ UINT nx_web_http_client_put_packet(NX_WEB_HTTP_CLIENT *client_ptr,
 - **NX_WEB_HTTP_AUTHENTICATION_ERROR** (0x3000B): недопустимое имя и (или) пароль.
 - **NX_WEB_HTTP_INCOMPLETE_PUT_ERROR** (0x3000F): сервер отвечает до завершения запроса PUT.
 - NX_PTR_ERROR (0x07): недопустимые входные данные указателя.
-- NX_INVALID_PACKET (0x12): слишком маленький пакет для заголовка TCP.
-- NX_CALLER_ERROR (0x11): недопустимый вызывающий объект этой службы.
+- NX_INVALID_PACKET (0x12) — слишком маленький пакет для заголовка TCP
+- NX_CALLER_ERROR (0x11) — недопустимый вызывающий объект этой службы.
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -1853,7 +1853,8 @@ nx_web_http_client_secure_connect(&my_client, IP_ADDRESS(1,2,3,5),
 
 /* Create a PUT request on the HTTP client instance. */
 nx_web_http_client_request_initialize(&my_client,
-    NX_WEB_HTTP_METHOD_PUT, "https://192.168.1.150/test.txt ",
+    NX_WEB_HTTP_METHOD_PUT,
+    "https://192.168.1.150/test.txt ", "host.com",
     0, /* Used by PUT and POST only */
     NX_TRUE,
     NX_NULL, /* username */
@@ -1871,7 +1872,7 @@ nx_web_http_client_request_packet_allocate(&my_client,
 /* Set the chunked transfer. */
 status = nx_web_http_client_request_chunked_set(&my_client, 128, my_packet);
 
-/* At this point, user can fill the data into my_packet. *./
+/* At this point, user can fill the data into my_packet. */
 nx_packet_data_append(my_packet, data_ptr, data_size,
     packet_pool, NX_WAIT_FOREVER);
 
@@ -1935,7 +1936,7 @@ nx_web_http_client_secure_connect(&my_client, IP_ADDRESS(1,2,3,5),
 
 nx_web_http_client_request_initialize(&my_client,
     NX_WEB_HTTP_METHOD_GET,
-    "https://192.168.1.150/test.txt ",
+    "https://192.168.1.150/test.txt ", "host.com",
     0, /* Used by PUT and POST only */
     NX_FALSE,
     NX_NULL, /* username */
@@ -1951,7 +1952,7 @@ status = nx_web_http_client_request_send(&my_client, 1000);
 
 /* At this point, we need to handle the response from the server
     by repeatedly calling *nx_web_http_client_response_body_get()*
-    until the entire response is retrieved. *./
+    until the entire response is retrieved. */
 
 get_status = NX_SUCCESS;
 
@@ -2042,7 +2043,7 @@ nx_web_http_client_request_initialize(&my_client,
 status = nx_web_http_client_request_send(&my_client, 1000);
 
 /* At this point, we need to handle the response from the server by repeatedly
-    calling *nx_web_http_client_response_body_get()* until the entire response is retrieved. *./
+    calling *nx_web_http_client_response_body_get()* until the entire response is retrieved. */
 get_status = NX_SUCCESS;
 
 while(get_status != NX_WEB_HTTP_GET_DONE)
@@ -2061,11 +2062,13 @@ while(get_status != NX_WEB_HTTP_GET_DONE)
 ### <a name="prototype"></a>Прототип
 
 ```C
-UINT nx_web_http_client_request_initialize(
-    NX_WEB_HTTP_CLIENT *client_ptr,
-    UINT method, CHAR *resource, CHAR *host,
+UINT nx_web_http_client_request_initialize_extended(
+    NX_WEB_HTTP_CLIENT *client_ptr, UINT method,
+    CHAR *resource, UINT resource_length,
+    CHAR *host, UINT host_length,
     UINT input_size, UINT transfer_encoding_trunked,
-    CHAR *username, CHAR *password, UINT wait_option);
+    CHAR *username, UINT username_length,
+    CHAR *password, UINT password_length, UINT wait_option);
 ```
 
 ### <a name="description"></a>Описание
@@ -2141,7 +2144,7 @@ status = nx_web_http_client_request_send(&my_client, 1000);
 
 
 /* At this point, we need to handle the response from the server by repeatedly
-    calling *nx_web_http_client_response_body_get()* until the entire response is retrieved. *./
+    calling *nx_web_http_client_response_body_get()* until the entire response is retrieved. */
 get_status = NX_SUCCESS;
 while(get_status != NX_WEB_HTTP_GET_DONE)
 {
@@ -2197,7 +2200,7 @@ nx_web_http_client_secure_connect(&my_client, IP_ADDRESS(1,2,3,5),
 /* Create a PUT request on the HTTP client instance. */
 nx_web_http_client_request_initialize(&my_client,
     NX_WEB_HTTP_METHOD_PUT,
-    "https://192.168.1.150/test.txt ",
+    "https://192.168.1.150/test.txt ", "host.com",
     128, /* Used by PUT and POST only */
     NX_FALSE,
     NX_NULL, /* username */
@@ -2212,7 +2215,7 @@ nx_web_http_client_request_packet_allocate(&my_client,
     &my_packet,
     NX_WAIT_FOREVER);
 
-/* At this point, user can fill the data into my_packet. *./
+/* At this point, user can fill the data into my_packet. */
 nx_packet_data_append(my_packet, data_ptr, data_size,
     packet_pool, NX_WAIT_FOREVER);
 
@@ -2270,7 +2273,7 @@ nx_web_http_client_secure_connect(&my_client, IP_ADDRESS(1,2,3,5),
 /* Create a new GET request on the HTTP client instance. */
 nx_web_http_client_request_initialize(&my_client,
     NX_WEB_HTTP_METHOD_GET,
-    "https://192.168.1.150/test.txt ",
+    "https://192.168.1.150/test.txt ", "host.com",
     0, /* Used by PUT and POST only */
     NX_FALSE,
     NX_NULL, /* username */
@@ -2282,7 +2285,7 @@ status = nx_web_http_client_request_send(&my_client, 1000);
 
 /* At this point, we need to handle the response from the server by
     repeatedly calling *nx_web_http_client_response_body_get* until
-    the entire response is retrieved. *./
+    the entire response is retrieved. */
 
 get_status = NX_SUCCESS;
 
@@ -2366,7 +2369,7 @@ UINT nx_web_http_client_response_body_get(
 - **NX_WEB_HTTP_STATUS_CODE_GATEWAY_TIMEOUT** (0x3003F): код состояния HTTP "504 Gateway Time-out" (504: превышено время ожидания шлюза).
 - **NX_WEB_HTTP_STATUS_CODE_VERSION_ERROR** (0x30040): код состояния HTTP "505 HTTP Version not supported" (505: версия протокола HTTP не поддерживается).
 - NX_PTR_ERROR (0x07): недопустимые входные данные указателя.
-- NX_CALLER_ERROR (0x11): недопустимый вызывающий объект этой службы.
+- NX_CALLER_ERROR (0x11) — недопустимый вызывающий объект этой службы.
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -2513,7 +2516,7 @@ nx_web_http_client_secure_connect(&my_client, &server_ip_addr,
 /* Create a new GET request on the HTTP client instance. */
 nx_web_http_client_request_initialize(&my_client,
     NX_WEB_HTTP_METHOD_GET,
-    "https://192.168.1.150/test.txt ",
+    "https://192.168.1.150/test.txt ", "host.com",
     0, /* Used by PUT and POST only */
     NX_FALSE,
     NX_NULL, /* username */
@@ -2528,7 +2531,7 @@ status = nx_web_http_client_request_header_add(&my_client, "Server", 6,
 status = nx_web_http_client_request_send(&my_client, 1000);
 
 /* At this point, we need to handle the response from the server by repeatedly
-    calling *nx_web_http_client_response_body_get* until the entire response is retrieved. *./
+    calling *nx_web_http_client_response_body_get* until the entire response is retrieved. */
 
 get_status = NX_SUCCESS;
 
@@ -2563,14 +2566,14 @@ UINT nx_web_http_server_cache_info_callback_set(
 ### <a name="input-parameters"></a>Входные параметры
 
 - **server_ptr**: указатель на блок управления HTTP-сервером.
-- **cache_info_get**: указатель на обратный вызов.
-- **max_age**: указатель на максимальный возраст ресурса.
+- **cache_info_get**: указатель на обратный вызов
+- **max_age**: указатель на максимальный возраст ресурса
 - **data**: указатель на возвращенную дату последнего изменения.
 
 ### <a name="return-values"></a>Возвращаемые значения
 
-- **NX_SUCCESS** (0x00): обратный вызов успешно задан.
-- **NX_PTR_ERROR** (0x07): недопустимые входные данные указателя.
+- **NX_SUCCESS** (0x00) — обратный вызов успешно задан.
+- **NX_PTR_ERROR** (0x07) — недопустимые входные данные указателя.
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -2605,18 +2608,18 @@ UINT nx_web_http_server_callback_data_send(
 
 ### <a name="description"></a>Описание
 
-Эта служба отправляет данные в предоставленном пакете из подпрограммы обратного вызова приложения. Обычно она используется для отправки динамических данных, связанных с запросами GET или POST. Обратите внимание, что, если используется эта функция, то подпрограмма обратного вызова отвечает за отправку всего ответа в правильном формате. Кроме того, подпрограмма обратного вызова должна возвращать состояние NX_WEB_HTTP_CALLBACK_COMPLETED.
+Эта служба отправляет данные в предоставленном пакете из подпрограммы обратного вызова приложения. Обычно она используется для отправки динамических данных, связанных с запросами GET/POST. Обратите внимание, что, если используется эта функция, то подпрограмма обратного вызова отвечает за отправку всего ответа в правильном формате. Кроме того, подпрограмма обратного вызова должна возвращать состояние NX_WEB_HTTP_CALLBACK_COMPLETED.
 
 ### <a name="input-parameters"></a>Входные параметры
 
 - **server_ptr**: указатель на блок управления HTTP-сервером.
-- **data_ptr**: указатель на данные для отправки.
+- **data_ptr**: указатель на данные для отправки
 - **data_length**: число отправляемых байтов.
 
 ### <a name="return-values"></a>Возвращаемые значения
 
-- **NX_SUCCESS** (0x00): данные сервера успешно отправлены.
-- **NX_PTR_ERROR** (0x07): недопустимые входные данные указателя.
+- **NX_SUCCESS** (0x00) — данные сервера успешно отправлены.
+- **NX_PTR_ERROR** (0x07) — недопустимые входные данные указателя.
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -2674,8 +2677,8 @@ UINT nx_web_http_server_callback_generate_response_header(
 ### <a name="input-parameters"></a>Входные параметры
 
 - **server_ptr**: указатель на блок управления HTTP-сервером.
-- **packet_pptr**: указатель на указатель пакета, выделенного для сообщения.
-- **status_code**: указывает на состояние ресурса. Примеры:
+- **packet_pptr**: указатель на указатель пакета, выделенный для сообщения
+- **status_code**: указывает состояние ресурса Примеры:
   - **NX_WEB_HTTP_STATUS_OK**
   - **NX_WEB_HTTP_STATUS_MODIFIED**
   - **NX_WEB_HTTP_STATUS_INTERNAL_ERROR**
@@ -2686,7 +2689,7 @@ UINT nx_web_http_server_callback_generate_response_header(
 ### <a name="return-values"></a>Возвращаемые значения
 
 - **NX_SUCCESS** (0X00): заголовок HTML успешно создан.
-- **NX_PTR_ERROR** (0x07): недопустимые входные данные указателя.
+- **NX_PTR_ERROR** (0x07) — недопустимые входные данные указателя.
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -2777,8 +2780,8 @@ UINT nx_web_http_server_callback_generate_response_header_extended(
 ### <a name="input-parameters"></a>Входные параметры
 
 - **server_ptr**: указатель на блок управления HTTP-сервером.
-- **packet_pptr**: указатель на указатель пакета, выделенного для сообщения.
-- **status_code**: указывает на состояние ресурса. Примеры:
+- **packet_pptr**: указатель на указатель пакета, выделенный для сообщения
+- **status_code**: указывает состояние ресурса Примеры:
   - **NX_WEB_HTTP_STATUS_OK**
   - **NX_WEB_HTTP_STATUS_MODIFIED**
   - **NX_WEB_HTTP_STATUS_INTERNAL_ERROR**
@@ -2792,7 +2795,7 @@ UINT nx_web_http_server_callback_generate_response_header_extended(
 ### <a name="return-values"></a>Возвращаемые значения
 
 - **NX_SUCCESS** (0X00): заголовок HTML успешно создан.
-- **NX_PTR_ERROR** (0x07): недопустимые входные данные указателя.
+- **NX_PTR_ERROR** (0x07) — недопустимые входные данные указателя.
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -2889,7 +2892,7 @@ UINT nx_web_http_server_callback_packet_send(
 ### <a name="return-values"></a>Возвращаемые значения
 
 - **NX_SUCCESS** (0X00): пакет HTTP-сервера успешно отправлен.
-- **NX_PTR_ERROR** (0x07): недопустимые входные данные указателя.
+- **NX_PTR_ERROR** (0x07) — недопустимые входные данные указателя.
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -2933,8 +2936,8 @@ UINT nx_web_http_server_callback_response_send(
 ### <a name="input-parameters"></a>Входные параметры
 
 - **server_ptr**: указатель на блок управления HTTP-сервером.
-- **header**: указатель на строку заголовка ответа.
-- **information**: указатель на строку информации.
+- **header**: указатель на строку заголовка ответа
+- **information**: указатель на строку информации
 - **additional_info**: указатель на строку дополнительной информации.
 
 ### <a name="return-values"></a>Возвращаемые значения
@@ -2997,7 +3000,7 @@ UINT nx_web_http_server_callback_response_send_extended(
 ### <a name="input-parameters"></a>Входные параметры
 
 - **server_ptr**: указатель на блок управления HTTP-сервером.
-- **header**: указатель на строку заголовка ответа.
+- **header**: указатель на строку заголовка ответа
 - **header_length**: длина строки заголовка ответа.
 - **information**: указатель на строку информации.
 - **information_length**: длина строки информации.
@@ -3061,10 +3064,10 @@ UINT nx_web_http_server_content_get(NX_WEB_HTTP_SERVER *server_ptr,
 ### <a name="input-parameters"></a>Входные параметры
 
 - **server_ptr**: указатель на блок управления HTTP-сервером.
-- **packet_ptr**: указатель на пакет запроса HTTP-клиента. Обратите внимание, что этот пакет не должен быть освобожден обратным вызовом уведомления о запросе.
-- **byte_offset**: число байтов для смещения в область содержимого.
-- **destination_ptr**: указатель на область назначения для содержимого.
-- **destination_size**: максимальное число байтов, доступных в области назначения.
+- **packet_ptr**: указатель на пакет запроса HTTP-клиента Обратите внимание, что этот пакет не должен быть освобожден обратным вызовом уведомления о запросе.
+- **byte_offset**: число байтов для смещения в область содержимого
+- **destination_ptr**: указатель на область назначения для содержимого
+- **destination_size**: максимальное число байтов, доступных в области назначения
 - **actual_size**: указатель на переменную назначения, в качестве значения которой будет задан фактический размер копируемого содержимого.
 
 ### <a name="return-values"></a>Возвращаемые значения
@@ -3074,7 +3077,7 @@ UINT nx_web_http_server_content_get(NX_WEB_HTTP_SERVER *server_ptr,
 - **NX_WEB_HTTP_DATA_END** (0X30007): конец содержимого запроса.
 - **NX_WEB_HTTP_TIMEOUT** (0x30001): время ожидания HTTP-сервера при получении следующего пакета содержимого.
 - NX_PTR_ERROR (0x07): недопустимые входные данные указателя.
-- NX_CALLER_ERROR (0x11): недопустимый вызывающий объект этой службы.
+- NX_CALLER_ERROR (0x11) — недопустимый вызывающий объект этой службы.
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -3118,10 +3121,10 @@ UINT nx_web_http_server_content_get_extended(
 ### <a name="input-parameters"></a>Входные параметры
 
 - **server_ptr**: указатель на блок управления HTTP-сервером.
-- **packet_ptr**: указатель на пакет запроса HTTP-клиента. Обратите внимание, что этот пакет не должен быть освобожден обратным вызовом уведомления о запросе.
-- **byte_offset**: число байтов для смещения в область содержимого.
-- **destination_ptr**: указатель на область назначения для содержимого.
-- **destination_size**: максимальное число байтов, доступных в области назначения.
+- **packet_ptr**: указатель на пакет запроса HTTP-клиента Обратите внимание, что этот пакет не должен быть освобожден обратным вызовом уведомления о запросе.
+- **byte_offset**: число байтов для смещения в область содержимого
+- **destination_ptr**: указатель на область назначения для содержимого
+- **destination_size**: максимальное число байтов, доступных в области назначения
 - **actual_size**: указатель на переменную назначения, в качестве значения которой будет задан фактический размер копируемого содержимого.
 
 ### <a name="return-values"></a>Возвращаемые значения
@@ -3131,7 +3134,7 @@ UINT nx_web_http_server_content_get_extended(
 - **NX_WEB_HTTP_DATA_END** (0X30007): конец содержимого запроса.
 - **NX_WEB_HTTP_TIMEOUT** (0x30001): время ожидания HTTP-сервера при получении следующего пакета.
 - NX_PTR_ERROR (0x07): недопустимые входные данные указателя.
-- NX_CALLER_ERROR (0x11): недопустимый вызывающий объект этой службы.
+- NX_CALLER_ERROR (0x11) — недопустимый вызывающий объект этой службы.
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -3221,14 +3224,14 @@ UINT nx_web_http_server_create(NX_WEB_HTTP_SERVER *http_server_ptr,
 ### <a name="input-parameters"></a>Входные параметры
 
 - **http_server_ptr**: указатель на блок управления HTTP-сервером.
-- **http_server_name**: указатель на имя HTTP-сервера.
+- **http_server_name**: указатель на имя HTTP-сервера
 - **ip_ptr**: указатель на созданный ранее экземпляр IP.
 - **server_port**: TCP-порт ожидания передачи данных для экземпляра сервера.
 - **media_ptr**: указатель на созданный ранее экземпляр носителя FileX.
-- **stack_ptr**: указатель на область стека потоков HTTP-сервера.
-- **stack_size**: указатель на размер стека потоков HTTP-сервера.
-- **authentication_check**: указатель функции на подпрограмму проверки подлинности приложения. Если этот параметр указан, данная подпрограмма вызывается для каждого запроса HTTP-клиента. Если этот параметр имеет значение NULL, то проверка подлинности выполняться не будет. Этот параметр является нерекомендуемым. Вместо этого используйте вызов *nx_web_http_server_authenticate_check_set()* .
-- **request_notify**: указатель функции на подпрограмму уведомления о запросе приложения. Если этот параметр указан, подпрограмма вызывается перед обработкой запроса HTTP-сервером. Это позволяет перенаправлять имя ресурса или обновлять поля в самом ресурсе до завершения запроса HTTP-клиента.
+- **stack_ptr**: указатель на область стека потока HTTP-сервера
+- **stack_ptr**: указатель на размер стека потока HTTP-сервера
+- **authentication_check**: указатель функции на подпрограмму проверки подлинности приложения Если параметр указан, эта подпрограмма вызывается для каждого запроса HTTP-клиента. Если этот параметр имеет значение NULL, то проверка подлинности выполняться не будет. Этот параметр является нерекомендуемым. Вместо этого используйте вызов *nx_web_http_server_authenticate_check_set()* .
+- **request_notify**: указатель функции на подпрограмму уведомления о запросе приложения. Если параметр указан, подпрограмма вызывается перед обработкой запроса HTTP-сервером. Это позволяет перенаправлять имя ресурса или обновлять поля в самом ресурсе до завершения запроса HTTP-клиента.
 
 ### <a name="return-values"></a>Возвращаемые значения
 
@@ -3238,7 +3241,7 @@ UINT nx_web_http_server_create(NX_WEB_HTTP_SERVER *http_server_ptr,
 
 ### <a name="allowed-from"></a>Допустимые источники
 
-Инициализация, потоки.
+Инициализация, потоки
 
 ### <a name="example"></a>Например, .
 
@@ -3264,7 +3267,7 @@ UINT nx_web_http_server_delete(NX_WEB_HTTP_SERVER *http_server_ptr);
 
 ### <a name="description"></a>Описание
 
-Эта служба удаляет созданный ранее экземпляр HTTP-сервера.
+Эта служба удаляет ранее созданный экземпляр HTTP-сервера.
 
 ### <a name="input-parameters"></a>Входные параметры
 
@@ -3272,9 +3275,9 @@ UINT nx_web_http_server_delete(NX_WEB_HTTP_SERVER *http_server_ptr);
 
 ### <a name="return-values"></a>Возвращаемые значения
 
-- **NX_SUCCESS** (0x00): HTTP-сервер успешно удален.
-- NX_PTR_ERROR (0x07): недопустимый указатель на HTTP-сервер.
-- NX_CALLER_ERROR (0x11): недопустимый вызывающий объект этой службы.
+- **NX_SUCCESS** (0x00) — HTTP-сервер успешно удален.
+- NX_PTR_ERROR (0x07) — недопустимый указатель на HTTP-сервер.
+- NX_CALLER_ERROR (0x11) — недопустимый вызывающий объект этой службы.
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -3362,7 +3365,7 @@ UINT nx_web_http_server_get_entity_header(
 
 ### <a name="description"></a>Описание
 
-Эта служба извлекает заголовок сущности в указанный буфер. HTTP-сервер обновляет собственные указатели для поиска следующей составной сущности в датаграмме клиента с несколькими заголовками сущностей. Указатель пакета обновляется до следующего пакета, где сообщением клиента является датаграмма с несколькими пакетами.
+Эта служба извлекает заголовок сущности в указанный буфер. HTTP-сервер внутренне обновляет собственные указатели для поиска следующей составной сущности в датаграмме клиента с несколькими заголовками сущностей. Указатель пакета обновляется до следующего пакета, где сообщением клиента является датаграмма с несколькими пакетами.
 
 Обратите внимание на то, что для использования этой службы необходимо включить NX_WEB_HTTP_MULTIPART_ENABLE. Также обратите внимание, что приложение не должно освобождать пакет, на который указывает packet_pptr.
 
@@ -3459,17 +3462,17 @@ UINT nx_web_http_server_gmt_callback_set(
 
 ### <a name="description"></a>Описание
 
-Эта служба задает обратный вызов для получения даты и времени в формате GMT с помощью созданного ранее HTTP-сервера. Эта служба вызывается HTTP-сервером и создает заголовок в ответах HTTP-сервера для клиента.
+Эта служба задает обратный вызов для получения даты и времени в формате GMT с помощью ранее созданного HTTP-сервера. Эта служба вызывается HTTP-сервером и создает заголовок в ответах HTTP-сервера для клиента.
 
 ### <a name="input-parameters"></a>Входные параметры
 
 - **server_ptr**: указатель на HTTP-сервер.
-- **gmt_getv**: указатель на обратный вызов для получения даты и времени по Гринвичу.
+- **gmt_getv**: указатель на обратный вызов для получения даты и времени по Гринвичу
 - **date**: указатель на полученную дату.
 
 ### <a name="return-values"></a>Возвращаемые значения
 
-- **NX_SUCCESS** (0x00): обратный вызов успешно задан.
+- **NX_SUCCESS** (0x00) — обратный вызов успешно задан.
 - NX_PTR_ERROR (0x07): недопустимый указатель на пакет или параметр.
 
 ### <a name="allowed-from"></a>Допустимые источники
@@ -3509,22 +3512,22 @@ UINT nx_web_http_server_invalid_userpassword_notify_set(
 
 ### <a name="description"></a>Описание
 
-Эта служба задает обратный вызов, вызываемый при получении недопустимого имени пользователя и пароля в запросе GET, PUT или DELETE клиента в результате дайджест-проверки подлинности или обычной проверки подлинности. HTTP-сервер должен быть уже создан.
+Эта служба задает обратный вызов, вызываемый при получении недопустимого имени пользователя и пароля в запросе GET, PUT или DELETE клиента в результате дайджест- или обычной проверки подлинности. HTTP-сервер должен быть создан ранее.
 
 ### <a name="input-parameters"></a>Входные параметры
 
 - **server_ptr**: указатель на HTTP-сервер.
-- **invalid_username_password_callback**: указатель на недопустимый обратный вызов для имени пользователя или пароля.
-- **resource**: указатель на ресурс, указанный клиентом.
-- **client_address**: адрес клиента.
-- **request_type**: указывает тип запроса клиента. Может иметь следующие значения:
+- **invalid_username_password_callback**: указатель на недопустимый обратный вызов имени пользователя или пароля
+- **resource**: указатель на ресурс, указанный клиентом
+- **client_address**: адрес клиента
+- **request_type** указывает тип запроса клиента Может иметь следующие значения:
   - *NX_WEB_HTTP_SERVER_GET_REQUEST*
   - *NX_WEB_HTTP_SERVER_POST_REQUEST NX_WEB_HTTP_SERVER_HEAD_REQUEST*
   - *NX_WEB_HTTP_SERVER_PUT_REQUEST NX_WEB_HTTP_SERVER_DELETE_REQUEST*
 
 ### <a name="return-values"></a>Возвращаемые значения
 
-- **NX_SUCCESS** (0x00): обратный вызов успешно задан.
+- **NX_SUCCESS** (0x00) — обратный вызов успешно задан.
 - NX_PTR_ERROR (0x07): недопустимые входные данные указателя.
 
 ### <a name="allowed-from"></a>Допустимые источники
@@ -3575,17 +3578,17 @@ UINT nx_web_http_server_mime_maps_additional_set(
 ### <a name="input-parameters"></a>Входные параметры
 
 - **server_ptr**: указатель на экземпляр HTTP-сервера.
-- **mime_maps**: указатель на массив сопоставлений MIME.
+- **mime_maps**: указатель на массив сопоставлений MIME
 - **mime_map_num**: число сопоставлений MIME в массиве.
 
 ### <a name="return-values"></a>Возвращаемые значения
 
-- **NX_SUCCESS** (0x00): сопоставление MIME HTTP-сервера успешно задано.
+- **NX_SUCCESS** (0x00) — сопоставление MIME HTTP-сервера успешно задано.
 - NX_PTR_ERROR (0x07): недопустимые входные данные указателя.
 
 ### <a name="allowed-from"></a>Допустимые источники
 
-Инициализация, потоки.
+Инициализация, потоки
 
 ### <a name="example"></a>Например, .
 
@@ -3639,7 +3642,7 @@ UINT nx_web_http_server_response_packet_allocate(
 - **NX_WAIT_ABORTED** (0x1A): запрошенная приостановка прервана вызовом *tx_thread_wait_abort*.
 - **NX_INVALID_PARAMETERS** (0x4D): размер пакета не поддерживается протоколом.
 - NX_PTR_ERROR (0x07): недопустимые входные данные указателя.
-- NX_CALLER_ERROR (0x11): недопустимый вызывающий объект этой службы.
+- NX_CALLER_ERROR (0x11) — недопустимый вызывающий объект этой службы.
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -3680,7 +3683,7 @@ UINT nx_web_http_server_packet_content_find(
 ### <a name="input-parameters"></a>Входные параметры
 
 - **server_ptr**: указатель на экземпляр HTTP-сервера.
-- **packet_ptr**: указатель на указатель пакета для возврата пакета с обновленным указателем начала.
+- **packet_ptr**: указатель на указатель пакета для возврата пакета с обновленным указателем начала
 - **content_length**: указатель на извлеченный параметр content_length.
 
 ### <a name="return-values"></a>Возвращаемые значения
@@ -3772,8 +3775,8 @@ UINT nx_web_http_server_param_get(NX_PACKET *packet_ptr,
 
 ### <a name="input-parameters"></a>Входные параметры
 
-- **packet_ptr**: указатель на пакет запроса HTTP-клиента. Обратите внимание на то, что приложение не должно освобождать этот пакет.
-- **param_number**: логический номер параметра, начинающийся с нуля, слева направо в списке параметров.
+- **packet_ptr**: указатель на пакет запроса HTTP-клиента. Обратите внимание, что приложение не должно освобождать этот пакет.
+- **param_number**: логический номер параметра, начинающийся с нуля, слева направо в списке параметров
 - **param_ptr**: область назначения для копирования параметра.
 - **param_size**: возвращает общий размер данных параметра (в байтах).
 - **max_param_size**: максимальный размер области назначения параметра.
@@ -3784,7 +3787,7 @@ UINT nx_web_http_server_param_get(NX_PACKET *packet_ptr,
 - **NX_WEB_HTTP_NOT_FOUND** (0x30006): указанный параметр не найден.
 - **NX_WEB_HTTP_IMPROPERLY_TERMINATED_PARAM** (0x30015): неправильное завершение параметра запроса.
 - NX_PTR_ERROR (0x07): недопустимые входные данные указателя.
-- NX_CALLER_ERROR (0x11): недопустимый вызывающий объект этой службы.
+- NX_CALLER_ERROR (0x11) — недопустимый вызывающий объект этой службы.
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -3824,8 +3827,8 @@ UINT nx_web_http_server_query_get(NX_PACKET *packet_ptr,
 
 ### <a name="input-parameters"></a>Входные параметры
 
-- **packet_ptr**: указатель на пакет запроса HTTP-клиента. Обратите внимание на то, что приложение не должно освобождать этот пакет.
-- **query_number**: логический номер параметра, начинающийся с нуля, слева направо в списке запросов.
+- **packet_ptr**: указатель на пакет запроса HTTP-клиента. Обратите внимание, что приложение не должно освобождать этот пакет.
+- **query_number**: логический номер параметра, начинающийся с нуля, слева направо в списке запросов
 - **query_ptr**: область назначения для копирования запроса.
 - **query_size**: размер возвращаемых данных запроса (в байтах).
 - **max_query_size**: максимальный размер области назначения запроса.
@@ -3839,7 +3842,7 @@ UINT nx_web_http_server_query_get(NX_PACKET *packet_ptr,
 - **NX_WEB_HTTP_NOT_FOUND** (0x30006): указанный запрос не найден.
 - **NX_WEB_HTTP_NO_QUERY_PARSED** (0x30013): запрос отсутствует в запросе клиента.
 - NX_PTR_ERROR (0x07): недопустимые входные данные указателя.
-- NX_CALLER_ERROR (0x11): недопустимый вызывающий объект этой службы.
+- NX_CALLER_ERROR (0x11) — недопустимый вызывающий объект этой службы.
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -3907,7 +3910,7 @@ nx_web_http_server_response_packet_allocate(&my_server, &my_packet, NX_WAIT_FORE
 /* Set the chunked transfer. */
 status = nx_web_http_server_response_chunked_set(&my_server, 128, my_packet)
 
-/* At this point, user can fill the data into my_packet. *./
+/* At this point, user can fill the data into my_packet. */
 nx_packet_data_append(my_packet, data_ptr, data_size,
     packet_pool, NX_WAIT_FOREVER);
 
@@ -3972,7 +3975,7 @@ UINT nx_web_http_server_secure_configure(
 
 ### <a name="return-values"></a>Возвращаемые значения
 
-- **TX_SUCCESS** (0x00): сеанс TLS успешно инициализирован.
+- **NX_SUCCESS** (0x00) — сеанс TLS успешно инициализирован.
 - **NX_NOT_CONNECTED** (0x38): базовый сокет TCP больше не подключен.
 - **NX_SECURE_TLS_UNRECOGNIZED_MESSAGE_TYPE** (0x102): получен неправильный тип сообщения TLS.
 - **NX_SECURE_TLS_UNSUPPORTED_CIPHER** (0x106): шифр, предоставленный удаленным узлом, не поддерживается.
@@ -3993,7 +3996,7 @@ UINT nx_web_http_server_secure_configure(
 
 ### <a name="allowed-from"></a>Допустимые источники
 
-Инициализация, потоки.
+Инициализация, потоки
 
 ### <a name="example"></a>Например, .
 
@@ -4052,7 +4055,7 @@ HTTPS-серверы используют те же API, что и HTTP-серв
 
 ### <a name="allowed-from"></a>Допустимые источники
 
-Инициализация, потоки.
+Инициализация, потоки
 
 ### <a name="example"></a>Например, .
 
@@ -4075,7 +4078,7 @@ UINT nx_web_http_server_stop(NX_WEB_HTTP_SERVER *http_server_ptr);
 
 ### <a name="description"></a>Описание
 
-Эта служба останавливает созданный ранее экземпляр HTTP-сервера. Эту подпрограмму следует вызывать до удаления экземпляра HTTP-сервера.
+Эта служба останавливает ранее созданный экземпляр HTTP-сервера. Эту подпрограмму следует вызывать до удаления экземпляра HTTP-сервера.
 
 ### <a name="input-parameters"></a>Входные параметры
 
@@ -4085,7 +4088,7 @@ UINT nx_web_http_server_stop(NX_WEB_HTTP_SERVER *http_server_ptr);
 
 - **NX_SUCCESS** (0X00): HTTP-сервер успешно остановлен.
 - NX_PTR_ERROR (0x07): недопустимые входные данные указателя.
-- NX_CALLER_ERROR (0x11): недопустимый вызывающий объект этой службы.
+- NX_CALLER_ERROR (0x11) — недопустимый вызывающий объект этой службы.
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -4120,11 +4123,11 @@ UINT nx_web_http_server_type_get(NX_WEB_HTTP_SERVER *http_server_ptr,
 Эта служба извлекает тип HTTP-запроса из *http_type_string* и его длину из *string_size* из входного буфера *name* (обычно это URL-адрес). Если сопоставление MIME не найдено, по умолчанию используется тип "text/plain". В противном случае извлеченный тип сравнивается с сопоставлениями MIME HTTP-сервера по умолчанию. Сопоставления MIME по умолчанию на сервере NetX Duo HTTP:
 
 - html — "text/html";
-- htm — "text/html";
-- txt — "text/plain";
-- gif — "image/gif";
-- jpg — "image/jpeg";
-- ico — "image/x-icon".
+- HTM — текст или HTML
+- TXT — текст или обычный текст
+- GIF — изображение или GIF
+- JPEG — изображение или JPEG
+- ICO — изображение или x-icon
 
 Если этот параметр задан, также будет выполнен поиск определенного пользователем набора дополнительных сопоставлений MIME. Дополнительные сведения об определяемых пользователем сопоставлениях см. в описании службы *nx_web_http_server_mime_maps_addtional_set()* .
 
@@ -4183,11 +4186,11 @@ UINT nx_web_http_server_type_get_extended(
 Эта служба извлекает тип HTTP-запроса из *http_type_string* и его длину из *string_size* из входного буфера *name* (обычно это URL-адрес). Если сопоставление MIME не найдено, по умолчанию используется тип "text/plain". В противном случае извлеченный тип сравнивается с сопоставлениями MIME HTTP-сервера по умолчанию. Сопоставления MIME по умолчанию на сервере NetX Duo HTTP:
 
 - html — "text/html";
-- htm — "text/html";
-- txt — "text/plain";
-- gif — "image/gif";
-- jpg — "image/jpeg";
-- ico — "image/x-icon".
+- HTM — текст или HTML
+- TXT — текст или обычный текст
+- GIF — изображение или GIF
+- JPEG — изображение или JPEG
+- ICO — изображение или x-icon
 
 Если этот параметр задан, также будет выполнен поиск определенного пользователем набора дополнительных сопоставлений MIME. Дополнительные сведения об определяемых пользователем сопоставлениях см. в описании службы *nx_web_http_server_mime_maps_addtional_set()* .
 
@@ -4265,9 +4268,9 @@ UINT nx_web_http_server_digest_authenticate_notify_set(
 
 ### <a name="return-values"></a>Возвращаемые значения
 
-- **NX_SUCCESS** (0x00): обратный вызов успешно задан.
-- NX_PTR_ERROR (0x07): недопустимые входные данные указателя.
-- NX_NOT_SUPPORTED (0x4B): дайджест-проверка подлинности не включена.
+- **NX_SUCCESS** (0x00) — обратный вызов успешно задан.
+- NX_PTR_ERROR (0x07) — недопустимые входные данные указателя.
+- NX_NOT_SUPPORTED (0x4B) — дайджест-проверка подлинности не включена.
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -4327,7 +4330,7 @@ UINT nx_web_http_server_digest_authenticate_notify_set(
 
 ### <a name="return-values"></a>Возвращаемые значения
 
-- **NX_SUCCESS** (0x00): обратный вызов успешно задан.
+- **NX_SUCCESS** (0x00) — обратный вызов успешно задан.
 - NX_PTR_ERROR (0x07): недопустимые входные данные указателя.
 
 ### <a name="allowed-from"></a>Допустимые источники
