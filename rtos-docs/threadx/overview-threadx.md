@@ -6,12 +6,12 @@ ms.author: philmea
 ms.date: 6/9/2020
 ms.service: rtos
 ms.topic: overview
-ms.openlocfilehash: e786e5bf1f434ec9543823dee8784b677a2b371f
-ms.sourcegitcommit: 19d50693d8f5287ba6938ae1d23eef88435ed7b1
+ms.openlocfilehash: 0fb861c2291046c2ac6edf1d03014996daa09a8e
+ms.sourcegitcommit: c1b00341e0c5ab71372f3d9cc4ee3bdd3702b805
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2021
-ms.locfileid: "108171392"
+ms.lasthandoff: 06/10/2021
+ms.locfileid: "111988368"
 ---
 # <a name="overview-of-azure-rtos-threadx"></a>Обзор ОСРВ Azure ThreadX
 
@@ -272,7 +272,6 @@ ms.locfileid: "108171392"
 
 Модули также используют адресное пространство, отдельное от ОСРВ Azure ThreadX. Это позволяет ОСРВ Azure ThreadX применять защиту памяти (посредством MPU или MMU) для модуля, которая не позволяет непреднамеренному обращению извне модуля повредить какой-либо другой программный компонент.
 
-
 ## <a name="misra-compliant"></a>Соответствие требованиям MISRA
 
 Исходный код ОСРВ Azure ThreadX и ОСРВ Azure ThreadX SMP соответствует требованиям MISRA-C:2004 и MISRA C:2012. MISRA C — это набор руководств по программированию критических систем с использованием языка программирования C. Первоначальные рекомендации MISRA C главным образом были нацелены на приложения для автомобилестроения, но теперь MISRA C широко признается стандартом, применимым к любому приложению со строгими требованиями к безопасности. ОСРВ Azure SMP ThreadX соответствует всем требуемым и обязательным правилам стандартов MISRA-C:2004 и MISRA C:2012.
@@ -307,3 +306,7 @@ ms.locfileid: "108171392"
 ## <a name="supports-most-popular-tools"></a>Поддержка большинства популярных инструментов
 
 ОСРВ Azure ThreadX поддерживает большинство популярных внедренных инструментов разработки, включая решение Embedded Workbench™ от IAR, которое также лучше всего совместимо с ядром ОСРВ Azure ThreadX. Возможна интеграция с дополнительными средства, включая инструменты GNU (GCC), ARM DS-5/uVision®, Green Hills MULTI®, Wind River Workbench™, Imagination Codescape, Renesas e2studio, Metaware SeeCode™, NXP CodeWarrior, Lauterbach TRACE32®, TI Code-Composer Studio, CrossCore и все аналоговые устройства.
+
+## <a name="adaptation-layer-for-threadx"></a>Уровень адаптации для ThreadX
+
+ОСРВ Azure ThreadX — это усовершенствованная операционная система реального времени (ОСРВ), разработанная специально для глубоко встраиваемых приложений. Чтобы упростить миграцию приложений на Auzre RTO, ThreadX предоставляет [уровни адаптации](https://github.com/azure-rtos/threadx/tree/master/utility/rtos_compatibility_layers) для разных API RTO устаревших версий (FreeRTOS, POSIX, OSEK и т. д.).

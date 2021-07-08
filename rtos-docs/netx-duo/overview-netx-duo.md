@@ -6,12 +6,12 @@ ms.author: philmea
 ms.date: 5/19/2020
 ms.service: rtos
 ms.topic: overview
-ms.openlocfilehash: e3fe3bcc602f409cc76f3be47aca865bf8116697
-ms.sourcegitcommit: 19d50693d8f5287ba6938ae1d23eef88435ed7b1
+ms.openlocfilehash: 6112ab5cb711ca1a5c83fd5cd4b43abc0302c6c5
+ms.sourcegitcommit: f9d8cf23becf96d5bd6d31dd54f89c48962fd09b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2021
-ms.locfileid: "108171341"
+ms.lasthandoff: 06/06/2021
+ms.locfileid: "111549342"
 ---
 # <a name="overview-of-azure-rtos-netx-duo"></a>Обзор NetX Duo для ОСРВ Azure
 
@@ -83,7 +83,7 @@ ms.locfileid: "108171341"
 * Поддержка клиентов.
 * mDNS и DNS-SD доступны только с NetX Duo для ОСРВ Azure.
 
-### <a name="p0p3"></a>P0P3
+### <a name="pop3"></a>POP3
 
 * Протокол Post Office Protocol версии 3 (POP3).
 * Всего 8,1 КБ занимаемой памяти и 1,4 КБ в ОЗУ.
@@ -294,7 +294,30 @@ NetX Duo для ОСРВ Azure — эта передовая технологи
 
 ## <a name="related-services"></a>Связанные службы
 
-Модуль безопасности "Центр безопасности Azure для ОСРВ Интернета вещей" предоставляет комплексное решение безопасности для устройств ОСРВ Azure. Модуль безопасности для ОСРВ Azure позволяет обнаруживать вредоносные действия в сети, настраивать базовое поведение устройств с учетом оповещений и помогает повысить уровень безопасности устройства. Узнайте больше о [модуле безопасности для ОСРВ Azure](https://docs.microsoft.com/azure/asc-for-iot/iot-security-azure-rtos) или изучите краткое руководство по [настройке модуля безопасности для ОСРВ Azure](https://docs.microsoft.com/azure/asc-for-iot/quickstart-azure-rtos-security-module).
+### <a name="azure-iot"></a>Azure IoT
+
+NetX Duo включает [ПО промежуточного слоя Интернета вещей Azure для ОСРВ Azure](https://github.com/azure-rtos/netxduo/blob/master/addons/azure_iot/docs/README.md), библиотеку для конкретной платформы, которая выступает в качестве уровня привязки между ОСРВ Azure и пакетом SDK Azure для Embedded C для упрощения подключения к службам Интернета вещей Azure. Ниже указаны задачи ПО промежуточного слоя Интернета вещей Azure.
+* Предоставьте интерфейсы интеллектуальных клиентов (IoTHub_Client, DeviceProvisioning_Client), требуемые разработчикам для приложений.
+* Управляйте взаимодействием между пакетом SDK для Embedded C и платформой.
+* Настройте инициализацию платформы ОСРВ Azure.
+* Поддержка IoT Plug and Play.
+* Возможности системы безопасности.
+* Учитывается ограничение ресурсов.
+* Поддержка протоколов.
+
+![Связанные службы NetX Duo ОСРВ Azure](./media/overview-netx-duo/related-services.png)
+
+### <a name="azure-defender"></a>Azure Defender
+
+Модуль безопасности Azure Defender для Интернета вещей предоставляет комплексное решение для защиты устройств ОСРВ Azure. Модуль безопасности для ОСРВ Azure позволяет обнаруживать вредоносные действия в сети, настраивать базовое поведение устройств с учетом оповещений и помогает повысить уровень безопасности устройства. Узнайте больше о [модуле безопасности для ОСРВ Azure](https://docs.microsoft.com/azure/asc-for-iot/iot-security-azure-rtos) или изучите краткое руководство по [настройке модуля безопасности для ОСРВ Azure](https://docs.microsoft.com/azure/asc-for-iot/quickstart-azure-rtos-security-module).
+
+### <a name="device-update-for-iot-hub"></a>Обновление устройств для Центра Интернета вещей
+
+[Обновление устройств для Центра Интернета вещей Azure](https://docs.microsoft.com/azure/iot-hub-device-update/understand-device-update) — это служба, которая позволяет развертывать обновления на устройствах Интернета вещей по беспроводной сети. Модуль Обновления устройств для Центра Интернета вещей — это реализация обновления устройства для агента Центра Интернета вещей в NetX Duo ОСРВ Azure. Здесь представлены простые API для разработчиков устройств, позволяющие интегрировать возможности Обновления устройств в приложения.
+
+Просмотрите примеры основных макетов полупроводниковых плат, которые включают руководства по началу работы с инструкциями по настройке, созданию и развертыванию обновлений для устройств по беспроводной сети.
+
+Вы также можете получить дополнительные сведения о работе с [Обновлением устройств для Центра Интернета вещей с использованием ОСРВ Azure](https://docs.microsoft.com/azure/iot-hub-device-update/device-update-azure-real-time-operating-system).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
