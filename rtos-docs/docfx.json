@@ -2,7 +2,9 @@
   "build": {
     "content": [
       {
-        "files": ["breadcrumb/toc.yml"]
+        "files": [
+          "breadcrumb/toc.yml"
+        ]
       },
       {
         "files": [
@@ -47,19 +49,48 @@
       "extendBreadcrumb": true,
       "feedback_system": "None",
       "uhfHeaderId": "Azure",
-      "searchScope": ["Azure RTOS"]
+      "searchScope": [
+        "Azure RTOS"
+      ]
     },
     "fileMetadata": {
-      "searchScope": { 
-        "rtos-docs/filex/**.md": ["Azure RTOS","FileX"],
-        "rtos-docs/guix/**.md": ["Azure RTOS","GUIX"],
-        "rtos-docs/levelx/**.md": ["Azure RTOS","LevelX"],
-        "rtos-docs/netx/**.md": ["Azure RTOS","NetX"],
-        "rtos-docs/netx-duo/**.md": ["Azure RTOS","NetX Duo"],
-        "rtos-docs/threadx/**.md": ["Azure RTOS","ThreadX"],
-        "rtos-docs/threadx-modules/**.md": ["Azure RTOS","ThreadX modules"],
-        "rtos-docs/tracex/**.md": ["Azure RTOS","TraceX"],
-        "rtos-docs/usbx/**.md": ["Azure RTOS","USBX"]
+      "searchScope": {
+        "rtos-docs/filex/**.md": [
+          "Azure RTOS",
+          "FileX"
+        ],
+        "rtos-docs/guix/**.md": [
+          "Azure RTOS",
+          "GUIX"
+        ],
+        "rtos-docs/levelx/**.md": [
+          "Azure RTOS",
+          "LevelX"
+        ],
+        "rtos-docs/netx/**.md": [
+          "Azure RTOS",
+          "NetX"
+        ],
+        "rtos-docs/netx-duo/**.md": [
+          "Azure RTOS",
+          "NetX Duo"
+        ],
+        "rtos-docs/threadx/**.md": [
+          "Azure RTOS",
+          "ThreadX"
+        ],
+        "rtos-docs/threadx-modules/**.md": [
+          "Azure RTOS",
+          "ThreadX modules"
+        ],
+        "rtos-docs/tracex/**.md": [
+          "Azure RTOS",
+          "TraceX"
+        ],
+        "rtos-docs/usbx/**.md": [
+          "Azure RTOS",
+          "USBX"
+        ]
       }
     },
     "template": [],
@@ -72,13 +103,13 @@
           "netx-duo/**/*.md",
           "usbx/**/*.md",
           "getting-started.md"
-          ]
+        ]
       },
-     "sensitive-language-sl": {
-       "exclude": [
-         "usbx/**/*.md"
-         ]
-     }
+      "sensitive-language-sl": {
+        "exclude": [
+          "usbx/**/*.md"
+        ]
+      }
     }
   }
 }
