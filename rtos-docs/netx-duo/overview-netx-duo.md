@@ -6,12 +6,12 @@ ms.author: philmea
 ms.date: 5/19/2020
 ms.service: rtos
 ms.topic: overview
-ms.openlocfilehash: 6112ab5cb711ca1a5c83fd5cd4b43abc0302c6c5
-ms.sourcegitcommit: f9d8cf23becf96d5bd6d31dd54f89c48962fd09b
+ms.openlocfilehash: b40a57bf385ddcf623ff7cbe0d2e798c547227d7
+ms.sourcegitcommit: dbbec3ba6a7eb6097c7888b235c433a2efd6e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2021
-ms.locfileid: "111549342"
+ms.lasthandoff: 07/14/2021
+ms.locfileid: "113754902"
 ---
 # <a name="overview-of-azure-rtos-netx-duo"></a>Обзор NetX Duo для ОСРВ Azure
 
@@ -30,6 +30,7 @@ ms.locfileid: "111549342"
 * Всего 1,2 КБ занимаемой памяти и 300 байт в ОЗУ.
 
 ### <a name="http-https"></a>HTTP, HTTPS
+NetX Duo поддерживает следующие протоколы HTTP/HTTPS.
 
 #### <a name="http-10"></a>HTTP 1.0
 
@@ -120,14 +121,8 @@ ms.locfileid: "111549342"
 * Поддержка клиентов.
 * Интуитивно простые API SNTP: *nx_sntp_\** .
 
-### <a name="azure-rtos-netx-duo-api"></a>API NetX Duo для ОСРВ Azure
+### <a name="legacy-code-support"></a>Поддержка устаревшего кода
 
-* Интуитивно простой и согласованный API.
-* Соглашение об именовании с использованием конструкций "существительное — глагол".
-* Быстрая реализация API без копирования.
-* Все API имеют префикс <i>nx_*</i> для простой идентификации принадлежности к NetX для ОСРВ Azure.
-* Блокирующие API поддерживают опциональное время ожидания потоков.
-* Дополнительные сведения см. в статье [Руководство пользователя по NetX Duo в ОСРВ Azure](about-this-guide.md).
 * Опциональный уровень BSD для портирования старого кода сокетов.
 
 ### <a name="igmp"></a>IGMP
@@ -261,7 +256,6 @@ ms.locfileid: "111549342"
 
 ОСРВ Azure от Майкрософт предоставляет изготовителям оборудования компоненты для безопасного обмена данными, а также создания кода и изоляции данных с помощью базовых аппаратных механизмов защиты, встроенных в микроконтроллеры и микропроцессоры. Ответственность за полное соответствие устройства меняющимся требованиям к безопасности в отношении отдельных вариантов использования в конечном итоге лежит на производителе устройства.
 
-
 ## <a name="interoperability-verification"></a>Подтвержденная совместимость
 
 NetX Duo соответствует стандартам RFC и обеспечивает полную совместимость с устройствами большинства поставщиков.
@@ -274,11 +268,32 @@ NetX Duo для ОСРВ Azure — это единственный стек с 
 
 NetX Duo предоставляет один из самых комплексных наборов сетевых функций с поддержкой TCP/IP для глубоко внедренных приложений. Такая поддержка включает следующие подключаемые протоколы:
 
-MQTT, CoAP, LWM2M, 6LoWPAN, SSL/TLS/DTLS, IPsec, AutoIP, DHCP, DNS, mDNS, DNS-SD, FTP, HTTP, IPsec, NAT, POP3, PPP, PPPoE, SMTP, SNMP версии 1, 2 и 3, Telnet, TFTP
+* MQTT
+* CoAP
+* LWM2M
+* 6LoWPAN
+* SSL, TLS и DTLS;
+* IPsec
+* AutoIP
+* DHCP
+* DNS
+* mDNS
+* DNS-SD
+* FTP
+* HTTP
+* IPsec
+* NAT
+* POP3
+* PPP
+* PPPoE
+* SMTP
+* SNMP v1/2/3
+* Telnet
+* TFTP
 
 ## <a name="advanced-technology"></a>Передовая технология
 
-NetX Duo для ОСРВ Azure — эта передовая технология, включающая следующее:
+ОСРВ Azure NetX Duo — это передовая технология, включающая следующее:
 
 * архитектура Piconet™;
 * Автоматическое масштабирование
@@ -294,7 +309,13 @@ NetX Duo для ОСРВ Azure — эта передовая технологи
 
 ## <a name="related-services"></a>Связанные службы
 
-### <a name="azure-iot"></a>Azure IoT
+NetX Duo предоставляет следующие дополнительные службы:
+
+* ПО промежуточного слоя Интернета вещей Azure;
+* Azure Defender
+* обновление устройств для Центра Интернета вещей.
+
+### <a name="azure-iot-middleware"></a>ПО промежуточного слоя Интернета вещей Azure
 
 NetX Duo включает [ПО промежуточного слоя Интернета вещей Azure для ОСРВ Azure](https://github.com/azure-rtos/netxduo/blob/master/addons/azure_iot/docs/README.md), библиотеку для конкретной платформы, которая выступает в качестве уровня привязки между ОСРВ Azure и пакетом SDK Azure для Embedded C для упрощения подключения к службам Интернета вещей Azure. Ниже указаны задачи ПО промежуточного слоя Интернета вещей Azure.
 * Предоставьте интерфейсы интеллектуальных клиентов (IoTHub_Client, DeviceProvisioning_Client), требуемые разработчикам для приложений.

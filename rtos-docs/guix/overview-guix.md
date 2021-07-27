@@ -6,12 +6,12 @@ ms.author: philmea
 ms.date: 5/19/2020
 ms.service: rtos
 ms.topic: overview
-ms.openlocfilehash: 8f4a1578fcabdabfb213ced9c6593f6cffc964aa
-ms.sourcegitcommit: 19d50693d8f5287ba6938ae1d23eef88435ed7b1
+ms.openlocfilehash: 0a6ac2c7a76893d516b9beae9b893c9764de60ba
+ms.sourcegitcommit: dbbec3ba6a7eb6097c7888b235c433a2efd6e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2021
-ms.locfileid: "108171409"
+ms.lasthandoff: 07/14/2021
+ms.locfileid: "113754936"
 ---
 # <a name="overview-of-azure-rtos-guix-and-azure-rtos-guix-studio"></a>Общие сведения об Azure RTOS GUIX и Azure RTOS GUIX Studio
 
@@ -134,7 +134,7 @@ Azure RTOS GUIX и Azure RTOS GUIX Studio предоставляют все не
 
 Сгенерируйте все выходные файлы, чтобы создать код на C для Azure RTOS GUIX. Затем просто перестройте целевое приложение и запустите его, чтобы проверить измененный эталонный проект.
 
-### <a name="memory-footprint"></a>Занимаемая память
+### <a name="guix-memory-footprint"></a>Объем памяти GUIX
 
 Azure RTOS GUIX имеет очень небольшой объем флэш-памяти (13,2 КБ) и ОЗУ (4 КБ) для базовой поддержки, не включая память, требуемую для холста.
 

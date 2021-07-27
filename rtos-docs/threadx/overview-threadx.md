@@ -6,12 +6,12 @@ ms.author: philmea
 ms.date: 6/9/2020
 ms.service: rtos
 ms.topic: overview
-ms.openlocfilehash: 0fb861c2291046c2ac6edf1d03014996daa09a8e
-ms.sourcegitcommit: c1b00341e0c5ab71372f3d9cc4ee3bdd3702b805
+ms.openlocfilehash: 938619170ef51d354fa970134328c17407ae846a
+ms.sourcegitcommit: dbbec3ba6a7eb6097c7888b235c433a2efd6e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/10/2021
-ms.locfileid: "111988368"
+ms.lasthandoff: 07/14/2021
+ms.locfileid: "113754868"
 ---
 # <a name="overview-of-azure-rtos-threadx"></a>Обзор ОСРВ Azure ThreadX
 
@@ -165,13 +165,7 @@ ms.locfileid: "111988368"
 * Трассировка на уровне системы.
 * Сертифицированная безопасность, соответствующая множеству стандартов.
 
-## <a name="most-deployed-rtos"></a>Наиболее развертываемая ОСРВ
-
-Согласно данным компании VDC Research, занимающейся исследованиями рынка технологий M2M, по всему миру развернуто более 6 200 000 000 экземпляров ОСРВ Azure ThreadX. Популярность ОСРВ Azure ThreadX — свидетельство ее надежности, качества, размера, производительности, расширенных функций, простоты использования и общих преимуществ для выхода на рынок.
-
-> *"Мы составили траекторию роста присутствия ThreadX на рынках беспроводных технологий и Интернета вещей с момента основания этой компании и были очень впечатлены тем, с какой скоростью ее продукты распространяются в этой отрасли,"* — Крис Роммель, исполнительный вице-президент VDC Research.
-
-## <a name="small-footprint"></a>Компактность
+## <a name="threadx-footprint"></a>Объем памяти ThreadX
 
 ОСРВ Azure ThreadX требуется очень мало занимаемой памяти — всего 2 КБ области инструкций и 1 КБ ОЗУ. В основном это обусловлено одноуровневой архитектурой picokernel™ и автоматическим масштабированием. Автоматическое масштабирование означает, что во время компоновки в окончательный образ добавляются только службы (и поддерживающая инфраструктура), используемые приложением.
 
@@ -187,7 +181,7 @@ ms.locfileid: "111988368"
 |Службы блоков памяти  |550  |
 |Службы управления байтами памяти  |900  |
 
-## <a name="fast-execution"></a>Быстрое выполнение
+## <a name="threadx-execution-speed"></a>Скорость выполнения ThreadX
 
 ОСРВ Azure ThreadX достигает переключения контекста меньше чем за микросекунду на самых популярных процессорах, значительно опережая другие коммерческие ОСРВ по этому параметру. В дополнение к быстроте ОСРВ Azure ThreadX также является высокодетерминированной. Она обеспечивает одинаковую производительность как для 200 потоков, так и для 1 потока.
 
@@ -277,31 +271,6 @@ ms.locfileid: "111988368"
 Исходный код ОСРВ Azure ThreadX и ОСРВ Azure ThreadX SMP соответствует требованиям MISRA-C:2004 и MISRA C:2012. MISRA C — это набор руководств по программированию критических систем с использованием языка программирования C. Первоначальные рекомендации MISRA C главным образом были нацелены на приложения для автомобилестроения, но теперь MISRA C широко признается стандартом, применимым к любому приложению со строгими требованиями к безопасности. ОСРВ Azure SMP ThreadX соответствует всем требуемым и обязательным правилам стандартов MISRA-C:2004 и MISRA C:2012.
 
 :::image type="content" source="media/overview-threadx/misra-logo-certification.png" alt-text="Сертификация MISRA":::
-
-## <a name="supports-most-popular-architectures"></a>Поддержка большинства популярных архитектур
-
-ОСРВ Azure ThreadX работает на большинстве популярных 32- или 64-разрядных микропроцессоров. Она не требует дополнительной настройки, полностью протестирована и поддерживается на разных архитектурах, включая следующие:
-
-* Analog Devices: SHARC, Blackfin, CM4xx;
-* Andes Core: RISC-V;
-* Ambiqmicro: микроконтроллеры Apollo;
-* ARM: ARM7, ARM9, ARM11; Cortex-M0, M3, M4, M7, A15, A5, A7, A8, A9, A5x (64-разрядные версии), A7x (64-разрядные версии), R4, R5; TrustZone ARMv8-M;
-* Cadence: Xtensa, Diamond;
-* CEVA: PSoC, PSoC 4, PSoC 5, PSoC 6, FM0+, FM3, MF4, WICED WiFi;
-* Cypress: RISC-V;
-* EnSilica: eSi-RISC;
-* Infineon: XMC1000, XMC4000, TriCore;
-* Intel и Intel FPGA: x36 и Pentium, XScale, NIOS II, Cyclone, Arria 10;
-* Microchip: AVR32, ARM7, ARM9; Cortex-M3, M4, M7; SAM3, 4, 7, 9, A, C, D, E, G, L, SV; PIC24 и PIC32;
-* Microsemi: RISC-V;
-* NXP: LPC, ARM7, ARM9, PowerPC, 68K, i.MX, ColdFire, Kinetis Cortex-M3 и M4;
-* Renesas: SH, HS, V850, RX, RZ, Synergy;
-* Silicon Labs: EFM32;
-* Synopsys: ARC 600, 700, ARC EM, ARC HS;
-* ST: STM32, ARM7, ARM9, Cortex-M3, M4, M7;
-* Tl: C5xxx, C6xxx, Stellaris, Sitara, Tiva-C;
-* Wave Computing: MIPS32 4K, 24K, 34K, 1004K, MIPS64 5K, microAptiv, interAptiv, proAptiv, M-Class;
-* Xilinx: MicroBlaze, PowerPC 405, ZYNQ, ZYNQ UltraSCALE.
 
 ## <a name="supports-most-popular-tools"></a>Поддержка большинства популярных инструментов
 
