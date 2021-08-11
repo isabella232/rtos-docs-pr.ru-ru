@@ -6,12 +6,12 @@ ms.author: philmea
 ms.date: 05/19/2020
 ms.topic: article
 ms.service: rtos
-ms.openlocfilehash: 65095e326bc6809eba6e9472e2d74325351354ca
-ms.sourcegitcommit: e3d42e1f2920ec9cb002634b542bc20754f9544e
+ms.openlocfilehash: 2b48491e3c601aeb68ecef00fd0f25d93cda6e64
+ms.sourcegitcommit: 62cfdf02628530807f4d9c390d6ab623e2973fee
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "104814996"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "115177768"
 ---
 # <a name="appendix-h---guix-build-time-configuration-flags"></a>Приложение H. Флаги конфигурации времени сборки GUIX
 
@@ -28,10 +28,6 @@ GX_SYSTEM_TIMER_MS
 TX_TIMER_TICKS_PER_SECOND
 - Значение по умолчанию: 100
 - Описание. Это значение определяет частоту прерываний таймера TX. Так как интервал таймера ThreadX по умолчанию равен 10 мс, по умолчанию используется частота 100 Гц.
-
-GX_SYSTEM_TIMER_TICKS
-- По умолчанию: (GX_SYSTEM_TIMER_MS * TX_TIMER_TICKS_PER_SECOND / 1000)
-- Описание. Это значение определяет число тактов базового таймера ОСРВ на такт таймера GUIX. Значение по умолчанию равно 2, то есть интервал таймера GUIX равен двум интервалам прерываний таймера ThreadX или 20 мс по умолчанию.
 
 GX_DISABLE_MULTITHREAD_SUPPORT
 - По умолчанию: не определено
