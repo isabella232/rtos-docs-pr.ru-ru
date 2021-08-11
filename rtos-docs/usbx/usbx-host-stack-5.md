@@ -6,12 +6,12 @@ ms.author: philmea
 ms.date: 5/19/2020
 ms.service: rtos
 ms.topic: article
-ms.openlocfilehash: bf5876042e08a59979adcd429917bfc3fbfdbc20
-ms.sourcegitcommit: e3d42e1f2920ec9cb002634b542bc20754f9544e
+ms.openlocfilehash: 2e9e2e0286300b3f79f7f9e6ad2d7fab96ba7337
+ms.sourcegitcommit: 62cfdf02628530807f4d9c390d6ab623e2973fee
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "104816467"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "115177751"
 ---
 # <a name="chapter-5---usbx-host-classes-api"></a>Глава 5. API классов узлов USBX
 
@@ -685,6 +685,9 @@ UINT ux_host_class_cdc_acm_read(
 ### <a name="description"></a>Описание
 
 Эта функция считывает данные из интерфейса cdc_acm. Вызов блокируется и возвращается только в случае ошибки или завершения передачи.
+
+> [!Note]
+> Эта функция считывает большой объем необработанных данных с устройства, поэтому она ожидает, пока буфер не будет заполнен или устройство не завершит передачу коротким пакетом (включая пакет нулевого размера). Дополнительные сведения см. в разделе [**Общие рекомендации по массовой передаче данных**](usbx-device-stack-5.md#general-considerations-for-bulk-transfer).
 
 ### <a name="parameters"></a>Параметры
 

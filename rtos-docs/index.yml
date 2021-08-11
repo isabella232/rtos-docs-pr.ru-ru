@@ -1,4 +1,4 @@
-### YamlMime:Hub
+### YamlMime:Hub 
 title: Документация по ОСРВ Microsoft Azure
 summary: Изучите документацию по ОСРВ Azure.
 brand: azure
@@ -10,112 +10,106 @@ metadata:
   author: philmea
   ms.author: philmea
   ms.date: 5/19/2020
-  ms.openlocfilehash: 12f6535be21d072fd9500c43d7a10f5f7bf0b10a
-  ms.sourcegitcommit: e3d42e1f2920ec9cb002634b542bc20754f9544e
-  ms.translationtype: HT
-  ms.contentlocale: ru-RU
-  ms.lasthandoff: 03/22/2021
-  ms.locfileid: "104797641"
 highlightedContent:
   items:
-  - title: Что такое ОСРВ Azure?
-    itemType: overview
-    url: overview-rtos.md
-  - title: Начало разработки встраиваемых устройств
-    itemType: quickstart
-    url: https://docs.microsoft.com/azure/iot-develop/quickstart-device-development
-  - title: Скачайте исходный код на сайте GitHub
-    itemType: download
-    url: https://github.com/azure-rtos/
-  - title: Azure Defender для Интернета вещей — ОСРВ (предварительная версия)
-    itemType: overview
-    url: https://docs.microsoft.com/azure/defender-for-iot/iot-security-azure-rtos
+    - title: Что такое ОСРВ Azure?
+      itemType: overview
+      url: overview-rtos.md
+    - title: Начало разработки встраиваемых устройств
+      itemType: quickstart
+      url: 'https://docs.microsoft.com/azure/iot-develop/quickstart-device-development'
+    - title: Скачайте исходный код на сайте GitHub
+      itemType: download
+      url: 'https://github.com/azure-rtos/'
+    - title: "Azure Defender для Интернета вещей\_— ОСРВ (предварительная версия)"
+      itemType: overview
+      url: 'https://docs.microsoft.com/azure/defender-for-iot/iot-security-azure-rtos'
 conceptualContent:
   title: ОСРВ Azure
   summary: Создавайте глубоко внедренные приложения Интернета вещей и пограничные устройства.
   items:
-  - title: Создание внедренного приложения
-    links:
-    - url: ./threadx/overview-threadx.md
-      itemType: overview
-      text: Что такое ThreadX в ОСРВ Azure?
-    - url: ./threadx/about-this-guide.md
-      itemType: how-to-guide
-      text: Руководство пользователя
-    footerLink:
-      url: ./threadx/index.yml
-      text: Подробнее
-  - title: Активация управления файлами
-    links:
-    - url: ./filex/overview-filex.md
-      itemType: overview
-      text: Что такое FileX в ОСРВ Azure?
-    - url: ./filex/about-this-guide.md
-      itemType: how-to-guide
-      text: Руководство пользователя
-    footerLink:
-      url: ./filex/index.yml
-      text: Подробнее
-  - title: Интеграция графических элементов
-    links:
-    - url: ./guix/overview-guix.md
-      itemType: overview
-      text: Что такое GUIX в ОСРВ Azure?
-    - url: ./guix/about-guix.md
-      itemType: how-to-guide
-      text: Руководство пользователя
-    footerLink:
-      url: ./guix/index.yml
-      text: Подробнее
-  - title: Отладка и устранение проблем
-    links:
-    - url: ./tracex/overview-tracex.md
-      itemType: overview
-      text: Что такое TraceX в ОСРВ Azure?
-    footerLink:
-      url: ./tracex/index.yml
-      text: Подробнее
-  - title: Настроить подключение к сети.
-    links:
-    - url: ./netx/overview-netx.md
-      itemType: overview
-      text: Что такое NetX в ОСРВ Azure?
-    - url: ./netx/about-this-guide.md
-      itemType: how-to-guide
-      text: Руководство пользователя
-    footerLink:
-      url: ./netx/index.yml
-      text: Подробнее
-  - title: Активация сетевого подключения и возможностей IPv6
-    links:
-    - url: ./netx-duo/overview-netx-duo.md
-      itemType: overview
-      text: Что такое NetX Duo в ОСРВ Azure?
-    - url: ./netx-duo/about-this-guide.md
-      itemType: how-to-guide
-      text: Руководство пользователя
-    footerLink:
-      url: ./netx-duo/index.yml
-      text: Подробнее
-  - title: Интерфейс с USB-устройствами
-    links:
-    - url: ./usbx/overview-usbx.md
-      itemType: overview
-      text: Что такое USBX в ОСРВ Azure?
-    - url: ./usbx/usbx-device-stack-about.md
-      itemType: how-to-guide
-      text: Руководство пользователя по стеку устройств
-    - url: ./usbx/usbx-host-stack-about.md
-      itemType: how-to-guide
-      text: Руководство пользователя по стеку узлов
-    footerLink:
-      url: ./usbx/index.yml
-      text: Подробнее
-  - title: Выравнивание износа флэш-памяти
-    links:
-    - url: ./levelx/chapter1.md
-      itemType: overview
-      text: Что такое LevelX в ОСРВ Azure?
-    footerLink:
-      url: ./levelx/index.yml
-      text: Подробнее
+    - title: Создание внедренного приложения
+      links:
+        - url: ./threadx/overview-threadx.md
+          itemType: overview
+          text: Что такое ThreadX в ОСРВ Azure?
+        - url: ./threadx/about-this-guide.md
+          itemType: how-to-guide
+          text: Руководство пользователя
+      footerLink:
+        url: ./threadx/index.yml
+        text: Подробнее
+    - title: Активация управления файлами
+      links:
+        - url: ./filex/overview-filex.md
+          itemType: overview
+          text: Что такое FileX в ОСРВ Azure?
+        - url: ./filex/about-this-guide.md
+          itemType: how-to-guide
+          text: Руководство пользователя
+      footerLink:
+        url: ./filex/index.yml
+        text: Подробнее
+    - title: Интеграция графических элементов
+      links:
+        - url: ./guix/overview-guix.md
+          itemType: overview
+          text: Что такое GUIX в ОСРВ Azure?
+        - url: ./guix/about-guix.md
+          itemType: how-to-guide
+          text: Руководство пользователя
+      footerLink:
+        url: ./guix/index.yml
+        text: Подробнее
+    - title: Отладка и устранение проблем
+      links:
+        - url: ./tracex/overview-tracex.md
+          itemType: overview
+          text: Что такое TraceX в ОСРВ Azure?
+      footerLink:
+        url: ./tracex/index.yml
+        text: Подробнее
+    - title: Настроить подключение к сети.
+      links:
+        - url: ./netx/overview-netx.md
+          itemType: overview
+          text: Что такое NetX в ОСРВ Azure?
+        - url: ./netx/about-this-guide.md
+          itemType: how-to-guide
+          text: Руководство пользователя
+      footerLink:
+        url: ./netx/index.yml
+        text: Подробнее
+    - title: Активация сетевого подключения и возможностей IPv6
+      links:
+        - url: ./netx-duo/overview-netx-duo.md
+          itemType: overview
+          text: Что такое NetX Duo в ОСРВ Azure?
+        - url: ./netx-duo/about-this-guide.md
+          itemType: how-to-guide
+          text: Руководство пользователя
+      footerLink:
+        url: ./netx-duo/index.yml
+        text: Подробнее
+    - title: Интерфейс с USB-устройствами
+      links:
+        - url: ./usbx/overview-usbx.md
+          itemType: overview
+          text: Что такое USBX в ОСРВ Azure?
+        - url: ./usbx/usbx-device-stack-about.md
+          itemType: how-to-guide
+          text: Руководство пользователя по стеку устройств
+        - url: ./usbx/usbx-host-stack-about.md
+          itemType: how-to-guide
+          text: Руководство пользователя по стеку узлов
+      footerLink:
+        url: ./usbx/index.yml
+        text: Подробнее
+    - title: Выравнивание износа флэш-памяти
+      links:
+        - url: ./levelx/chapter1.md
+          itemType: overview
+          text: Что такое LevelX в ОСРВ Azure?
+      footerLink:
+        url: ./levelx/index.yml
+        text: Подробнее
