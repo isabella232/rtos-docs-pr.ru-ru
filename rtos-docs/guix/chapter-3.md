@@ -6,12 +6,12 @@ ms.author: philmea
 ms.date: 05/19/2020
 ms.topic: article
 ms.service: rtos
-ms.openlocfilehash: 2a53da048b18d35b6b15a4ad8d4138e1a2acd4e8
-ms.sourcegitcommit: 95f4ae0842a486fec8f10d1480203695faa9592d
+ms.openlocfilehash: 37c1103d6b690350b6fa0794b9c719f31a112ff3babf88f125d3735f8ef935b6
+ms.sourcegitcommit: 93d716cf7e3d735b18246d659ec9ec7f82c336de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/09/2021
-ms.locfileid: "111875258"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "116785229"
 ---
 # <a name="chapter-3---functional-overview-of-guix"></a>Глава 3. Обзор функций GUIX
 
@@ -990,7 +990,7 @@ typedef struct GX_BRUSH_STRUCT
 Если корневое окно является перемещаемым, оно перемещается не путем изменения его положения на холсте подобно дочернему окну, а путем перемещения самого холста.
 Эта возможность позволяет корневому окну GUIX использовать оборудование, которое поддерживает несколько буферов кадров с аппаратными регистрами смещения.
 
-### <a name="background"></a>Фон 
+### <a name="background"></a>Историческая справка 
 
 Для фона окна используются либо сплошные цвета, либо растровые изображения. На системном уровне используется фон окна по умолчанию, который предоставляет значение по умолчанию для начального набора окон. Разумеется, любое фоновое окно можно изменить с помощью API GUIX.
 

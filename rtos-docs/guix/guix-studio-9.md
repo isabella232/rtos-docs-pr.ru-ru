@@ -6,12 +6,12 @@ ms.author: kemaxwel
 ms.date: 9/30/2020
 ms.service: rtos
 ms.topic: article
-ms.openlocfilehash: 9f9bfc67c524a77b5bf736407bf2ca372ce98308
-ms.sourcegitcommit: e3d42e1f2920ec9cb002634b542bc20754f9544e
+ms.openlocfilehash: bd88054d974aabea30b50c6f4e10b4c5df9994db03ab84a4a5d8f9394b4d6ed8
+ms.sourcegitcommit: 93d716cf7e3d735b18246d659ec9ec7f82c336de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "104814915"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "116785402"
 ---
 # <a name="chapter-9-guix-studio-command-line"></a>Глава 9. Командная строка GUIX Studio
 

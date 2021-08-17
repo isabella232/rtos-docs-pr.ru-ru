@@ -6,12 +6,12 @@ ms.author: philmea
 ms.date: 06/04/2020
 ms.topic: article
 ms.service: rtos
-ms.openlocfilehash: d1137fae4dfea428d50e2defed94de6a838b01c6
-ms.sourcegitcommit: e3d42e1f2920ec9cb002634b542bc20754f9544e
+ms.openlocfilehash: d184fc3c5e6ed74ef25045561b1613e280672f77385fbb13b8e84bccf051b301
+ms.sourcegitcommit: 93d716cf7e3d735b18246d659ec9ec7f82c336de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "104815120"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "116782818"
 ---
 # <a name="chapter-3---description-of-azure-rtos-netx-pppoe-server-services"></a>Глава 3. Описание служб сервера PPPoE для ОСРВ Azure
 
@@ -560,7 +560,7 @@ VOID PppInitnd(UINT length, UCHAR *aData);
 
 ### <a name="return-values"></a>Возвращаемые значения
 
-**Нет**
+**None**
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -601,7 +601,7 @@ VOID PppDiscoverCnf (UINT length, UCHAR *aData, UINT interfaceHandle);
 
 ### <a name="return-values"></a>Возвращаемые значения
 
-**Нет**
+**None**
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -635,7 +635,7 @@ VOID PppOpenCnf (UCHAR accept, UINT interfaceHandle);
 
 ### <a name="return-values"></a>Возвращаемые значения
 
-**Нет**
+**None**
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -671,7 +671,7 @@ VOID PppCloseInd (UINT interfaceHandle, UCHAR *causeCode);
 
 ### <a name="return-values"></a>Возвращаемые значения
 
-**Нет**
+**None**
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -704,7 +704,7 @@ VOID PppCloseCnf (UINT interfaceHandle);
 
 ### <a name="return-values"></a>Возвращаемые значения
 
-**Нет**
+**None**
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -740,7 +740,7 @@ VOID PppTransmitDataCnf (UINT interfaceHandle, UCHAR *aData,
 
 ### <a name="return-values"></a>Возвращаемые значения
 
-**Нет**
+**None**
 
 ### <a name="allowed-from"></a>Допустимые источники
 
@@ -777,7 +777,7 @@ VOID PppReceiveDataInd(UINT interfaceHandle, UINT length, UCHAR *aData);
 
 ### <a name="return-values"></a>Возвращаемые значения
 
-**Нет**
+**None**
 
 ### <a name="allowed-from"></a>Допустимые источники
 

@@ -6,12 +6,12 @@ ms.author: philmea
 ms.date: 06/04/2020
 ms.topic: article
 ms.service: rtos
-ms.openlocfilehash: 1a0ab96a454bea9f56ced0d7aa8de5d481b284e9
-ms.sourcegitcommit: e3d42e1f2920ec9cb002634b542bc20754f9544e
+ms.openlocfilehash: f68d6ac942c829dbf6eb9be334328b1b58a47ea370a73d37f471ec32cd46a360
+ms.sourcegitcommit: 93d716cf7e3d735b18246d659ec9ec7f82c336de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "104815160"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "116782393"
 ---
 # <a name="chapter-3---description-of-azure-rtos-netx-pop3-client-services"></a>Глава 3. Описание служб клиента NetX POP3 для ОСРВ Azure
 

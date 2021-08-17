@@ -6,12 +6,12 @@ ms.author: philmea
 ms.date: 06/04/2020
 ms.topic: article
 ms.service: rtos
-ms.openlocfilehash: 56f0d8edb991fff6ae30b6411e375ace58c544f7
-ms.sourcegitcommit: e3d42e1f2920ec9cb002634b542bc20754f9544e
+ms.openlocfilehash: db7b7469bda02597db6428ecbf080b37a095413411eef2abefb1c4804d7bb1d3
+ms.sourcegitcommit: 93d716cf7e3d735b18246d659ec9ec7f82c336de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "104814524"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "116799069"
 ---
 # <a name="chapter-3---description-of-azure-rtos-netx-duo-tftp-services"></a>Глава 3. Описание служб ОСРВ Azure NetX Duo TFTP
 
@@ -273,7 +273,7 @@ UINT nx_tftp_client_file_open(NX_TFTP_CLIENT *tftp_client_ptr,
 
 - **wait_option**: определяет, как долго служба будет ожидать открытия файла клиента TFTP. Параметры ожидания определяются следующим образом:
 
-  **значение времени ожидания** (от 0X00000001 до 0xFFFFFFFE);
+  **Значение времени ожидания** (от 0x00000001 до 0xFFFFFFFE)
 
   **TX_WAIT_FOREVER** (0xFFFFFFFF). 
   
@@ -360,7 +360,7 @@ UINT nxd_tftp_client_file_open(NX_TFTP_CLIENT *tftp_client_ptr,
 
 - **wait_option**: определяет, как долго служба будет ожидать открытия файла клиента TFTP. Параметры ожидания определяются следующим образом:
 
-  **значение времени ожидания** (от 0X00000001 до 0xFFFFFFFE);
+  **Значение времени ожидания** (от 0x00000001 до 0xFFFFFFFE)
 
   **TX_WAIT_FOREVER** (0xFFFFFFFF).
 
@@ -443,7 +443,7 @@ UINT nxd_tftp_client_file_read(NX_TFTP_CLIENT *tftp_client_ptr,
 
 - **wait_option**: определяет, как долго служба будет ожидать завершения чтения. Параметры ожидания определяются следующим образом:
 
-  **значение времени ожидания** (от 0X00000001 до 0xFFFFFFFE);
+  **Значение времени ожидания** (от 0x00000001 до 0xFFFFFFFE)
 
   **TX_WAIT_FOREVER** (0xFFFFFFFF).
 
@@ -518,7 +518,7 @@ UINT nxd_tftp_client_file_write(NX_TFTP_CLIENT *tftp_client_ptr,
 
 - **wait_option**: определяет, как долго служба будет ожидать завершения записи. Параметры ожидания определяются следующим образом:
 
-  **значение времени ожидания** (от 0X00000001 до 0xFFFFFFFE);
+  **Значение времени ожидания** (от 0x00000001 до 0xFFFFFFFE)
 
   **TX_WAIT_FOREVER** (0xFFFFFFFF).
 
@@ -590,7 +590,7 @@ UINT nxd_tftp_client_packet_allocate(NX_PACKET_POOL *pool_ptr,
 
 - **wait_option**: определяет, как долго служба будет ожидать завершения выделения пакета. Параметры ожидания определяются следующим образом:
 
-  **значение времени ожидания** (от 0X00000001 до 0xFFFFFFFE);
+  **Значение времени ожидания** (от 0x00000001 до 0xFFFFFFFE)
 
   **TX_WAIT_FOREVER** (0xFFFFFFFF).
 
@@ -721,7 +721,7 @@ UINT nxd_tftp_server_create(NX_TFTP_SERVER *tftp_server_ptr,
 
 ### <a name="allowed-from"></a>Допустимые источники
 
-Инициализация, потоки.
+Инициализация, потоки
 
 ### <a name="example"></a>Например, .
 

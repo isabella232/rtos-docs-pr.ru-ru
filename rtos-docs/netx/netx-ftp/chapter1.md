@@ -6,12 +6,12 @@ ms.author: philmea
 ms.date: 06/04/2020
 ms.topic: article
 ms.service: rtos
-ms.openlocfilehash: 86e132daf96f9039631234f10c8e239b61ad5126
-ms.sourcegitcommit: e3d42e1f2920ec9cb002634b542bc20754f9544e
+ms.openlocfilehash: 35a7487720578ce8da578c490d96aa3c444ee818167b1bbd10833556e34b3dce
+ms.sourcegitcommit: 93d716cf7e3d735b18246d659ec9ec7f82c336de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "104815208"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "116799478"
 ---
 # <a name="chapter-1---introduction-to-azure-rtos-netx-ftp"></a>Глава 1. Введение в FTP NetX для ОСРВ Azure
 

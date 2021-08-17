@@ -6,12 +6,12 @@ ms.service: rtos
 ms.topic: article
 ms.date: 5/19/2020
 ms.author: philmea
-ms.openlocfilehash: f296137d23b9f3c1c4fd115947bb50a32b768123
-ms.sourcegitcommit: e3d42e1f2920ec9cb002634b542bc20754f9544e
+ms.openlocfilehash: 7d5c90675728fc7e374d625f5a9ae27340268ca8398200c68fb7113a84aa2983
+ms.sourcegitcommit: 93d716cf7e3d735b18246d659ec9ec7f82c336de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "104815735"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "116801790"
 ---
 # <a name="chapter-5---generating-trace-buffers"></a>Глава 5. Создание буферов трассировки
 
@@ -108,7 +108,7 @@ UINT tx_trace_enable (VOID *trace_buffer_start,
 
 #### <a name="allowed-from"></a>Допустимые источники
 
-Инициализация и потоки.
+Инициализация и потоки
 
 #### <a name="example"></a>Пример
 
@@ -191,7 +191,7 @@ UX_TRACE_DEVICE_CLASS_EVENTS          0x40000000
 
 #### <a name="allowed-from"></a>Допустимые источники
 
-Инициализация и потоки.
+Инициализация и потоки
 
 #### <a name="example"></a>Пример
 
@@ -273,7 +273,7 @@ UX_TRACE_DEVICE_CLASS_EVENTS         0x40000000
 
 #### <a name="allowed-from"></a>Допустимые источники
 
-Инициализация и потоки.
+Инициализация и потоки
 
 #### <a name="example"></a>Пример
 
@@ -318,7 +318,7 @@ UINT tx_trace_disable (VOID);
 
 #### <a name="allowed-from"></a>Допустимые источники
 
-Инициализация и потоки.
+Инициализация и потоки
 
 #### <a name="example"></a>Пример 
 
@@ -503,7 +503,7 @@ UINT tx_trace_user_event_insert (ULONG event_id,
 
 #### <a name="allowed-from"></a>Допустимые источники
 
-Инициализация и потоки.
+Инициализация и потоки
 
 #### <a name="example"></a>Пример
 

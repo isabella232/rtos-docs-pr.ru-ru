@@ -6,12 +6,12 @@ ms.author: philmea
 ms.date: 06/04/2020
 ms.topic: article
 ms.service: rtos
-ms.openlocfilehash: d24c69cf6b8c2bb84b7155e49a54e8296ee662f0
-ms.sourcegitcommit: e3d42e1f2920ec9cb002634b542bc20754f9544e
+ms.openlocfilehash: 702499184b12484fa5862ba83ff3fadb8fccea31089b6bf8b71daf267e8c84a3
+ms.sourcegitcommit: 93d716cf7e3d735b18246d659ec9ec7f82c336de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "104815243"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "116799529"
 ---
 # <a name="chapter-3---description-of-azure-rtos-netx-dhcp-server-services"></a>Глава 3. Описание служб сервера ОСРВ Azure NetX DHCP
 
@@ -268,7 +268,7 @@ UINT nx_dhcp_server_start(NX_DHCP_SERVER *dhcp_ptr);
 
 ### <a name="input-parameters"></a>Входные параметры
 
-- **dhcp_ptr**: указатель на созданный ранее экземпляр DHCP.
+- **dhcp_ptr**: указатель на ранее созданный экземпляр DHCP
 
 ### <a name="return-values"></a>Возвращаемые значения
 

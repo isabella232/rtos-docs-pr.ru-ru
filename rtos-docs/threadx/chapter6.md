@@ -6,12 +6,12 @@ ms.author: philmea
 ms.date: 05/19/2020
 ms.topic: article
 ms.service: rtos
-ms.openlocfilehash: be85ba77e5c27366f61899c0939be7cad1845bbe
-ms.sourcegitcommit: e3d42e1f2920ec9cb002634b542bc20754f9544e
+ms.openlocfilehash: 67054d67d0a6babc50a489c4ec4b738abf3efccab10060d307106e8344b00d02
+ms.sourcegitcommit: 93d716cf7e3d735b18246d659ec9ec7f82c336de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "104814355"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "116783379"
 ---
 # <a name="chapter-6---demonstration-system-for-azure-rtos-threadx"></a>Глава 6. Демонстрационная система ThreadX для ОСРВ Azure
 

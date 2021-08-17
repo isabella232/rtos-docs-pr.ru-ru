@@ -6,12 +6,12 @@ ms.author: philmea
 ms.date: 05/19/2020
 ms.topic: article
 ms.service: rtos
-ms.openlocfilehash: 720e573b53070a754618830134f63a8421b9fd29
-ms.sourcegitcommit: e3d42e1f2920ec9cb002634b542bc20754f9544e
+ms.openlocfilehash: f1ebbd4d78f96a257fc6cf62474917a1d618524ff6f27f99c108f904589f84fe
+ms.sourcegitcommit: 93d716cf7e3d735b18246d659ec9ec7f82c336de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "104814480"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "116801943"
 ---
 # <a name="chapter-4---description-of-azure-rtos-netx-services"></a>Глава 4. Описание служб NetX для ОСРВ Azure
 
@@ -110,7 +110,7 @@ UINT nx_arp_dynamic_entry_set(
 
 ### <a name="preemption-possible"></a>Возможно вытеснение
 
-Нет
+нет
 
 ### <a name="example"></a>Пример
 
@@ -279,7 +279,7 @@ UINT nx_arp_hardware_address_find(
 
 ### <a name="preemption-possible"></a>Возможно вытеснение
 
-Нет
+нет
 
 ### <a name="example"></a>Пример
 
@@ -538,7 +538,7 @@ UINT nx_arp_static_entry_create(
 
 ### <a name="preemption-possible"></a>Возможно вытеснение
 
-Нет
+нет
 
 ### <a name="example"></a>Пример
 
@@ -718,7 +718,7 @@ UINT nx_icmp_info_get(
 
 ### <a name="preemption-possible"></a>Возможно вытеснение
 
-Нет
+нет
 
 ### <a name="example"></a>Пример
 
@@ -903,7 +903,7 @@ UINT nx_igmp_info_get(
 
 ### <a name="preemption-possible"></a>Возможно вытеснение
 
-Нет
+нет
 
 ### <a name="example"></a>Пример
 
@@ -1349,7 +1349,7 @@ UINT nx_ip_address_set(
 
 ### <a name="preemption-possible"></a>Возможно вытеснение
 
-Нет
+нет
 
 ### <a name="example"></a>Пример
 
@@ -2089,7 +2089,7 @@ UINT nx_ip_interface_address_set(
 
 ### <a name="preemption-possible"></a>Возможно вытеснение
 
-Нет
+нет
 
 ### <a name="example"></a>Пример
 
@@ -2232,7 +2232,7 @@ UINT nx_ip_interface_info_get(
 
 ### <a name="preemption-possible"></a>Возможно вытеснение
 
-Нет
+нет
 
 ### <a name="example"></a>Пример
 
@@ -2313,7 +2313,7 @@ UINT nx_ip_interface_status_check(
 
 ### <a name="preemption-possible"></a>Возможно вытеснение
 
-Нет
+нет
 
 ### <a name="example"></a>Пример
 
@@ -2418,7 +2418,7 @@ UINT nx_ip_raw_packet_disable(NX_IP *ip_ptr);
 
 ### <a name="preemption-possible"></a>Возможно вытеснение
 
-Нет
+нет
 
 ### <a name="example"></a>Пример
 
@@ -2532,7 +2532,7 @@ UINT nx_ip_raw_packet_interface_send(
 
 ### <a name="preemption-possible"></a>Возможно вытеснение
 
-Нет
+нет
 
 ### <a name="example"></a>Пример
 
@@ -3047,7 +3047,7 @@ UINT nx_packet_data_append(
 
 ### <a name="preemption-possible"></a>Возможно вытеснение
 
-Нет
+нет
 
 ### <a name="example"></a>Пример
 
@@ -3549,7 +3549,7 @@ UINT nx_rarp_disable(NX_IP *ip_ptr);
 
 ### <a name="preemption-possible"></a>Возможно вытеснение
 
-Нет
+нет
 
 ### <a name="example"></a>Пример
 
@@ -3699,7 +3699,7 @@ None
 
 ### <a name="preemption-possible"></a>Возможно вытеснение
 
-Нет
+нет
 
 ### <a name="example"></a>Пример
 
@@ -3762,7 +3762,7 @@ UINT nx_tcp_client_socket_bind(
 
 ### <a name="preemption-possible"></a>Возможно вытеснение
 
-Нет
+нет
 
 ### <a name="example"></a>Пример
 
@@ -3836,7 +3836,7 @@ UINT nx_tcp_client_socket_connect(
 
 ### <a name="preemption-possible"></a>Возможно вытеснение
 
-Нет
+нет
 
 ### <a name="example"></a>Пример
 
@@ -4401,7 +4401,7 @@ UINT nx_tcp_server_socket_listen(
 
 ### <a name="preemption-possible"></a>Возможно вытеснение
 
-Нет
+нет
 
 ### <a name="example"></a>Пример
 
@@ -4840,7 +4840,7 @@ UINT nx_tcp_server_socket_unlisten(NX_IP *ip_ptr, UINT port);
 
 ### <a name="preemption-possible"></a>Возможно вытеснение
 
-Нет
+нет
 
 ### <a name="example"></a>Пример
 
@@ -4980,7 +4980,7 @@ UINT nx_tcp_socket_bytes_available(
 
 ### <a name="preemption-possible"></a>Возможно вытеснение
 
-Нет
+нет
 
 ### <a name="example"></a>Пример
 
@@ -5062,7 +5062,7 @@ UINT nx_tcp_socket_create(
 
 ### <a name="preemption-possible"></a>Возможно вытеснение
 
-Нет
+нет
 
 ### <a name="example"></a>Пример
 
@@ -5529,7 +5529,7 @@ UINT nx_tcp_socket_mss_peer_get(
 
 ### <a name="preemption-possible"></a>Возможно вытеснение
 
-Нет
+нет
 
 ### <a name="example"></a>Пример
 
@@ -5647,7 +5647,7 @@ UINT nx_tcp_socket_peer_info_get(
 
 ### <a name="preemption-possible"></a>Возможно вытеснение
 
-Нет
+нет
 
 ### <a name="example"></a>Пример
 
@@ -5713,7 +5713,7 @@ UINT nx_tcp_socket_receive(
 
 ### <a name="preemption-possible"></a>Возможно вытеснение
 
-Нет
+нет
 
 ### <a name="example"></a>Пример
 
@@ -5816,7 +5816,7 @@ UINT nx_tcp_socket_send(
 
 - **socket_ptr**: указатель на ранее подключенный экземпляр сокета TCP
 - **packet_ptr**: указатель на пакет данных TCP
-- **wait_option** определяет поведение службы в случае, если запрос превышает размер окна получателя Параметры ожидания определяются следующим образом.
+- **wait_option** — определяет поведение службы в случае, если запрос превышает размер окна получателя. Параметры ожидания определяются следующим образом.
 - NX_NO_WAIT (0x00000000)
 - NX_WAIT_FOREVER (0xFFFFFFFF)
 - Значение времени ожидания в тактах (от 0x00000001 до 0xFFFFFFFE)
@@ -5843,7 +5843,7 @@ UINT nx_tcp_socket_send(
 
 ### <a name="preemption-possible"></a>Возможно вытеснение
 
-Нет
+нет
 
 ### <a name="example"></a>Пример
 
@@ -5919,7 +5919,7 @@ UINT nx_tcp_socket_state_wait(
 
 ### <a name="preemption-possible"></a>Возможно вытеснение
 
-Нет
+нет
 
 ### <a name="example"></a>Пример
 
@@ -5980,7 +5980,7 @@ UINT nx_tcp_socket_timed_wait_callback(
 
 ### <a name="preemption-possible"></a>Возможно вытеснение
 
-Нет
+нет
 
 ### <a name="example"></a>Пример
 
@@ -6039,7 +6039,7 @@ UINT nx_tcp_socket_transmit_configure(
 
 ### <a name="preemption-possible"></a>Возможно вытеснение
 
-Нет
+нет
 
 ### <a name="example"></a>Пример
 
@@ -6100,7 +6100,7 @@ UINT nx_tcp_socket_window_update_notify_set(
 
 ### <a name="preemption-possible"></a>Возможно вытеснение
 
-Нет
+нет
 
 ### <a name="example"></a>Пример
 
@@ -6222,7 +6222,7 @@ UINT nx_udp_free_port_find(
 
 ### <a name="preemption-possible"></a>Возможно вытеснение
 
-Нет
+нет
 
 ### <a name="example"></a>Пример
 
@@ -6431,7 +6431,7 @@ UINT nx_udp_socket_bind(
 
 ### <a name="preemption-possible"></a>Возможно вытеснение
 
-Нет
+нет
 
 ### <a name="example"></a>Пример
 
@@ -6491,7 +6491,7 @@ UINT nx_udp_socket_bytes_available(
 
 ### <a name="preemption-possible"></a>Возможно вытеснение
 
-Нет
+нет
 
 ### <a name="example"></a>Пример
 
@@ -6731,7 +6731,7 @@ UINT nx_udp_socket_delete(NX_UDP_SOCKET *socket_ptr);
 
 ### <a name="preemption-possible"></a>Возможно вытеснение
 
-Нет
+нет
 
 ### <a name="example"></a>Пример
 
@@ -6802,7 +6802,7 @@ UINT nx_udp_socket_info_get(
 
 ### <a name="preemption-possible"></a>Возможно вытеснение
 
-Нет
+нет
 
 ### <a name="example"></a>Пример
 
@@ -6864,7 +6864,7 @@ UINT nx_udp_socket_port_get(NX_UDP_SOCKET *socket_ptr, UINT *port_ptr);
 
 ### <a name="preemption-possible"></a>Возможно вытеснение
 
-Нет
+нет
 
 ### <a name="example"></a>Пример
 
@@ -6921,7 +6921,7 @@ UINT nx_udp_socket_receive(
 
 ### <a name="preemption-possible"></a>Возможно вытеснение
 
-Нет
+нет
 
 ### <a name="example"></a>Пример
 
@@ -6974,7 +6974,7 @@ UINT nx_udp_socket_receive_notify(
 
 ### <a name="preemption-possible"></a>Возможно вытеснение
 
-Нет
+нет
 
 ### <a name="example"></a>Пример
 
@@ -7241,7 +7241,7 @@ UINT nx_udp_source_extract(
 
 ### <a name="preemption-possible"></a>Возможно вытеснение
 
-Нет
+нет
 
 ### <a name="example"></a>Пример
 

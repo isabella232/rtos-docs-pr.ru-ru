@@ -6,12 +6,12 @@ ms.author: philmea
 ms.date: 07/13/2020
 ms.topic: article
 ms.service: rtos
-ms.openlocfilehash: 17d910647db7b207280b3fbd9e90c468293a8e67
-ms.sourcegitcommit: e3d42e1f2920ec9cb002634b542bc20754f9544e
+ms.openlocfilehash: 081fbbd917391a4183488f0fbf124cbd8499c5f8b6d619f7b6cff9f61e6d0bcb
+ms.sourcegitcommit: 93d716cf7e3d735b18246d659ec9ec7f82c336de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "104815144"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "116798798"
 ---
 # <a name="chapter-2---installation-and-use-of-azure-rtos-netx-pppoe-client"></a>Глава 2. Установка и использование клиента ОСРВ Azure NetX PPPoE
 

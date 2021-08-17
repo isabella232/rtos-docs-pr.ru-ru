@@ -6,12 +6,12 @@ ms.author: v-condav
 ms.date: 01/22/2021
 ms.topic: article
 ms.service: rtos
-ms.openlocfilehash: 24b7ff66fb4d060075eb6bc81bed45b3479e18dc
-ms.sourcegitcommit: e3d42e1f2920ec9cb002634b542bc20754f9544e
+ms.openlocfilehash: be6d9d854ce89140ce749fbeb0364678077337bf19ddc1055d286d0f624e8bd5
+ms.sourcegitcommit: 93d716cf7e3d735b18246d659ec9ec7f82c336de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "104814679"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "116783464"
 ---
 # <a name="chapter-3--functional-description-of-lwm2m-client"></a>Глава 3. Функциональное описание клиента LWM2M
 

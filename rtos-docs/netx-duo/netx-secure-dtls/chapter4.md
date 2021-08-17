@@ -6,12 +6,12 @@ ms.author: philmea
 ms.date: 06/04/2020
 ms.topic: article
 ms.service: rtos
-ms.openlocfilehash: e795a5fa35a4590e508c7fe2eec53f5494809657
-ms.sourcegitcommit: e3d42e1f2920ec9cb002634b542bc20754f9544e
+ms.openlocfilehash: 45966e7c8ea9be18bf294e8a7540e7226e803f29ae4f3ad3faaa29e4939c2ed8
+ms.sourcegitcommit: 93d716cf7e3d735b18246d659ec9ec7f82c336de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "104814512"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "116801854"
 ---
 # <a name="chapter-4-description-of-azure-rtos-netx-secure-dtls-services"></a>Глава 4. Описание служб ОСРВ Azure NetX Secure DTLS
 
@@ -236,7 +236,7 @@ UINT  nx_secure_dtls_packet_allocate(
 
 ### <a name="return-values"></a>Возвращаемые значения
 
-- **NX_SUCCESS** (0x00): пакет выделен успешно.
+- **NX_SUCCESS** (0x00) — пакет выделен успешно.
 - **NX_SECURE_TLS_ALLOCATE_PACKET_FAILED** (0x111): не удалось выделить базовый пакет.
 - **NX_SECURE_TLS_SESSION_UNINITIALIZED** (0x101): указанный сеанс DTLS не инициализирован.
 
@@ -706,7 +706,7 @@ void dtls_server_thread(void)
 
 ### <a name="see-also"></a>См. также:
 
-- nx_secure_dtls_server_start, nx_secure_dtls_server_create,
+- nx_secure_dtls_server_start, nx_secure_dtls_server_create
 - nx_secure_dtls_session_receive, nx_secure_dtls_server_session_send
 - nx_secure_dtls_server_session_start
 
@@ -2504,7 +2504,7 @@ UINT nx_secure_dtls_session_create(
 
 ### <a name="description"></a>Описание
 
-Эта служба создает и настраивает сеанс DTLS. Как правило, она используется для создания сеансов клиента DTLS, так как сеансами сервера DTLS управляет механизм сервера DTLS (см. описание службы *nx_secure_dtls_server_create*), но возможны случаи, в которых приложению необходимо создать единственный изолированный экземпляр сеанса сервера DTLS, для чего можно использовать эту службу<sup>7</sup>.
+Эта служба создает и настраивает сеанс DTLS. Как правило, она используется для создания сеансов клиента DTLS, так как сеансами сервера DTLS управляет механизм сервера DTLS (см. описание службы *nx_secure_dtls_server_create*), но возможны случаи, в которых приложению необходимо создать единственный изолированный экземпляр сеанса сервера DTLS, для чего можно использовать эту службу <sup>7</sup>.
 
 Параметры определяют сведения и выделение памяти, необходимые для создания экземпляра сеанса DTLS. Параметр crypto_table указывает таблицу TLS, содержащую все криптографические процедуры, необходимые для шифрования и проверки подлинности TLS или DTLS. Параметр metadata_buffer используется для вычислительных операций шифрования (см. описание службы nx_secure_tls_metadata_size_calculate в руководстве пользователя NetX Secure TLS), а параметр packet_reassembly_buffer используется для преобразования датаграмм UDP в полные записи DTLS для расшифровки.
 

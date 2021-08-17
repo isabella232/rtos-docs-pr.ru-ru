@@ -6,12 +6,12 @@ ms.author: philmea
 ms.date: 05/19/2020
 ms.topic: article
 ms.service: rtos
-ms.openlocfilehash: 1d94dbb9d7d53ec3e1900188142974cc981dfea9
-ms.sourcegitcommit: e3d42e1f2920ec9cb002634b542bc20754f9544e
+ms.openlocfilehash: 7928e1781be03969de25901ebbe728e6554e96befb59c860f4ea53663c28932d
+ms.sourcegitcommit: 93d716cf7e3d735b18246d659ec9ec7f82c336de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "104815567"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "116784603"
 ---
 # <a name="appendix-f---guix-rtos-binding-services"></a>Приложение Е. Службы привязки GUIX для ОСРВ
 

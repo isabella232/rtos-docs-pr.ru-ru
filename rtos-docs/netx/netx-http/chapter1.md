@@ -6,12 +6,12 @@ ms.author: philmea
 ms.date: 06/08/2020
 ms.topic: article
 ms.service: rtos
-ms.openlocfilehash: 6137cc0d8deb753d784be844d5abc7778dd62295
-ms.sourcegitcommit: e3d42e1f2920ec9cb002634b542bc20754f9544e
+ms.openlocfilehash: 1e37328ab9cff0ab635a00113a83ee256c39303ce24b0cb292b6c2eaa71236f5
+ms.sourcegitcommit: 93d716cf7e3d735b18246d659ec9ec7f82c336de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "104815199"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "116799393"
 ---
 # <a name="chapter-1---introduction-to-netx-http"></a>Глава 1. Введение в NetX HTTP
 

@@ -6,12 +6,12 @@ ms.author: philmea
 ms.date: 06/04/2020
 ms.topic: article
 ms.service: rtos
-ms.openlocfilehash: f24d7366d27a8223b069a54ef7b93f6b3e38bf3a
-ms.sourcegitcommit: e3d42e1f2920ec9cb002634b542bc20754f9544e
+ms.openlocfilehash: 980348b5c50acfb82b2d8fda8786a1d48bf59c69e7949b6f62b64515b59bf42d
+ms.sourcegitcommit: 93d716cf7e3d735b18246d659ec9ec7f82c336de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "104815155"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "116798764"
 ---
 # <a name="chapter-3---description-of-azure-rtos-netx-point-to-point-protocol-ppp-services"></a>Глава 3. Описание служб протокола PPP для NetX в ОСРВ Azure
 

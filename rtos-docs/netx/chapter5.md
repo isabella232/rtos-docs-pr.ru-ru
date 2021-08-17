@@ -6,12 +6,12 @@ ms.author: philmea
 ms.date: 09/11/2020
 ms.topic: article
 ms.service: rtos
-ms.openlocfilehash: ccc55111d785d84cdb193c387830abbc03a15e7c
-ms.sourcegitcommit: e3d42e1f2920ec9cb002634b542bc20754f9544e
+ms.openlocfilehash: 0770d6beb8b2715a8e5dddf1bdf187c0cd1d5ffd74e7bea9b7ff9bdf1785d088
+ms.sourcegitcommit: 93d716cf7e3d735b18246d659ec9ec7f82c336de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "104815288"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "116801926"
 ---
 # <a name="chapter-5---netx-network-drivers"></a>Глава 5. Сетевые драйверы для NetX
 
@@ -132,7 +132,7 @@ NetX сериализует все операции доступа к драйв
 |-----------------------------------|---------------------------------------------------------------|
 | nx_ip_driver_command              | NX_LINK_PACKET_SEND |
 | nx_ip_driver_ptr                  | Указатель на экземпляр IP-адреса |
-| nx_ip_driver_packet               | Указатель на пакет для отправки |
+| nx_ip_driver_packet               | Указатель на отправляемый пакет |
 | nx_ip_driver_interface            | Указатель на экземпляр интерфейса             |
 | nx_ip_driver_physical_address_msw | Старшие 32 бита физического адреса (только если требуется физическое сопоставление) |
 | nx_ip_driver_physical_address_lsw | Младшие 32 бита физического адреса (только если требуется физическое сопоставление)    |
@@ -176,7 +176,7 @@ NetX сериализует все операции доступа к драйв
 |-----------------------------------| ------------------------------------|
 | nx_ip_driver_command              | NX_LINK_ARP_RESPONSE_SEND |
 | nx_ip_driver_ptr                  | Указатель на экземпляр IP-адреса |
-| nx_ip_driver_packet               | Указатель на пакет для отправки|
+| nx_ip_driver_packet               | Указатель на отправляемый пакет|
 | nx_ip_driver_physical_address_msw | Старшие 32 бита физического адреса |
 | nx_ip_driver_physical_address_lsw | Младшие 32 бита физического адреса                     |
 | nx_ip_driver_interface            | Указатель на экземпляр интерфейса |
@@ -195,7 +195,7 @@ NetX сериализует все операции доступа к драйв
 |-----------------------------------|---------------------------------|
 | nx_ip_driver_command              |NX_LINK_RARP_SEND |
 | nx_ip_driver_ptr                  | Указатель на экземпляр IP-адреса |
-| nx_ip_driver_packet               | Указатель на пакет для отправки |
+| nx_ip_driver_packet               | Указатель на отправляемый пакет |
 | nx_ip_driver_physical_address_msw | 0x0000FFFF (широковещательная рассылка) |
 | nx_ip_driver_physical_address_lsw | 0xFFFFFFFF (широковещательная рассылка) |
 | Элемент NX_IP_DRIVER               | Значение |

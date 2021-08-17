@@ -6,12 +6,12 @@ ms.author: philmea
 ms.date: 06/04/2020
 ms.topic: article
 ms.service: rtos
-ms.openlocfilehash: 18e059e79f9742eaaafffbf15b55b4b5063363f8
-ms.sourcegitcommit: e3d42e1f2920ec9cb002634b542bc20754f9544e
+ms.openlocfilehash: 922d41dc374ccd782809404776f18f2aed8f5e3c34b7c9e143075c0ee5567220
+ms.sourcegitcommit: 93d716cf7e3d735b18246d659ec9ec7f82c336de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "104815220"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "116782528"
 ---
 # <a name="chapter-3---description-of-azure-rtos-netx-dns-client-services"></a>Глава 3. Описание служб DNS-клиента для NetX в ОСРВ Azure
 
@@ -102,7 +102,7 @@ UINT nx_dns_authority_zone_start_get (NX_DNS *dns_ptr, UCHAR *host_name,
 
 Потоки
 
-### <a name="example"></a>Например, .
+### <a name="example"></a>Пример
 ```c
 UCHAR                  record_buffer[50];
 UINT                   record_count;   
@@ -202,7 +202,7 @@ UINT nx_dns_cache_initialize(NX_DNS *dns_ptr,
 
 Потоки
 
-### <a name="example"></a>Например, .
+### <a name="example"></a>Пример
 ```c
 UCHAR          dns_cache [2048]; 
 
@@ -238,7 +238,7 @@ UINT     nx_dns_cache_notify_clear(NX_DNS *dns_ptr);
 
 Потоки
 
-### <a name="example"></a>Например, .
+### <a name="example"></a>Пример
 
 ```c
 /* Clear the DNS Cache full notify function.  */
@@ -276,7 +276,7 @@ UINT nx_dns_cache_notify_set(NX_DNS *dns_ptr, VOID (*cache_full_notify_cb)(NX_DN
 
 Потоки
 
-### <a name="example"></a>Например, .
+### <a name="example"></a>Пример
 
 ```c
 /* Set the DNS Cache full notify function.  */
@@ -322,7 +322,7 @@ UINT nx_dns_cname_get(NX_DNS *dns_ptr, UCHAR *host_name,
 
 Потоки
 
-### <a name="example"></a>Например, .
+### <a name="example"></a>Пример
 
 ```c
 CHAR            record _buffer[50];
@@ -383,7 +383,7 @@ UINT nx_dns_create(NX_DNS *dns_ptr, NX_IP *ip_ptr, CHAR *domain_name);
 
 Потоки
 
-### <a name="example"></a>Например, .
+### <a name="example"></a>Пример
 
 ```c
 /* Create a DNS Client instance.  */
@@ -422,7 +422,7 @@ UINT     nx_dns_delete(NX_DNS *dns_ptr);
 
 Потоки
 
-### <a name="example"></a>Например, .
+### <a name="example"></a>Пример
 
 ```c
 /* Delete a DNS Client instance.  */
@@ -485,7 +485,7 @@ UINT nx_dns_domain_name_server_get(NX_DNS *dns_ptr, UCHAR *host_name,
 
 Потоки
 
-### <a name="example"></a>Например, .
+### <a name="example"></a>Пример
 ```c
 #define RECORD_COUNT        10
 
@@ -603,7 +603,7 @@ UINT     nx_dns_domain_mail_exchange_get(NX_DNS *dns_ptr, UCHAR *host_name,
 
 Потоки
 
-### <a name="example"></a>Например, .
+### <a name="example"></a>Пример
 ```c
 #define           MAX_RECORD_COUNT 10
 
@@ -730,7 +730,7 @@ UINT nx_dns_domain_service_get (NX_DNS *dns_ptr, UCHAR *host_name,
 
 Потоки
 
-### <a name="example"></a>Например, .
+### <a name="example"></a>Пример
 
 ```c
 #define MAX_RECORD_COUNT  10
@@ -834,7 +834,7 @@ UINT nx_dns_get_serverlist_size (NX_DNS *dns_ptr, UINT *size);
 
 Потоки
 
-### <a name="example"></a>Например, .
+### <a name="example"></a>Пример
 
 ```c
 UINT my_listsize;
@@ -881,7 +881,7 @@ UINT nx_dns_info_by_name_get(NX_DNS *dns_ptr, UCHAR *host_name,
 
 Потоки
 
-### <a name="example"></a>Например, .
+### <a name="example"></a>Пример
 ```c
 ULONG         ip_address;
 USHORT         port;
@@ -942,7 +942,7 @@ UINT nx_dns_ipv4_address_by_name_get (NX_DNS *dns_ptr,
 
 Потоки
 
-### <a name="example"></a>Например, .
+### <a name="example"></a>Пример
 
 ```c
 #define MAX_RECORD_COUNT  20
@@ -1165,7 +1165,7 @@ DNS-клиент копирует текстовую строку в запис�
 
 Потоки
 
-### <a name="example"></a>Например, .
+### <a name="example"></a>Пример
 
 ```c
 CHAR            record_buffer[50];
@@ -1230,7 +1230,7 @@ UINT nx_dns_packet_pool_set(NX_DNS *dns_ptr, NX_PACKET_POOL *pool_ptr);
 
 Потоки
 
-### <a name="example"></a>Например, .
+### <a name="example"></a>Пример
 ```c
 NX_DNS             my_dns;
 NX_PACKET_POOL     client_pool;
@@ -1283,7 +1283,7 @@ UINT nx_dns_server_add(NX_DNS *dns_ptr, ULONG server_address);
 
 Потоки
 
-### <a name="example"></a>Например, .
+### <a name="example"></a>Пример
 
 ```c
 /* Add a DNS Server at IP address 202.2.2.13.  */
@@ -1326,7 +1326,7 @@ UINT nx_dns_server_get(NX_DNS *dns_ptr, UINT index,
 
 Потоки
 
-### <a name="example"></a>Например, .
+### <a name="example"></a>Пример
 
 ```c
 ULONG     my_server_address;
@@ -1369,7 +1369,7 @@ UINT nx_dns_server_remove(NX_DNS *dns_ptr, ULONG server_address);
 
 Потоки
 
-### <a name="example"></a>Например, .
+### <a name="example"></a>Пример
 
 ```c
 /* Remove the DNS Server at IP address is 202.2.2.13.  */

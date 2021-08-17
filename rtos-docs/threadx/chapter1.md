@@ -6,12 +6,12 @@ ms.author: philmea
 ms.date: 05/19/2020
 ms.topic: article
 ms.service: rtos
-ms.openlocfilehash: 83718ddf5469238e2429855908be2ea5d405f874
-ms.sourcegitcommit: e3d42e1f2920ec9cb002634b542bc20754f9544e
+ms.openlocfilehash: 536b2d59bf9f2cf15d320b91277f0efc7bf96097329f690b0849b2145c5a3abc
+ms.sourcegitcommit: 93d716cf7e3d735b18246d659ec9ec7f82c336de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "104815107"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "116802071"
 ---
 # <a name="chapter-1---introduction-to-azure-rtos-threadx"></a>Глава 1. Введение в ThreadX (ОСРВ Azure)
 
@@ -79,11 +79,11 @@ ThreadX масштабируется с учетом базовой архите
 
 ![Сертификация TÜV](./media/overview-threadx/partener-logo-sgs-tuv-saar-2.png)
 
-* IEC 61508 до уровня SIL 4
+* IEC 61508 до уровня SIL 4
 
-* IEC 62304 до уровня SW класса безопасности C
+* IEC 62304 до уровня SW класса безопасности C
 
-* ISO 26262 ASIL D
+* ISO 26262 ASIL D
 
 * EN 50128 SW-SIL 4
 

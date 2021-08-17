@@ -6,12 +6,12 @@ ms.author: v-condav
 ms.date: 01/22/2021
 ms.topic: article
 ms.service: rtos
-ms.openlocfilehash: 825a215ba756b39b6d76e6cc773c288e8b8aab01
-ms.sourcegitcommit: e3d42e1f2920ec9cb002634b542bc20754f9544e
+ms.openlocfilehash: 0956cb43f4fcd87d5bd4d90b2288ce6f8d5295ee0be8b8a9f4719ad842e00b2a
+ms.sourcegitcommit: 93d716cf7e3d735b18246d659ec9ec7f82c336de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "104814672"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "116783447"
 ---
 # <a name="chapter-4--description-of-lwm2m-client-services"></a>Глава 4 Описание услуг LWM2M CLIENT
 
@@ -172,7 +172,7 @@ UINT nx_lwm2m_client_create(
 
 ### <a name="description"></a>Описание
 
-Данная служба создает экземпляр клиента LWM2M, который запускается в контексте собственного потока ThreadX.
+Эта служба создает экземпляр клиента LWM2M, который выполняется в контексте собственного потока ThreadX.
 
 Клиент LWM2M реализует следующие объекты OMA LWM2M: безопасность (0), сервер (1), контроль доступа (2) и устройство (3). Другие реализации объектов должны быть добавлены посредством приложения.
 
@@ -201,7 +201,7 @@ UINT nx_lwm2m_client_create(
 
 ### <a name="allowed-from"></a>Разрешено с
 
-Потоки, Инициализация
+Потоки, инициализация
 
 ### <a name="example"></a>Пример
 
@@ -227,9 +227,9 @@ UINT nx_lwm2m_client_delete(NX_LWM2M_CLIENT *client_ptr);
 
 ### <a name="description"></a>Описание
 
-Данная служба удаляет ранее созданный экземпляр клиентом LWM2M.
+Данная служба удаляет созданный ранее экземпляр клиента LWM2M.
 
-Все сеансы, подключенные в данный момент к клиенту, также удаляются посредством данного вызова.
+Этот вызов также удаляет все сеансы, подключенные в данный момент к этому клиенту.
 
 ### <a name="parameters"></a>Параметры
 
@@ -242,7 +242,7 @@ UINT nx_lwm2m_client_delete(NX_LWM2M_CLIENT *client_ptr);
 
 ### <a name="allowed-from"></a>Разрешено с
 
-Потоки, Инициализация
+Потоки, инициализация
 
 ### <a name="example"></a>Пример
 
@@ -283,7 +283,7 @@ UINT **nx_lwm2m_client_device_callback_set**(
 
 ### <a name="allowed-from"></a>Разрешено с
 
-Потоки, Инициализация
+Потоки, инициализация
 
 ### <a name="example"></a>Пример
 
@@ -307,7 +307,7 @@ UINT **nx_lwm2m_client_device_error_push**(
 
 ### <a name="description"></a>Описание
 
-Данная служба добавляет новый экземпляр к ресурсу кода ошибки (11) объектного устройства.
+Данная служба добавляет новый экземпляр в ресурс кода ошибки (11) объекта устройства.
 
 ### <a name="parameters"></a>Параметры
 
@@ -327,7 +327,7 @@ NX_PTR_ERROR Недопустимый указатель.
 
 ### <a name="allowed-from"></a>Разрешено с
 
-Потоки, Инициализация
+Потоки, инициализация
 
 ### <a name="example"></a>Пример
 
@@ -363,7 +363,7 @@ UINT nx_lwm2m_client_device_error_reset(NX_LWM2M_CLIENT *client_ptr);
 
 ### <a name="allowed-from"></a>Разрешено с
 
-Потоки, Инициализация
+Потоки, инициализация
 
 ### <a name="example"></a>Пример
 
@@ -389,7 +389,7 @@ UINT nx_lwm2m_client_device_resource_changed(
 
 ### <a name="description"></a>Описание
 
-Служба используется приложением для сигнализации клиенту LWM2M об изменении ресурса объектного устройства. В случае если за ресурсом наблюдает сервер LWM2M, клиент LWM2M отправит соответствующее уведомление.
+Служба используется приложением для сообщения клиенту LWM2M об изменении ресурса объектного устройства. Если за ресурсом наблюдает сервер LWM2M, клиент LWM2M отправит соответствующее уведомление.
 
 ### <a name="parameters"></a>Параметры
 
@@ -403,7 +403,7 @@ UINT nx_lwm2m_client_device_resource_changed(
 
 ### <a name="allowed-from"></a>Разрешено с
 
-Потоки, Инициализация
+Потоки, инициализация
 
 ### <a name="example"></a>Пример
 
@@ -450,7 +450,7 @@ UINT nx_lwm2m_client_firmware_create(
 
 ### <a name="allowed-from"></a>Разрешено с
 
-Потоки, Инициализация
+Потоки, инициализация
 
 ### <a name="example"></a>Пример
 
@@ -498,7 +498,7 @@ UINT nx_lwm2m_client_firmware_package_info_set(
 
 ### <a name="allowed-from"></a>Разрешено с
 
-Потоки, Инициализация
+Потоки, инициализация
 
 ### <a name="example"></a>Пример
 
@@ -539,7 +539,7 @@ UINT nx_lwm2m_client_firmware_result_set(
 
 ### <a name="allowed-from"></a>Разрешено с
 
-Потоки, Инициализация
+Потоки, инициализация
 
 ### <a name="example"></a>Пример
 
@@ -579,7 +579,7 @@ UINT nx_lwm2m_client_firmware_state_set(
 
 ### <a name="allowed-from"></a>Разрешено с
 
-Потоки, Инициализация
+Потоки, инициализация
 
 ### <a name="example"></a>Пример
 
@@ -620,7 +620,7 @@ UINT **nx_lwm2m_client_lock**(NX_LWM2M_CLIENT *client_ptr);
 
 ### <a name="allowed-from"></a>Разрешено с
 
-Потоки, Инициализация
+Потоки, инициализация
 
 ### <a name="example"></a>Пример
 
@@ -664,7 +664,7 @@ UINT **nx_lwm2m_client_object_add**(
 
 ### <a name="allowed-from"></a>Разрешено с
 
-Потоки, Инициализация
+Потоки, инициализация
 
 ### <a name="example"></a>Пример
 
@@ -714,7 +714,7 @@ UINT nx_lwm2m_client_object_create(
 
 ### <a name="allowed-from"></a>Разрешено с
 
-Потоки, Инициализация
+Потоки, инициализация
 
 ### <a name="example"></a>Пример
 
@@ -757,7 +757,7 @@ UINT nx_lwm2m_client_object_delete(
 
 ### <a name="allowed-from"></a>Разрешено с
 
-Потоки, Инициализация
+Потоки, инициализация
 
 ### <a name="example"></a>Пример
 
@@ -805,7 +805,7 @@ UINT nx_lwm2m_client_object_discover(
 
 ### <a name="allowed-from"></a>Разрешено с
 
-Потоки, Инициализация
+Потоки, инициализация
 
 ### <a name="example"></a>Пример
 
@@ -858,7 +858,7 @@ UINT **nx_lwm2m_client_object_execute**(
 
 ### <a name="allowed-from"></a>Разрешено с
 
-Потоки, Инициализация
+Потоки, инициализация
 
 ### <a name="example"></a>Пример
 
@@ -901,7 +901,7 @@ UINT nx_lwm2m_client_object_instance_add(
 
 ### <a name="allowed-from"></a>Разрешено с
 
-Потоки, Инициализация
+Потоки, инициализация
 
 ### <a name="example"></a>Пример
 
@@ -928,7 +928,7 @@ UINT nx_lwm2m_client_object_instance_next_get(
 
 ### <a name="description"></a>Описание
 
-Данная служба возвращает идентификатор следующего экземпляра данного объекта. Если текущий идентификатор экземпляра установлен на NX_LWM2M_RESERVED_ID (65535), возвращается идентификатор первого экземпляра.
+Данная служба возвращает идентификатор следующего экземпляра данного объекта. Если для текущего идентификатора экземпляра установлено NX_LWM2M_RESERVED_ID (65535), возвращается идентификатор первого экземпляра.
 
 ### <a name="parameters"></a>Параметры
 
@@ -944,7 +944,7 @@ UINT nx_lwm2m_client_object_instance_next_get(
 
 ### <a name="allowed-from"></a>Разрешено с
 
-Потоки, Инициализация
+Потоки, инициализация
 
 ### <a name="example"></a>Пример
 
@@ -985,7 +985,7 @@ UINT nx_lwm2m_client_object_instance_remove(
 
 ### <a name="allowed-from"></a>Разрешено с
 
-Потоки, Инициализация
+Потоки, инициализация
 
 ### <a name="example"></a>Пример
 
@@ -1010,7 +1010,7 @@ UINT nx_lwm2m_client_object_next_get(
 
 ### <a name="description"></a>Описание
 
-Данная служба возвращает идентификатор следующего объекта, реализованного клиентом LWM2M. Если текущий идентификатор объекта установлен на NX_LWM2M_RESERVED_ID (65535), возвращается первый идентификатор объекта.
+Данная служба возвращает идентификатор следующего объекта, реализованного клиентом LWM2M. Если для текущего идентификатора объекта установлено значение NX_LWM2M_RESERVED_ID (65535), возвращается первый идентификатор объекта.
 
 ### <a name="parameters"></a>Параметры
 
@@ -1025,7 +1025,7 @@ UINT nx_lwm2m_client_object_next_get(
 
 ### <a name="allowed-from"></a>Разрешено с
 
-Потоки, Инициализация
+Потоки, инициализация
 
 ### <a name="example"></a>Пример
 
@@ -1072,7 +1072,7 @@ UINT nx_lwm2m_client_object_read(
 
 ### <a name="allowed-from"></a>Разрешено с
 
-Потоки, Инициализация
+Потоки, инициализация
 
 ### <a name="example"></a>Пример
 
@@ -1113,7 +1113,7 @@ UINT nx_lwm2m_client_object_remove(
 
 ### <a name="allowed-from"></a>Разрешено с
 
-Потоки, Инициализация
+Потоки, инициализация
 
 ### <a name="example"></a>Пример
 
@@ -1154,7 +1154,7 @@ UINT nx_lwm2m_client_object_resource_changed(
 
 ### <a name="allowed-from"></a>Разрешено с
 
-Потоки, Инициализация
+Потоки, инициализация
 
 ### <a name="example"></a>Пример
 
@@ -1189,9 +1189,9 @@ UINT nx_lwm2m_client_object_write(
 
 | Значение | Операция&nbsp;записи | Описание |
 | --- | ---| --- |
-| 0 | Частичное обновление | Добавляет или обновляет Ресурсы, представленные в новом значении, и оставляет другие существующие Ресурсы без изменений. |
-| **NX_LWM2M_CLIENT_OBJECT_WRITE_REPLACE_INSTANCE** | Заменить экземпляр | Заменяет экземпляр объекта новыми предоставленными значениями ресурсов. |
-| **NX_LWM2M_CLIENT_OBJECT_WRITE_REPLACE_RESOURCE** | Заменить ресурс | Заменяет ресурсы новыми предоставленными значениями ресурсов (используется для замены нескольких ресурсов). |
+| 0 | Частичное обновление | Добавляет или обновляет ресурсы, указанные в новом значении, и сохраняет остальные существующие ресурсы без изменений. |
+| **NX_LWM2M_CLIENT_OBJECT_WRITE_REPLACE_INSTANCE** | Замена экземпляра | Заменяет экземпляр объекта новыми указанными значениями ресурсов. |
+| **NX_LWM2M_CLIENT_OBJECT_WRITE_REPLACE_RESOURCE** | Замена ресурса | Заменяет ресурсы новыми предоставленными значениями ресурсов (используется для замены нескольких ресурсов). |
 | **NX_LWM2M_CLIENT_OBJECT_WRITE_BOOTSTRAP** | Запись при начальной загрузке | Обозначает вызов из последовательности начальной загрузки. |
 
 ### <a name="parameters"></a>Параметры
@@ -1217,7 +1217,7 @@ UINT nx_lwm2m_client_object_write(
 
 ### <a name="allowed-from"></a>Разрешено с
 
-Потоки, Инициализация
+Потоки, инициализация
 
 ### <a name="example"></a>Пример
 
@@ -1258,7 +1258,7 @@ UINT nx_lwm2m_client_resource_boolean_get(
 
 ### <a name="allowed-from"></a>Разрешено с
 
-Потоки, Инициализация
+Потоки, инициализация
 
 ### <a name="example"></a>Пример
 
@@ -1297,7 +1297,7 @@ UINT nx_lwm2m_client_resource_boolean_set(
 
 ### <a name="allowed-from"></a>Разрешено с
 
-Потоки, Инициализация
+Потоки, инициализация
 
 ### <a name="example"></a>Пример
 
@@ -1337,7 +1337,7 @@ UINT nx_lwm2m_client_resource_dim_get(
 
 ### <a name="allowed-from"></a>Разрешено с
 
-Потоки, Инициализация
+Потоки, инициализация
 
 ### <a name="example"></a>Пример
 
@@ -1376,7 +1376,7 @@ UINT nx_lwm2m_client_resource_dim_set(
 
 ### <a name="allowed-from"></a>Разрешено с
 
-Потоки, Инициализация
+Потоки, инициализация
 
 ### <a name="example"></a>Пример
 
@@ -1416,7 +1416,7 @@ UINT nx_lwm2m_client_resource_float32_get(
 
 ### <a name="allowed-from"></a>Разрешено с
 
-Потоки, Инициализация
+Потоки, инициализация
 
 ### <a name="example"></a>Пример
 
@@ -1455,7 +1455,7 @@ UINT nx_lwm2m_client_resource_float32_set(
 
 ### <a name="allowed-from"></a>Разрешено с
 
-Потоки, Инициализация
+Потоки, инициализация
 
 ### <a name="example"></a>Пример
 
@@ -1495,7 +1495,7 @@ UINT nx_lwm2m_client_resource_float64_get(
 
 ### <a name="allowed-from"></a>Разрешено с
 
-Потоки, Инициализация
+Потоки, инициализация
 
 ### <a name="example"></a>Пример
 
@@ -1534,7 +1534,7 @@ UINT nx_lwm2m_client_resource_float64_set(
 
 ### <a name="allowed-from"></a>Разрешено с
 
-Потоки, Инициализация
+Потоки, инициализация
 
 ### <a name="example"></a>Пример
 
@@ -1575,7 +1575,7 @@ UINT nx_lwm2m_client_resource_info_get(
 
 ### <a name="allowed-from"></a>Разрешено с
 
-Потоки, Инициализация
+Потоки, инициализация
 
 ### <a name="example"></a>Пример
 
@@ -1615,7 +1615,7 @@ UINT nx_lwm2m_client_resource_info_set(
 
 ### <a name="allowed-from"></a>Разрешено с
 
-Потоки, Инициализация
+Потоки, инициализация
 
 ### <a name="example"></a>Пример
 
@@ -1658,7 +1658,7 @@ UINT nx_lwm2m_client_resource_instances_get(
 
 ### <a name="allowed-from"></a>Разрешено с
 
-Потоки, Инициализация
+Потоки, инициализация
 
 ### <a name="example"></a>Пример
 
@@ -1699,7 +1699,7 @@ UINT nx_lwm2m_client_resource_instances_set(
 
 ### <a name="allowed-from"></a>Разрешено с
 
-Потоки, Инициализация
+Потоки, инициализация
 
 ### <a name="example"></a>Пример
 
@@ -1739,7 +1739,7 @@ UINT nx_lwm2m_client_resource_integer32_get(
 
 ### <a name="allowed-from"></a>Разрешено с
 
-Потоки, Инициализация
+Потоки, инициализация
 
 ### <a name="example"></a>Пример
 
@@ -1778,7 +1778,7 @@ UINT nx_lwm2m_client_resource_integer32_set(
 
 ### <a name="allowed-from"></a>Разрешено с
 
-Потоки, Инициализация
+Потоки, инициализация
 
 ### <a name="example"></a>Пример
 
@@ -1818,7 +1818,7 @@ UINT nx_lwm2m_client_resource_integer64_get(
 
 ### <a name="allowed-from"></a>Разрешено с
 
-Потоки, Инициализация
+Потоки, инициализация
 
 ### <a name="example"></a>Пример
 
@@ -1857,7 +1857,7 @@ UINT nx_lwm2m_client_resource_integer64_set(
 
 ### <a name="allowed-from"></a>Разрешено с
 
-Потоки, Инициализация
+Потоки, инициализация
 
 ### <a name="example"></a>Пример
 
@@ -1899,7 +1899,7 @@ UINT nx_lwm2m_client_resource_objlnk_get(
 
 ### <a name="allowed-from"></a>Разрешено с
 
-Потоки, Инициализация
+Потоки, инициализация
 
 ### <a name="example"></a>Пример
 
@@ -1940,7 +1940,7 @@ UINT nx_lwm2m_client_resource_objlnk_set(
 
 ### <a name="allowed-from"></a>Разрешено с
 
-Потоки, Инициализация
+Потоки, инициализация
 
 ### <a name="example"></a>Пример
 
@@ -1983,7 +1983,7 @@ UINT nx_lwm2m_client_resource_opaque_get(
 
 ### <a name="allowed-from"></a>Разрешено с
 
-Потоки, Инициализация
+Потоки, инициализация
 
 ### <a name="example"></a>Пример
 
@@ -2024,7 +2024,7 @@ UINT nx_lwm2m_client_resource_opaque_set(
 
 ### <a name="allowed-from"></a>Разрешено с
 
-Потоки, Инициализация
+Потоки, инициализация
 
 ### <a name="example"></a>Пример
 
@@ -2066,7 +2066,7 @@ UINT nx_lwm2m_client_resource_string_get(
 
 ### <a name="allowed-from"></a>Разрешено с
 
-Потоки, Инициализация
+Потоки, инициализация
 
 ### <a name="example"></a>Пример
 
@@ -2107,7 +2107,7 @@ UINT nx_lwm2m_client_resource_string_set(
 
 ### <a name="allowed-from"></a>Разрешено с
 
-Потоки, Инициализация
+Потоки, инициализация
 
 ### <a name="example"></a>Пример
 
@@ -2156,7 +2156,7 @@ UINT nx_lwm2m_client_session_bootstrap(
 
 ### <a name="allowed-from"></a>Разрешено с
 
-Потоки, Инициализация
+Потоки, инициализация
 
 ### <a name="example"></a>Пример
 
@@ -2184,7 +2184,7 @@ UINT nx_lwm2m_client_session_bootstrap_dtls(
 
 ### <a name="description"></a>Описание
 
-Данная служба запускает сеанс с сервером начальной загрузки, используя безопасное соединение DTLS. Сервер должен иметь соответствующий экземпляр защиты в объекте защиты.
+Данная служба запускает сеанс с сервером начальной загрузки, используя безопасное подключение DTLS. Сервер должен иметь соответствующий экземпляр безопасности в объекте безопасности.
 
 Перед вызовом данной функции сеанс протокола DTLS должен быть настроен с использованием надлежащих наборов шифров и ключевого материала. Необходимо определить **NX_SECURE_ENABLE_DTLS**.
 
@@ -2210,7 +2210,7 @@ UINT nx_lwm2m_client_session_bootstrap_dtls(
 
 ### <a name="allowed-from"></a>Разрешено с
 
-Потоки, Инициализация
+Потоки, инициализация
 
 ### <a name="example"></a>Пример
 
@@ -2236,7 +2236,7 @@ UINT nx_lwm2m_client_session_create(
 
 ### <a name="description"></a>Описание
 
-Данная служба создает новый клиентский сеанс LWM2M, присоединенный к существующему клиенту LWM2M. Сеанс используется клиентом LWM2M для связи с сервером начальной загрузки или сервером LWM2M. 
+Данная служба создает новый сеанс клиента LWM2M, подключенный к существующему клиенту LWM2M. Этот сеанс используется клиентом LWM2M для взаимодействия с сервером начальной загрузки или сервером LWM2M. 
 
 Приложение должно предоставить функцию обратного вызова, которая будет вызываться при обновлении состояния сеанса.
 
@@ -2253,7 +2253,7 @@ UINT nx_lwm2m_client_session_create(
 
 ### <a name="allowed-from"></a>Разрешено с
 
-Потоки, Инициализация
+Потоки, инициализация
 
 ### <a name="example"></a>Пример
 
@@ -2276,9 +2276,9 @@ UINT nx_lwm2m_client_session_delete(NX_LWM2M_CLIENT_SESSION *session_ptr);
 
 ### <a name="description"></a>Описание
 
-Данная служба удаляет клиентский сеанс LWM2M.
+Данная служба удаляет сеанс клиента LWM2M.
 
-Когда клиент LWM2M удаляется вызовом nx_lwm2m_client_delete, также удаляются все сеансы, подключенные к клиенту.
+Когда клиент LWM2M удаляется вызовом nx_lwm2m_client_delete, также удаляются все сеансы, подключенные к этому клиенту.
 
 ### <a name="parameters"></a>Параметры
 
@@ -2291,7 +2291,7 @@ UINT nx_lwm2m_client_session_delete(NX_LWM2M_CLIENT_SESSION *session_ptr);
 
 ### <a name="allowed-from"></a>Разрешено с
 
-Потоки, Инициализация
+Потоки, инициализация
 
 ### <a name="example"></a>Пример
 
@@ -2328,7 +2328,7 @@ UINT nx_lwm2m_client_session_deregister(NX_LWM2M_CLIENT_SESSION *session_ptr);
 
 ### <a name="allowed-from"></a>Разрешено с
 
-Потоки, Инициализация
+Потоки, инициализация
 
 ### <a name="example"></a>Пример
 
@@ -2351,7 +2351,7 @@ UINT nx_lwm2m_client_session_error_get(NX_LWM2M_CLIENT_SESSION *session_ptr);
 
 ### <a name="description"></a>Описание
 
-Данная служба возвращает код ошибки сеанса в случаях, когда сеанс находится в состоянии ошибки.
+Данная служба возвращает код ошибки сеанса в случае, когда сеанс находится в состоянии ошибки.
 
 ### <a name="parameters"></a>Параметры
 
@@ -2372,7 +2372,7 @@ UINT nx_lwm2m_client_session_error_get(NX_LWM2M_CLIENT_SESSION *session_ptr);
 
 ### <a name="allowed-from"></a>Разрешено с
 
-Потоки, Инициализация
+Потоки, инициализация
 
 ### <a name="example"></a>Пример
 
@@ -2419,7 +2419,7 @@ UINT nx_lwm2m_client_session_register(
 
 ### <a name="allowed-from"></a>Разрешено с
 
-Потоки, Инициализация
+Потоки, инициализация
 
 ### <a name="example"></a>Пример
 
@@ -2472,7 +2472,7 @@ UINT nx_lwm2m_client_session_register_dtls(
 
 ### <a name="allowed-from"></a>Разрешено с
 
-Потоки, Инициализация
+Потоки, инициализация
 
 ### <a name="example"></a>Пример
 
@@ -2532,7 +2532,7 @@ UINT nx_lwm2m_client_session_register_dtls(
 
 ### <a name="allowed-from"></a>Разрешено с
 
-Потоки, Инициализация
+Потоки, инициализация
 
 ### <a name="example"></a>Пример
 
@@ -2569,7 +2569,7 @@ UINT nx_lwm2m_client_session_update(NX_LWM2M_CLIENT_SESSION *session_ptr);
 
 ### <a name="allowed-from"></a>Разрешено с
 
-Потоки, Инициализация
+Потоки, инициализация
 
 ### <a name="example"></a>Пример
 
@@ -2605,7 +2605,7 @@ UINT nx_lwm2m_client_unlock(NX_LWM2M_CLIENT *client_ptr);
 
 ### <a name="allowed-from"></a>Разрешено с
 
-Потоки, Инициализация
+Потоки, инициализация
 
 ### <a name="example"></a>Пример
 

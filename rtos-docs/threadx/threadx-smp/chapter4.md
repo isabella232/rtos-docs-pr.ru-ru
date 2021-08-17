@@ -6,12 +6,12 @@ ms.author: philmea
 ms.date: 06/04/2020
 ms.topic: article
 ms.service: rtos
-ms.openlocfilehash: 4432001b773b4ef4f99b1b34193e90863966aad4
-ms.sourcegitcommit: e3d42e1f2920ec9cb002634b542bc20754f9544e
+ms.openlocfilehash: 71b964963968b0ec6fa3c8cc70cc46576e8ff33e2cfad0315182afe1f1afcc5b
+ms.sourcegitcommit: 93d716cf7e3d735b18246d659ec9ec7f82c336de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "104816068"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "116802164"
 ---
 # <a name="chapter-4---description-of-azure-rtos-threadx-smp-services"></a>Глава 4. Описание служб ThreadX SMP для ОСРВ Azure
 
@@ -148,7 +148,7 @@ UINT tx_block_allocate(TX_BLOCK_POOL *pool_ptr, VOID **block_ptr,
 
 ### <a name="allowed-from"></a>Допустимые источники
 
-Инициализация, потоки, таймеры и подпрограммы ISR
+Инициализация, потоки, таймеры, запросы ISR
 
 ### <a name="preemption-possible"></a>Возможно вытеснение
 
@@ -346,7 +346,7 @@ UINT tx_block_pool_info_get(TX_BLOCK_POOL *pool_ptr, CHAR **name,
 
 ### <a name="allowed-from"></a>Допустимые источники
 
-Инициализация, потоки, таймеры и подпрограммы ISR
+Инициализация, потоки, таймеры, запросы ISR
 
 ### <a name="example"></a>Пример
 
@@ -419,7 +419,7 @@ UINT tx_block_pool_performance_info_get(TX_BLOCK_POOL *pool_ptr,
 
 ### <a name="allowed-from"></a>Допустимые источники
 
-Инициализация, потоки, таймеры и подпрограммы ISR
+Инициализация, потоки, таймеры, запросы ISR
 
 ### <a name="example"></a>Пример
 
@@ -484,7 +484,7 @@ UINT tx_block_pool_performance_system_info_get(ULONG *allocates,
 
 ### <a name="allowed-from"></a>Допустимые источники
 
-Инициализация, потоки, таймеры и подпрограммы ISR
+Инициализация, потоки, таймеры, запросы ISR
 
 ### <a name="example"></a>Пример
 
@@ -536,11 +536,11 @@ UINT tx_block_pool_prioritize(TX_BLOCK_POOL *pool_ptr);
 
 ### <a name="allowed-from"></a>Допустимые источники
 
-Инициализация, потоки, таймеры и подпрограммы ISR
+Инициализация, потоки, таймеры, запросы ISR
 
 ### <a name="preemption-possible"></a>Возможно вытеснение
 
-Нет
+нет
 
 ### <a name="example"></a>Пример
 
@@ -593,7 +593,7 @@ UINT tx_block_release(VOID *block_ptr);
 
 ### <a name="allowed-from"></a>Допустимые источники
 
-Инициализация, потоки, таймеры и подпрограммы ISR
+Инициализация, потоки, таймеры, запросы ISR
 
 ### <a name="preemption-possible"></a>Возможно вытеснение
 
@@ -862,7 +862,7 @@ UINT tx_byte_pool_info_get(TX_BYTE_POOL *pool_ptr, CHAR **name,
 
 ### <a name="allowed-from"></a>Допустимые источники
 
-Инициализация, потоки, таймеры и подпрограммы ISR
+Инициализация, потоки, таймеры, запросы ISR
 
 ### <a name="preemption-possible"></a>Возможно вытеснение
 
@@ -941,7 +941,7 @@ UINT tx_byte_pool_performance_info_get(TX_BYTE_POOL *pool_ptr,
 
 ### <a name="allowed-from"></a>Допустимые источники
 
-Инициализация, потоки, таймеры и подпрограммы ISR
+Инициализация, потоки, таймеры, запросы ISR
 
 ### <a name="example"></a>Пример
 
@@ -1014,7 +1014,7 @@ UINT  tx_byte_pool_performance_system_info_get(ULONG *allocates,
 
 ### <a name="allowed-from"></a>Допустимые источники
 
-Инициализация, потоки, таймеры и подпрограммы ISR
+Инициализация, потоки, таймеры, запросы ISR
 
 ### <a name="example"></a>Пример
 
@@ -1071,7 +1071,7 @@ UINT tx_byte_pool_prioritize(TX_BYTE_POOL *pool_ptr);
 
 ### <a name="allowed-from"></a>Допустимые источники
 
-Инициализация, потоки, таймеры и подпрограммы ISR
+Инициализация, потоки, таймеры, запросы ISR
 
 ### <a name="preemption-possible"></a>Возможно вытеснение
 
@@ -1325,7 +1325,7 @@ UINT tx_event_flags_get(TX_EVENT_FLAGS_GROUP *group_ptr,
 
 ### <a name="allowed-from"></a>Допустимые источники
 
-Инициализация, потоки, таймеры и подпрограммы ISR
+Инициализация, потоки, таймеры, запросы ISR
 
 ### <a name="preemption-possible"></a>Возможно вытеснение
 
@@ -1394,11 +1394,11 @@ UINT tx_event_flags_info_get(TX_EVENT_FLAGS_GROUP *group_ptr,
 
 ### <a name="allowed-from"></a>Допустимые источники
 
-Инициализация, потоки, таймеры и подпрограммы ISR
+Инициализация, потоки, таймеры, запросы ISR
 
 ### <a name="preemption-possible"></a>Возможно вытеснение
 
-Нет
+нет
 
 ### <a name="example"></a>Пример
 
@@ -1468,7 +1468,7 @@ UINT tx_event_flags_performance_info_get(TX_EVENT_FLAGS_GROUP
 
 ### <a name="allowed-from"></a>Допустимые источники
 
-Инициализация, потоки, таймеры и подпрограммы ISR
+Инициализация, потоки, таймеры, запросы ISR
 
 ### <a name="example"></a>Пример
 
@@ -1532,7 +1532,7 @@ UINT  tx_event_flags_performance_system_info_get(ULONG *sets,
 
 ### <a name="allowed-from"></a>Допустимые источники
 
-Инициализация, потоки, таймеры и подпрограммы ISR
+Инициализация, потоки, таймеры, запросы ISR
 
 ### <a name="example"></a>Пример
 
@@ -1590,7 +1590,7 @@ UINT tx_event_flags_set(TX_EVENT_FLAGS_GROUP *group_ptr,
 
 ### <a name="allowed-from"></a>Допустимые источники
 
-Инициализация, потоки, таймеры и подпрограммы ISR
+Инициализация, потоки, таймеры, запросы ISR
 
 ### <a name="preemption-possible"></a>Возможно вытеснение
 
@@ -1649,7 +1649,7 @@ UINT tx_event_flags_set_notify(TX_EVENT_FLAGS_GROUP *group_ptr,
 
 ### <a name="allowed-from"></a>Допустимые источники
 
-Инициализация, потоки, таймеры и подпрограммы ISR
+Инициализация, потоки, таймеры, запросы ISR
 
 ### <a name="example"></a>Пример
 
@@ -1763,7 +1763,7 @@ UINT tx_mutex_create(TX_MUTEX *mutex_ptr,
 
 ### <a name="preemption-possible"></a>Возможно вытеснение
 
-Нет
+нет
 
 ### <a name="example"></a>Пример
 
@@ -1953,11 +1953,11 @@ UINT tx_mutex_info_get(TX_MUTEX *mutex_ptr, CHAR **name,
 
 ### <a name="allowed-from"></a>Допустимые источники
 
-Инициализация, потоки, таймеры и подпрограммы ISR
+Инициализация, потоки, таймеры, запросы ISR
 
 ### <a name="preemption-possible"></a>Возможно вытеснение
 
-Нет
+нет
 
 ### <a name="example"></a>Пример
 
@@ -2030,7 +2030,7 @@ UINT tx_mutex_performance_info_get(TX_MUTEX *mutex_ptr, ULONG *puts,
 
 ### <a name="allowed-from"></a>Допустимые источники
 
-Инициализация, потоки, таймеры и подпрограммы ISR
+Инициализация, потоки, таймеры, запросы ISR
 
 ### <a name="example"></a>Пример
 
@@ -2099,7 +2099,7 @@ UINT  tx_mutex_performance_system_info_get(ULONG *puts, ULONG *gets,
 
 ### <a name="allowed-from"></a>Допустимые источники
 
-Инициализация, потоки, таймеры и подпрограммы ISR
+Инициализация, потоки, таймеры, запросы ISR
 
 ### <a name="example"></a>Пример
 
@@ -2154,7 +2154,7 @@ UINT tx_mutex_prioritize(TX_MUTEX *mutex_ptr);
 
 ### <a name="allowed-from"></a>Допустимые источники
 
-Инициализация, потоки, таймеры и подпрограммы ISR
+Инициализация, потоки, таймеры, запросы ISR
 
 ### <a name="preemption-possible"></a>Возможно вытеснение
 
@@ -2400,7 +2400,7 @@ UINT tx_queue_flush(TX_QUEUE *queue_ptr);
 
 ### <a name="allowed-from"></a>Допустимые источники
 
-Инициализация, потоки, таймеры и подпрограммы ISR
+Инициализация, потоки, таймеры, запросы ISR
 
 ### <a name="preemption-possible"></a>Возможно вытеснение
 
@@ -2474,7 +2474,7 @@ UINT tx_queue_front_send(TX_QUEUE *queue_ptr,
 
 ### <a name="allowed-from"></a>Допустимые источники
 
-Инициализация, потоки, таймеры и подпрограммы ISR
+Инициализация, потоки, таймеры, запросы ISR
 
 ### <a name="preemption-possible"></a>Возможно вытеснение
 
@@ -2546,7 +2546,7 @@ UINT tx_queue_info_get(TX_QUEUE *queue_ptr, CHAR **name,
 
 ### <a name="allowed-from"></a>Допустимые источники
 
-Инициализация, потоки, таймеры и подпрограммы ISR
+Инициализация, потоки, таймеры, запросы ISR
 
 ### <a name="preemption-possible"></a>Возможно вытеснение
 
@@ -2627,7 +2627,7 @@ UINT  tx_queue_performance_info_get(TX_QUEUE *queue_ptr,
 
 ### <a name="allowed-from"></a>Допустимые источники
 
-Инициализация, потоки, таймеры и подпрограммы ISR
+Инициализация, потоки, таймеры, запросы ISR
 
 ### <a name="example"></a>Пример
 
@@ -2700,7 +2700,7 @@ UINT  tx_queue_performance_system_info_get(ULONG *messages_sent,
 
 ### <a name="allowed-from"></a>Допустимые источники
 
-Инициализация, потоки, таймеры и подпрограммы ISR
+Инициализация, потоки, таймеры, запросы ISR
 
 ### <a name="example"></a>Пример
 
@@ -2759,7 +2759,7 @@ UINT tx_queue_prioritize(TX_QUEUE *queue_ptr);
 
 ### <a name="allowed-from"></a>Допустимые источники
 
-Инициализация, потоки, таймеры и подпрограммы ISR
+Инициализация, потоки, таймеры, запросы ISR
 
 ### <a name="preemption-possible"></a>Возможно вытеснение
 
@@ -2837,7 +2837,7 @@ UINT tx_queue_receive(TX_QUEUE *queue_ptr,
 
 ### <a name="allowed-from"></a>Допустимые источники
 
-Инициализация, потоки, таймеры и подпрограммы ISR
+Инициализация, потоки, таймеры, запросы ISR
 
 ### <a name="preemption-possible"></a>Возможно вытеснение
 
@@ -2914,7 +2914,7 @@ UINT tx_queue_send(TX_QUEUE *queue_ptr,
 
 ### <a name="allowed-from"></a>Допустимые источники
 
-Инициализация, потоки, таймеры и подпрограммы ISR
+Инициализация, потоки, таймеры, запросы ISR
 
 ### <a name="preemption-possible"></a>Возможно вытеснение
 
@@ -2978,7 +2978,7 @@ UINT  tx_queue_send_notify(TX_QUEUE *queue_ptr,
 
 ### <a name="allowed-from"></a>Допустимые источники
 
-Инициализация, потоки, таймеры и подпрограммы ISR
+Инициализация, потоки, таймеры, запросы ISR
 
 ### <a name="example"></a>Пример
 
@@ -3037,7 +3037,7 @@ UINT  tx_semaphore_ceiling_put(TX_SEMAPHORE *semaphore_ptr,
 
 ### <a name="allowed-from"></a>Допустимые источники
 
-Инициализация, потоки, таймеры и подпрограммы ISR
+Инициализация, потоки, таймеры, запросы ISR
 
 ### <a name="example"></a>Пример
 
@@ -3094,7 +3094,7 @@ UINT tx_semaphore_create(TX_SEMAPHORE *semaphore_ptr,
 
 ### <a name="preemption-possible"></a>Возможно вытеснение
 
-Нет
+нет
 
 ### <a name="example"></a>Пример
 
@@ -3222,7 +3222,7 @@ UINT tx_semaphore_get(TX_SEMAPHORE *semaphore_ptr,
 
 ### <a name="allowed-from"></a>Допустимые источники
 
-Инициализация, потоки, таймеры и подпрограммы ISR
+Инициализация, потоки, таймеры, запросы ISR
 
 ### <a name="preemption-possible"></a>Возможно вытеснение
 
@@ -3291,7 +3291,7 @@ UINT tx_semaphore_info_get(TX_SEMAPHORE *semaphore_ptr,
 
 ### <a name="allowed-from"></a>Допустимые источники
 
-Инициализация, потоки, таймеры и подпрограммы ISR
+Инициализация, потоки, таймеры, запросы ISR
 
 ### <a name="preemption-possible"></a>Возможно вытеснение
 
@@ -3367,7 +3367,7 @@ UINT  tx_semaphore_performance_info_get(TX_SEMAPHORE *semaphore_ptr,
 
 ### <a name="allowed-from"></a>Допустимые источники
 
-Инициализация, потоки, таймеры и подпрограммы ISR
+Инициализация, потоки, таймеры, запросы ISR
 
 ### <a name="example"></a>Пример
 
@@ -3432,7 +3432,7 @@ UINT tx_semaphore_performance_system_info_get(ULONG *puts,
 
 ### <a name="allowed-from"></a>Допустимые источники
 
-Инициализация, потоки, таймеры и подпрограммы ISR
+Инициализация, потоки, таймеры, запросы ISR
 
 ### <a name="example"></a>Пример
 
@@ -3486,11 +3486,11 @@ UINT tx_semaphore_prioritize(TX_SEMAPHORE *semaphore_ptr);
 
 ### <a name="allowed-from"></a>Допустимые источники
 
-Инициализация, потоки, таймеры и подпрограммы ISR
+Инициализация, потоки, таймеры, запросы ISR
 
 ### <a name="preemption-possible"></a>Возможно вытеснение
 
-Нет
+нет
 
 ### <a name="example"></a>Пример
 
@@ -3542,7 +3542,7 @@ UINT tx_semaphore_put(TX_SEMAPHORE *semaphore_ptr);
 
 ### <a name="allowed-from"></a>Допустимые источники
 
-Инициализация, потоки, таймеры и подпрограммы ISR
+Инициализация, потоки, таймеры, запросы ISR
 
 ### <a name="preemption-possible"></a>Возможно вытеснение
 
@@ -3603,7 +3603,7 @@ UINT  tx_semaphore_put_notify(TX_SEMAPHORE *semaphore_ptr,
 
 ### <a name="allowed-from"></a>Допустимые источники
 
-Инициализация, потоки, таймеры и подпрограммы ISR
+Инициализация, потоки, таймеры, запросы ISR
 
 ### <a name="example"></a>Пример
 
@@ -3848,7 +3848,7 @@ UINT  tx_thread_entry_exit_notify(TX_THREAD *thread_ptr,
 
 ### <a name="allowed-from"></a>Допустимые источники
 
-Инициализация, потоки, таймеры и подпрограммы ISR
+Инициализация, потоки, таймеры, запросы ISR
 
 ### <a name="example"></a>Пример
 
@@ -3924,7 +3924,7 @@ None
 
 ### <a name="preemption-possible"></a>Возможно вытеснение
 
-Нет
+нет
 
 ### <a name="example"></a>Пример
 
@@ -4013,7 +4013,7 @@ UINT tx_thread_info_get(TX_THREAD *thread_ptr, CHAR **name,
 
 ### <a name="allowed-from"></a>Допустимые источники
 
-Инициализация, потоки, таймеры и подпрограммы ISR
+Инициализация, потоки, таймеры, запросы ISR
 
 ### <a name="preemption-possible"></a>Возможно вытеснение
 
@@ -4108,7 +4108,7 @@ UINT  tx_thread_performance_info_get(TX_THREAD *thread_ptr,
 
 ### <a name="allowed-from"></a>Допустимые источники
 
-Инициализация, потоки, таймеры и подпрограммы ISR
+Инициализация, потоки, таймеры, запросы ISR
 
 ### <a name="example"></a>Пример
 
@@ -4202,7 +4202,7 @@ UINT tx_thread_performance_system_info_get(ULONG *resumptions,
 
 ### <a name="allowed-from"></a>Допустимые источники
 
-Инициализация, потоки, таймеры и подпрограммы ISR
+Инициализация, потоки, таймеры, запросы ISR
 
 ### <a name="example"></a>Пример
 
@@ -4580,7 +4580,7 @@ UINT tx_thread_resume(TX_THREAD *thread_ptr);
 
 ### <a name="allowed-from"></a>Допустимые источники
 
-Инициализация, потоки, таймеры и подпрограммы ISR
+Инициализация, потоки, таймеры, запросы ISR
 
 ### <a name="preemption-possible"></a>Возможно вытеснение
 
@@ -4833,7 +4833,7 @@ UINT tx_thread_stack_error_notify(VOID (*error_handler)(TX_THREAD *));
 
 ### <a name="allowed-from"></a>Допустимые источники
 
-Инициализация, потоки, таймеры и подпрограммы ISR
+Инициализация, потоки, таймеры, запросы ISR
 
 ### <a name="example"></a>Пример
 
@@ -4897,7 +4897,7 @@ UINT tx_thread_suspend(TX_THREAD *thread_ptr);
 
 ### <a name="allowed-from"></a>Допустимые источники
 
-Инициализация, потоки, таймеры и подпрограммы ISR
+Инициализация, потоки, таймеры, запросы ISR
 
 ### <a name="preemption-possible"></a>Возможно вытеснение
 
@@ -5110,7 +5110,7 @@ UINT tx_thread_wait_abort(TX_THREAD *thread_ptr);
 
 ### <a name="allowed-from"></a>Допустимые источники
 
-Инициализация, потоки, таймеры и подпрограммы ISR
+Инициализация, потоки, таймеры, запросы ISR
 
 ### <a name="preemption-possible"></a>Возможно вытеснение
 
@@ -5175,7 +5175,7 @@ None
 
 ### <a name="allowed-from"></a>Допустимые источники
 
-Инициализация, потоки, таймеры и подпрограммы ISR
+Инициализация, потоки, таймеры, запросы ISR
 
 ### <a name="preemption-possible"></a>Возможно вытеснение
 
@@ -5226,7 +5226,7 @@ VOID tx_time_set(ULONG new_time);
 
 ### <a name="preemption-possible"></a>Возможно вытеснение
 
-Нет
+нет
 
 ### <a name="example"></a>Пример
 
@@ -5269,11 +5269,11 @@ UINT tx_timer_activate(TX_TIMER *timer_ptr);
 
 ### <a name="allowed-from"></a>Допустимые источники
 
-Инициализация, потоки, таймеры и подпрограммы ISR
+Инициализация, потоки, таймеры, запросы ISR
 
 ### <a name="preemption-possible"></a>Возможно вытеснение
 
-Нет
+нет
 
 ### <a name="example"></a>Пример
 
@@ -5466,7 +5466,7 @@ UINT tx_timer_deactivate(TX_TIMER *timer_ptr);
 
 ### <a name="allowed-from"></a>Допустимые источники
 
-Инициализация, потоки, таймеры и подпрограммы ISR
+Инициализация, потоки, таймеры, запросы ISR
 
 ### <a name="preemption-possible"></a>Возможно вытеснение
 
@@ -5527,7 +5527,7 @@ UINT tx_timer_delete(TX_TIMER *timer_ptr);
 
 ### <a name="preemption-possible"></a>Возможно вытеснение
 
-Нет
+нет
 
 ### <a name="example"></a>Пример
 
@@ -5587,11 +5587,11 @@ UINT tx_timer_info_get(TX_TIMER *timer_ptr, CHAR **name,
 
 ### <a name="allowed-from"></a>Допустимые источники
 
-Инициализация, потоки, таймеры и подпрограммы ISR
+Инициализация, потоки, таймеры, запросы ISR
 
 ### <a name="preemption-possible"></a>Возможно вытеснение
 
-Нет
+нет
 
 ### <a name="example"></a>Пример
 
@@ -5664,7 +5664,7 @@ UINT  tx_timer_performance_info_get(TX_TIMER *timer_ptr,
 
 ### <a name="allowed-from"></a>Допустимые источники
 
-Инициализация, потоки, таймеры и подпрограммы ISR
+Инициализация, потоки, таймеры, запросы ISR
 
 ### <a name="example"></a>Пример
 
@@ -5731,7 +5731,7 @@ UINT  tx_timer_performance_system_info_get(ULONG *activates,
 
 ### <a name="allowed-from"></a>Допустимые источники
 
-Инициализация, потоки, таймеры и подпрограммы ISR
+Инициализация, потоки, таймеры, запросы ISR
 
 ### <a name="example"></a>Пример
 
