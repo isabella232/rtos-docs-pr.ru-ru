@@ -6,12 +6,12 @@ ms.author: philmea
 ms.date: 5/19/2020
 ms.service: rtos
 ms.topic: article
-ms.openlocfilehash: dc57f3e0f6aa6731f4aaedee8169313ca7276cff
-ms.sourcegitcommit: 1aeca2f91960856d8cc24fef65f909639e527599
+ms.openlocfilehash: 104badcbf1ec682cd8b09008578ba91768834d694473ecccf59e35637dfd9f3c
+ms.sourcegitcommit: 93d716cf7e3d735b18246d659ec9ec7f82c336de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106082206"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "116791363"
 ---
 # <a name="chapter-3---functional-components-of-usbx-device-stack"></a>Глава 3. Функциональные компоненты стека устройств USBX
 

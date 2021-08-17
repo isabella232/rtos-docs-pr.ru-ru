@@ -6,12 +6,12 @@ ms.author: philmea
 ms.date: 06/04/2020
 ms.topic: article
 ms.service: rtos
-ms.openlocfilehash: cf4c4cb0edb7deb7bd0f257f48949b5c7355426b
-ms.sourcegitcommit: e3d42e1f2920ec9cb002634b542bc20754f9544e
+ms.openlocfilehash: b24776c2eb25a53195ea4eb452497b23b933e4ab3f9f0a379ea64d8469c1c971
+ms.sourcegitcommit: 93d716cf7e3d735b18246d659ec9ec7f82c336de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "104814564"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "116790128"
 ---
 # <a name="chapter-3---description-of-azure-rtos-netx-duo-snmp-agent-services"></a>Глава 3. Описание служб агентов SNMP для NetX Duo в ОСРВ Azure
 
@@ -1301,7 +1301,7 @@ UINT nx_snmp_agent_trapv2_send(NX_SNMP_AGENT *agent_ptr,
 - **ip_address** — адрес IPv4 диспетчера SNMP.
 - **community** — имя для доступа (имя пользователя).
 - **trap_type** —  
-   Тип запрошенной ловушки. Стандартными событиями являются:  
+   тип запрошенной ловушки. Стандартными событиями являются:  
    - NX_SNMP_TRAP_COLDSTART (0)
    - NX_SNMP_TRAP_WARMSTART (1)
    - NX_SNMP_TRAP_LINKDOWN (2)
@@ -1418,7 +1418,7 @@ UINT nxd_snmp_agent_trapv2_send(NX_SNMP_AGENT *agent_ptr,
 - **ip_address** — IP-адрес (IPv4 или IPv6) диспетчера SNMP.
 - **community** — имя для доступа (имя пользователя).
 - **trap_type** —  
-   Тип запрошенной ловушки. Стандартными событиями являются:  
+   тип запрошенной ловушки. Стандартными событиями являются:  
    - NX_SNMP_TRAP_COLDSTART (0)
    - NX_SNMP_TRAP_WARMSTART (1)
    - NX_SNMP_TRAP_LINKDOWN (2)

@@ -6,12 +6,12 @@ ms.author: philmea
 ms.date: 05/19/2020
 ms.topic: article
 ms.service: rtos
-ms.openlocfilehash: 01077e3315e87b918cdfd47423d8e0c1b6bbdbbd
-ms.sourcegitcommit: 60ad844b58639d88830f2660ab0c4ff86b92c10f
+ms.openlocfilehash: 7d77997e8c5bac598f382e1169a56727af09ab108f57c90cc6265df0691b5926
+ms.sourcegitcommit: 93d716cf7e3d735b18246d659ec9ec7f82c336de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/07/2021
-ms.locfileid: "106550275"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "116796418"
 ---
 # <a name="about-the-azure-rtos-netx-user-guide"></a>Сведения о руководстве пользователя по NetX в ОСРВ Azure
 
@@ -58,7 +58,7 @@ ms.locfileid: "106550275"
 
 ## <a name="customer-support-center"></a>Центр поддержки клиентов
 
-Если у вас возникли вопросы или требуется помощь при выполнении приведенных здесь шагов, отправьте запрос в службу поддержки на портале Azure. Чтобы мы могли более эффективно решить ваш запрос на поддержку, укажите в сообщении электронной почты следующие сведения:
+Если у вас возникли вопросы или требуется помощь при выполнении приведенных здесь шагов, отправьте запрос в службу поддержки на портале Azure. Чтобы мы могли более эффективно решить ваш запрос на поддержку, укажите в сообщении электронной почты следующие сведения.
 
 1. Подробное описание проблемы, включая частоту возникновения и действия, позволяющие гарантированно воспроизвести эту проблему (если это возможно).
 
@@ -70,13 +70,13 @@ ms.locfileid: "106550275"
 
     **_tx_build_options**;
 
-    **_nx_system_build_options1**;
+    **_nx_system_build_options1**
 
-    **_nx_system_build_options2**;
+    **_nx_system_build_options2**
 
-    **_nx_system_build_options3**;
+    **_nx_system_build_options3**
 
-    **_nx_system_build_options4**;
+    **_nx_system_build_options4**
 
     **_nx_system_build_options5**.
 

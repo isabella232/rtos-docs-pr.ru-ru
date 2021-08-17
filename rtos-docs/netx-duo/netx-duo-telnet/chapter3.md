@@ -6,12 +6,12 @@ ms.author: philmea
 ms.date: 06/04/2020
 ms.topic: article
 ms.service: rtos
-ms.openlocfilehash: 991ec53aaba052b4f42da6e5a541151953121e76
-ms.sourcegitcommit: e3d42e1f2920ec9cb002634b542bc20754f9544e
+ms.openlocfilehash: 70bf4016793572d7327d12be182750316659c3c4260d2f7db8acddbba00c5601
+ms.sourcegitcommit: 93d716cf7e3d735b18246d659ec9ec7f82c336de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "104814528"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "116791998"
 ---
 # <a name="chapter-3---description-of-azure-rtos-netx-duo-telnet-services"></a>Глава 3. Описание служб NetX Duo Telnet для ОСРВ Azure
 
@@ -166,7 +166,7 @@ UINT nx_telnet_client_create(NX_TELNET_CLIENT *client_ptr,
 
 ### <a name="allowed-from"></a>Допустимые источники
 
-Инициализация, Потоки
+Инициализация, потоки
 
 ### <a name="example"></a>Например, .
 
@@ -389,7 +389,7 @@ UINT nx_telnet_server_create(NX_TELNET_SERVER *server_ptr, CHAR *server_name, NX
 
 ### <a name="allowed-from"></a>Допустимые источники
 
-Инициализация, Потоки
+Инициализация, потоки
 
 ### <a name="example"></a>Например, .
 
@@ -641,7 +641,7 @@ UINT nx_telnet_server_start(NX_TELNET_SERVER *server_ptr);
 
 ### <a name="allowed-from"></a>Допустимые источники
 
-Инициализация, Потоки
+Инициализация, потоки
 
 ### <a name="example"></a>Например, .
 

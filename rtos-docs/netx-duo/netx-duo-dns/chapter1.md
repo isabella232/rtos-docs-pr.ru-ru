@@ -6,12 +6,12 @@ ms.author: philmea
 ms.date: 06/04/2020
 ms.topic: article
 ms.service: rtos
-ms.openlocfilehash: 4c07d6e3183d421c637874dcdeff3767554fca78
-ms.sourcegitcommit: e3d42e1f2920ec9cb002634b542bc20754f9544e
+ms.openlocfilehash: e878d32d6bcf514bb75a76b51e66c4d267b1a5b34f6c4b2df6ab231e5814ffc5
+ms.sourcegitcommit: 93d716cf7e3d735b18246d659ec9ec7f82c336de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "104814736"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "116792064"
 ---
 # <a name="chapter-1---introduction-to-the-azure-rtos-netx-duo-dns-client"></a>Глава 1. Введение в клиент DNS NetX Duo для ОСРВ Azure
 

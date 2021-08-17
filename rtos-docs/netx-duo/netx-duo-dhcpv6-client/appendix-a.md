@@ -6,12 +6,12 @@ ms.author: philmea
 ms.date: 06/04/2020
 ms.topic: article
 ms.service: rtos
-ms.openlocfilehash: 3e642af158202bb3b2a4e2a37397b47d707b566e
-ms.sourcegitcommit: e3d42e1f2920ec9cb002634b542bc20754f9544e
+ms.openlocfilehash: 6840f89e66d713b1839ac84427b73273b3f9601d4b6d9d39cd94908ac77a77ca
+ms.sourcegitcommit: 93d716cf7e3d735b18246d659ec9ec7f82c336de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "104814787"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "116791335"
 ---
 # <a name="appendix-a---description-of-the-restore-state-feature-for-azure-rtos-netx-duo-dhcpv6-client"></a>Приложение A. Описание функции восстановления состояния клиента DHCPv6 для NetX Duo в ОСРВ Azure
 
@@ -142,7 +142,7 @@ status=  nx_dhcpv6_client_get_record(&dhcpv6_ptr, &dhcpv6_record);
 
 ### <a name="see-also"></a>См. также:
 
-- nx_dhcpv6_resume;
+- nx_dhcpv6_resume
 - nx_dhcpv6_suspend;
 - nx_dhcpv6_client_restore_record.
 

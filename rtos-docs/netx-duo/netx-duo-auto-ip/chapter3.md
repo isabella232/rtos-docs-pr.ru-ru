@@ -6,12 +6,12 @@ ms.author: philmea
 ms.date: 06/04/2020
 ms.topic: article
 ms.service: rtos
-ms.openlocfilehash: 0935295ef9f7255c0851e1f64013884dce4c52f1
-ms.sourcegitcommit: e3d42e1f2920ec9cb002634b542bc20754f9544e
+ms.openlocfilehash: 82a186505104983dbe6964f92e89c8e775d545eedb6495e27f21542d7660bf42
+ms.sourcegitcommit: 93d716cf7e3d735b18246d659ec9ec7f82c336de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "104814831"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "116791199"
 ---
 # <a name="chapter-3---description-of-azure-rtos-netx-duo-autoip-services"></a>Глава 3. Описание служб ОСРВ Azure NetX Duo AutoIP
 
@@ -63,7 +63,7 @@ UINT nx_auto_ip_create(NX_AUTO_IP *auto_ip_ptr, CHAR *name,
 
 ### <a name="allowed-from"></a>Допустимые источники
 
-Инициализация, потоки.
+Инициализация, потоки
 
 ### <a name="example"></a>Пример
 
@@ -240,7 +240,7 @@ UINT nx_auto_ip_start(NX_AUTO_IP *auto_ip_ptr,
 
 ### <a name="allowed-from"></a>Допустимые источники
 
-Инициализация, потоки.
+Инициализация, потоки
 
 ### <a name="example"></a>Пример
 

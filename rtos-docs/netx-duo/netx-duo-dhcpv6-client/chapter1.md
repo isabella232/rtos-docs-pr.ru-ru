@@ -6,12 +6,12 @@ ms.author: philmea
 ms.date: 06/04/2020
 ms.topic: article
 ms.service: rtos
-ms.openlocfilehash: 3bf3b52c53bb26e2c9c2c736ae35817eb967f609
-ms.sourcegitcommit: e3d42e1f2920ec9cb002634b542bc20754f9544e
+ms.openlocfilehash: f938be404c121f3080cfed1a81aa356f698538c4f557387009d951df40496a6d
+ms.sourcegitcommit: 93d716cf7e3d735b18246d659ec9ec7f82c336de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "104814784"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "116791318"
 ---
 # <a name="chapter-1---introduction-to-azure-rtos-netx-duo-dhcpv6-client"></a>Глава 1. Введение в DHCPv6-клиент NetX Duo для ОСРВ Azure
 

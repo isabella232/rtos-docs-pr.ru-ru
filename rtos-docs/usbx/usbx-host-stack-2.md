@@ -6,12 +6,12 @@ ms.author: philmea
 ms.date: 5/19/2020
 ms.service: rtos
 ms.topic: article
-ms.openlocfilehash: 4c33f95b8ac268c557fd947a1303ec3af315a37e
-ms.sourcegitcommit: d8edbb3207fe99f8afb431597dac063e73383e68
+ms.openlocfilehash: 77df2c4e4bf4ef38403fe78eb98f18820de4325aadb941fc69275e4c77754212
+ms.sourcegitcommit: 93d716cf7e3d735b18246d659ec9ec7f82c336de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2021
-ms.locfileid: "106377090"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "116790972"
 ---
 # <a name="chapter-2---azure-rtos-usbx-host-stack-installation"></a>Глава 2. Установка стека узлов ОСРВ Azure USBX
 
@@ -39,7 +39,7 @@ ms.locfileid: "106377090"
 
 USBX также использует семафоры, мьютексы и потоки ThreadX для защиты многопоточности, как и приостановку ввода-вывода и периодическую обработку для мониторинга топологии шины USB.
 
-### <a name="product-distribution"></a>Дистрибутивы продукта
+### <a name="product-distribution"></a>Распространение продукта
 
 ОСРВ Azure USBX можно получить из нашего репозитория общедоступного исходного кода по адресу <https://github.com/azure-rtos/usbx/>.
 

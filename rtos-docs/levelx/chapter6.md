@@ -6,12 +6,12 @@ ms.author: philmea
 ms.date: 05/19/2020
 ms.topic: article
 ms.service: rtos
-ms.openlocfilehash: 3ab7d3a7e431d7c8f49ef4f5cab9216dc77c8d33
-ms.sourcegitcommit: e3d42e1f2920ec9cb002634b542bc20754f9544e
+ms.openlocfilehash: 2e109f5916a9e903aa3341f2855ade085e9d9a22b80ec7cb2e0c310e43ff3eac
+ms.sourcegitcommit: 93d716cf7e3d735b18246d659ec9ec7f82c336de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "104815420"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "116790247"
 ---
 # <a name="chapter-6---azure-rtos-levelx-nor-apis"></a>Глава 6. API-интерфейсы NOR для LevelX для ОСРВ Azure
 
@@ -47,7 +47,7 @@ UINT lx_nor_flash_close(LX_NOR_FLASH *nor_flash);
 
 ### <a name="return-values"></a>Возвращаемые значения
 
-- **TX_SUCCESS** (0x00): запрос успешно выполнен.
+- **LX_SUCCESS** (0x00): запрос успешно выполнен.
 - **LX_ERROR** (0x01): ошибка закрытия экземпляра флэш-памяти.
 
 ### <a name="allowed-from"></a>Допустимые источники
@@ -94,7 +94,7 @@ UINT lx_nor_flash_defragment(LX_NOR_FLASH *nor_flash);
 
 ### <a name="return-values"></a>Возвращаемые значения
 
-- **TX_SUCCESS** (0x00): запрос успешно выполнен.
+- **LX_SUCCESS** (0x00): запрос успешно выполнен.
 - **LX_ERROR** (0x01): ошибка дефрагментации экземпляра флэш-памяти.
 
 ### <a name="allowed-from"></a>Допустимые источники
@@ -200,7 +200,7 @@ UINT lx_nor_flash_initialize(void);
 
 ### <a name="allowed-from"></a>Допустимые источники
 
-Инициализация, потоки.
+Инициализация, потоки
 
 ### <a name="example"></a>Пример
 
@@ -299,7 +299,7 @@ UINT lx_nor_flash_partial_defragment(
 
 ### <a name="return-values"></a>Возвращаемые значения
 
-- **TX_SUCCESS** (0x00): запрос успешно выполнен.
+- **LX_SUCCESS** (0x00): запрос успешно выполнен.
 - **LX_ERROR** (0x01): ошибка дефрагментации экземпляра флэш-памяти.
 
 ### <a name="allowed-from"></a>Допустимые источники
@@ -453,7 +453,7 @@ UINT lx_nor_flash_sector_write(
 
 ### <a name="return-values"></a>Возвращаемые значения
 
-- **TX_SUCCESS** (0x00): запрос успешно выполнен.
+- **LX_SUCCESS** (0x00): запрос успешно выполнен.
 - **LX_NO_SECTORS** (0x02): больше нет свободных секторов для выполнения записи
 - **LX_ERROR** (0x01): ошибка освобождения сектора флэш-памяти NOR.
 

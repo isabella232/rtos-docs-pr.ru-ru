@@ -6,12 +6,12 @@ ms.author: philmea
 ms.date: 05/19/2020
 ms.topic: article
 ms.service: rtos
-ms.openlocfilehash: 30a2dc6284b413fe79ae6214e972b01d1321d031
-ms.sourcegitcommit: e3d42e1f2920ec9cb002634b542bc20754f9544e
+ms.openlocfilehash: 99dd57b474f2f82aea2a7b2317a46c6b5a6150009ab33522ee6fbe4a3de6bf2c
+ms.sourcegitcommit: 93d716cf7e3d735b18246d659ec9ec7f82c336de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "104814368"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "116788530"
 ---
 # <a name="appendix-a---azure-rtos-threadx-api-services"></a>Приложение A. Службы API в ThreadX для ОСРВ Azure
 
@@ -21,7 +21,7 @@ ms.locfileid: "104814368"
 VOID      tx_kernel_enter(VOID);
 ```
 
-## <a name="block-memory-services"></a>Службы блочной памяти
+## <a name="block-memory-services"></a>Службы блоков памяти
 
 ```c
 UINT      tx_block_allocate(TX_BLOCK_POOL *pool_ptr,
@@ -66,7 +66,7 @@ UINT      tx_block_pool_prioritize(TX_BLOCK_POOL *pool_ptr);
 UINT      tx_block_release(VOID *block_ptr);
 ```
 
-## <a name="byte-memory-services"></a>Службы побайтовой памяти
+## <a name="byte-memory-services"></a>Службы управления байтами памяти
 
 ```c
 UINT      tx_byte_allocate(TX_BYTE_POOL *pool_ptr,

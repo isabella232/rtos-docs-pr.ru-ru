@@ -6,12 +6,12 @@ ms.author: philmea
 ms.date: 06/08/2020
 ms.topic: article
 ms.service: rtos
-ms.openlocfilehash: 33eb0b4bd98f808124b9a6a1f01950639243d612
-ms.sourcegitcommit: e3d42e1f2920ec9cb002634b542bc20754f9544e
+ms.openlocfilehash: 8496d9158c06e79ed86cb2f09ed9986a4eae5ed176352ff01c317df9f2399127
+ms.sourcegitcommit: 93d716cf7e3d735b18246d659ec9ec7f82c336de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "104814791"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "116788445"
 ---
 # <a name="chapter-3---description-of-azure-rtos-netx-duo-dhcp-server-services"></a>Глава 3. Описание служб сервера DHCP для NetX Duo в ОСРВ Azure
 
@@ -73,7 +73,7 @@ status = nx_dhcp_server_create(&dhcp_server, &server_ip, pointer,
 
 ## <a name="nx_dhcp_create_server_ip_address_list"></a>nx_dhcp_create_server_ip_address_list
 
-Создание пула IP-адресов
+Создание пула IP-адресов.
 
 ### <a name="prototype"></a>Прототип
 
@@ -122,7 +122,7 @@ status = nx_dhcp_create_server_ip_list(&dhcp_server, iface_index,
 
 ## <a name="nx_dhcp_clear_client_record"></a>nx_dhcp_clear_client_record
 
-Удаление записи клиента из базы данных сервера
+Удаление записи клиента из базы данных сервера.
 
 ### <a name="prototype"></a>Прототип
 
@@ -133,7 +133,7 @@ UINT nx_dhcp_clear_client_record(NX_DHCP_SERVER *dhcp_ptr,
 
 ### <a name="description"></a>Описание
 
-Эта служба очищает запись клиента из базы данных сервера.
+Эта служба удаляет запись клиента из базы данных сервера.
 
 ### <a name="input-parameters"></a>Входные параметры
 
@@ -161,7 +161,7 @@ status = nx_dhcp_clear_client_record(&dhcp_server, &dhcp_client_ptr);
 
 ## <a name="nx_dhcp_set_interface_network_parameters"></a>nx_dhcp_set_interface_network_parameters
 
-Настройка параметров сети в конфигурации DHCP
+Настройка параметров сети в конфигурации DHCP.
 
 ### <a name="prototype"></a>Прототип
 
@@ -174,7 +174,7 @@ UINT nx_dhcp_set_interface_network_parameters(NX_DHCP_SERVER *dhcp_ptr,
 
 ### <a name="description"></a>Описание
 
-Эта служба задает значения по умолчанию для критически важных сетевых параметров указанного интерфейса. Сервер DHCP будет включать эти параметры в ответы OFFER и ACK, возвращаемые в клиент DHCP. Если параметры интерфейса устанавливает узел, в котором выполняется сервер DHCP, будут использоваться следующие значения по умолчанию: в качестве основного шлюза для интерфейса задается адрес самого сервера DHCP, в качестве адреса DNS-сервера также задается адрес самого сервера DHCP, а в качестве маски подсети задается значение, настроенное для интерфейса сервера DHCP.
+Эта служба задает значения по умолчанию для критически важных параметров сети для указанного интерфейса. DHCP-сервер будет включать эти параметры в ответы OFFER и ACK, возвращаемые в DHCP-клиент. Если параметры интерфейса устанавливает узел, на котором выполняется DHCP-сервер, то будут использоваться следующие значения по умолчанию: в качестве основного шлюза для интерфейса задается адрес самого DHCP-сервера, в качестве адреса DNS-сервера также задается адрес самого DHCP-сервера, а в качестве маски подсети задается значение, настроенное для интерфейса DHCP-сервера.
 
 ### <a name="input-parameters"></a>Входные параметры
 
@@ -209,7 +209,7 @@ status = nx_dhcp_set_interface_network_parameters(&dhcp_server, iface_index,
 
 ## <a name="nx_dhcp_server_delete"></a>nx_dhcp_server_delete
 
-Удаление экземпляра сервера DHCP
+Удаление экземпляра DHCP-сервера.
 
 ### <a name="prototype"></a>Прототип
 
@@ -219,7 +219,7 @@ UINT nx_dhcp_server_delete(NX_DHCP_SERVER *dhcp_ptr);
 
 ### <a name="description"></a>Описание
 
-Эта служба удаляет ранее созданный экземпляр сервера DHCP.
+Эта служба удаляет созданный ранее экземпляр DHCP-сервера.
 
 ### <a name="input-parameters"></a>Входные параметры
 
@@ -248,7 +248,7 @@ status = nx_dhcp_server_delete(&dhcp_server);
 
 ## <a name="nx_dhcp_server_start"></a>nx_dhcp_server_start
 
-Запуск работы сервера DHCP.
+Запуск обработки DHCP-сервера.
 
 ### <a name="prototype"></a>Прототип
 
@@ -258,11 +258,11 @@ UINT nx_dhcp_server_start(NX_DHCP_SERVER *dhcp_ptr);
 
 ### <a name="description"></a>Описание
 
-Эта служба запускает работу сервера DHCP, в том числе создает для сервера сокет UDP, привязывает порт DHCP и ожидает получения запросов от клиента DHCP.
+Эта служба запускает работу DHCP-сервера, в том числе создает для сервера сокет UDP, привязывает порт DHCP и ожидает получения запросов от DHCP-клиента.
 
 ### <a name="input-parameters"></a>Входные параметры
 
-- **dhcp_ptr** — указатель на ранее созданный экземпляр DHCP.
+- **dhcp_ptr**: указатель на созданный ранее экземпляр DHCP.
 
 ### <a name="return-values"></a>Возвращаемые значения
 
@@ -288,7 +288,7 @@ status = nx_dhcp_server_start(&dhcp_server);
 
 ## <a name="nx_dhcp_server_stop"></a>nx_dhcp_server_stop
 
-Остановка работы сервера DHCP
+Остановка обработки DHCP-сервера.
 
 ### <a name="prototype"></a>Прототип
 
@@ -298,7 +298,7 @@ UINT nx_dhcp_server_stop(NX_DHCP_SERVER *dhcp_ptr);
 
 ### <a name="description"></a>Описание
 
-Эта служба останавливает работу сервера DHCP, в том числе получение запросов от клиента DHCP.
+Эта служба останавливает работу DHCP-сервера, в том числе получение запросов от DHCP-клиентов.
 
 ### <a name="input-parameters"></a>Входные параметры
 
