@@ -6,12 +6,12 @@ ms.author: v-condav
 ms.date: 01/27/2021
 ms.topic: article
 ms.service: rtos
-ms.openlocfilehash: b4cdeca81c157934e35a219cd5535ec38f2c0746
-ms.sourcegitcommit: e3d42e1f2920ec9cb002634b542bc20754f9544e
+ms.openlocfilehash: 686db68181e3712f9f6a09a9f471626eff610fd7f45ec5b83ba56f8b7aa378cc
+ms.sourcegitcommit: 93d716cf7e3d735b18246d659ec9ec7f82c336de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "104814588"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "116798016"
 ---
 # <a name="chapter-3---description-of-azure-rtos-netx-duo-ptp-client-services"></a>Глава 3. Описание служб клиента PTP для NetX Duo в ОСРВ Azure
 
@@ -94,8 +94,8 @@ UINT nx_ptp_client_delete(NX_PTP_CLIENT *client_ptr);
 * **client_ptr** — указатель на удаляемый клиент PTP.
 
 ### <a name="return-values"></a>Возвращаемые значения
-* **NX_SUCCESS** (0x00) — клиент успешно удален.
-* NX_PTR_ERROR (0x07) — недопустимый параметр указателя во входных данных.
+* **NX_SUCCESS** (0x00): клиент успешно удален.
+* NX_PTR_ERROR (0x07): недопустимый параметр указателя во входных данных.
 
 ### <a name="allowed-from"></a>Допустимые источники
 Потоки
@@ -306,7 +306,7 @@ UINT nx_ptp_client_start(
 * **NX_SUCCESS** (0x00) — клиент успешно запущен.
 * **NX_PTP_CLIENT_ALREADY_STARTED** (0xD02) — клиент PTP уже запущен.
 * **status** — состояние завершения вызовов служб NetX Duo и ThreadX.
-* NX_PTR_ERROR (0x07) — недопустимый параметр указателя во входных данных.
+* NX_PTR_ERROR (0x07): недопустимый параметр указателя во входных данных.
 
 ### <a name="allowed-from"></a>Допустимые источники
 Потоки

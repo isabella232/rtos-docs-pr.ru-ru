@@ -6,12 +6,12 @@ ms.author: philmea
 ms.date: 5/19/2020
 ms.service: rtos
 ms.topic: article
-ms.openlocfilehash: d4aea7470ba2d9075296164b9d1fb61db4f88523
-ms.sourcegitcommit: e3d42e1f2920ec9cb002634b542bc20754f9544e
+ms.openlocfilehash: 9d88d9bd177a251a00fec6757fc1f1494b56bab9655a55f973481f273f0683ee
+ms.sourcegitcommit: 93d716cf7e3d735b18246d659ec9ec7f82c336de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "104816144"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "116797557"
 ---
 # <a name="description-of-usbx-device-services"></a>Описание служб устройства USBX
 
@@ -568,7 +568,7 @@ UINT ux_device_stack_interface_delete(UX_SLAVE_INTERFACE*interface);
 
 ### <a name="return-value"></a>Возвращаемое значение
 
-- **UX_SUCCESS** (0x00) – операция успешно выполнена.
+- **UX_SUCCESS** (0x00) — операция успешно выполнена
 
 ### <a name="example"></a>Пример
 
@@ -780,7 +780,7 @@ UINT ux_device_stack_transfer_abort(
 
 ### <a name="return-value"></a>Возвращаемое значение
 
-- **UX_SUCCESS** (0x00) – операция успешно выполнена.
+- **UX_SUCCESS** (0x00) — операция успешно выполнена
 
 ### <a name="example"></a>Пример
 

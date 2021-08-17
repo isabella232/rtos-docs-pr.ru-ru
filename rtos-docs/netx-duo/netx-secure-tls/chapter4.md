@@ -6,12 +6,12 @@ ms.author: philmea
 ms.date: 06/04/2020
 ms.topic: article
 ms.service: rtos
-ms.openlocfilehash: 80ec22058ab64ed0c6258bb3d9364ec44f9a741b
-ms.sourcegitcommit: 4ebe7c51ba850951c6a9d0f15e22d07bb752bc28
+ms.openlocfilehash: b10260778f7f5e1a5bd0a38aded2339008b066cca77f2439a5881d28a0489524
+ms.sourcegitcommit: 93d716cf7e3d735b18246d659ec9ec7f82c336de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2021
-ms.locfileid: "110223398"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "116797761"
 ---
 # <a name="chapter-4---description-of-azure-rtos-netx-secure-services"></a>Глава 4. Описание служб NetX Secure для ОСРВ Azure
 
@@ -2621,7 +2621,7 @@ UINT  nx_secure_tls_session_start(NX_SECURE_TLS_SESSION *session_ptr,
 
 ### <a name="return-values"></a>Возвращаемые значения
 
-- **TX_SUCCESS** (0x00): сеанс TLS успешно инициализирован.
+- **NX_SUCCESS** (0x00) — сеанс TLS успешно инициализирован.
 - **NX_NOT_CONNECTED** (0x38): базовый сокет TCP больше не подключен.
 - **NX_SECURE_TLS_UNRECOGNIZED_MESSAGE_TYPE** (0x102): получен неправильный тип сообщения TLS.
 - **NX_SECURE_TLS_UNSUPPORTED_CIPHER** (0x106): шифр, предоставленный удаленным узлом, не поддерживается.

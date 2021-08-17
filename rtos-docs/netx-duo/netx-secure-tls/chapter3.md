@@ -6,12 +6,12 @@ ms.author: philmea
 ms.date: 06/04/2020
 ms.topic: article
 ms.service: rtos
-ms.openlocfilehash: c28ad0255f99986a4ddfe5faefad81e70840e5e0
-ms.sourcegitcommit: e3d42e1f2920ec9cb002634b542bc20754f9544e
+ms.openlocfilehash: 711195e60771ebd467c69df49ef7665f32e13a17c21ca839404e829449cf1401
+ms.sourcegitcommit: 93d716cf7e3d735b18246d659ec9ec7f82c336de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "104814511"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "116797979"
 ---
 # <a name="chapter-3---functional-description-of-azure-rtos-netx-secure"></a>Глава 3. Функциональное описание ОСРВ Azure NetX Secure
 
@@ -64,7 +64,7 @@ TLS задает протокол для создания *ключей сеан
 
 | Поле заголовка TLS | Назначение     |
 | ---------------- | ------------- |
-| **8 разрядов: тип сообщения** | Это поле содержит тип отправляемой записи TLS. Допустимые типы:<br />- ChangeCipherSpec<sup>8</sup>: 0x14;<br />- оповещение: 0x15;<br />- подтверждение: 0x16;<br />- данные приложения: 0x17. |
+| **8 разрядов: тип сообщения** | Это поле содержит тип отправляемой записи TLS. Допустимые типы:<br />- ChangeCipherSpec<sup>8</sup>: 0x14;<br />- оповещение: 0x15;<br />- Handshake: 0x16;<br />- данные приложения: 0x17. |
 | **16 разрядов: версия протокола** | Это поле содержит версию протокола TLS. Допустимы следующие значения:<br />- SSL 3.0: 0x0300;<br />- TLS 1.0: 0x0301;<br />- TLS 1.1: 0x0302;<br />- TLS 1.2: 0x0303;<br />- **TLS 1.3 <sup>9</sup>** : **0x0303**. |
 | **16 разрядов: длина** | Это поле содержит длину данных, инкапсулированных в запись TLS. |
 
@@ -695,13 +695,13 @@ typedef struct NX_SECURE_X509_EXTENSION_STRUCT
 В случае сервера TLS проверка подлинности на основе сертификата клиента выполняется немного сложнее, чем в случае клиента TLS, ввиду необязательного использования функции. В этом случае сервер TLS должен запросить сертификат у удаленного клиента TLS, обработать сообщение CertificateVerify, чтобы убедиться, что удаленный клиент владеет соответствующим закрытым ключом, а затем сервер должен убедиться, что сертификат, предоставленный клиентом, можно отследить до сертификата в хранилище локальных доверенных сертификатов.
 
 В экземплярах сервера NetX Secure TLS проверка подлинности на основе сертификата клиента осуществляется с помощью служб <br>
-*nx <span class="underline"> _</span>secure <span class="underline">_</span>tls <span class="underline"> _</span>session <span class="underline">_</span>client <span class="underline"> _</span>verify<span class="underline">_</span>enable* и<br>
-*nx <span class="underline"> _</span>secure <span class="underline">_</span>tls <span class="underline"> _</span>session <span class="underline">_</span>client <span class="underline"> _</span>verify<span class="underline">_</span>disable*.
+*nx <span class="underline"> _</span>secure <span class="underline">_</span>tls <span class="underline"> _</span>session <span class="underline">_</span>client <span class="underline"> _</span>verify <span class="underline">_</span>enable* и<br>
+*nx <span class="underline"> _</span>secure <span class="underline">_</span>tls <span class="underline"> _</span>session <span class="underline">_</span>client <span class="underline"> _</span>verify <span class="underline">_</span>disable*.
 
 Чтобы включить проверку подлинности на основе сертификата клиента, приложение должно вызвать службу<br>
 *nx <span class="underline"> _</span>secure <span class="underline">_</span>tls <span class="underline"> _</span>session <span class="underline">_</span>client <span class="underline"> _</span>verify <span class="underline">_</span>enable* с использованием экземпляра сеанса сервера TLS перед вызовом *nx_secure_tls_session_start*. Обратите внимание на то, что вызов этой службы для сеанса TLS, который используется для подключений клиента TLS, ни на что не повлияет.
 
-Если включена проверка подлинности на основе сертификата клиента, сервер TLS запрашивает сертификат у удаленного клиента TLS во время подтверждения TLS. На сервере NetX Secure TLS сертификат клиента проверяется с помощью хранилища доверенных сертификатов, созданных с помощью *nx <span class="underline"> _</span>secure_tls <span class="underline">_</span>trusted <span class="underline"> _</span>certificate<span class="underline">_</span>add*, в соответствии с цепочкой издателей X.509. Удаленный клиент должен предоставить цепочку, которая связывает удостоверяющий сертификат с сертификатом в доверенном хранилище, иначе произойдет сбой подтверждения TLS. Кроме того, если происходит сбой обработки сообщения CertificateVerify, то подтверждение TLS также завершается ошибкой.
+Если включена проверка подлинности на основе сертификата клиента, сервер TLS запрашивает сертификат у удаленного клиента TLS во время подтверждения TLS. На сервере NetX Secure TLS сертификат клиента проверяется с помощью хранилища доверенных сертификатов, созданных с помощью *nx <span class="underline"> _</span>secure_tls <span class="underline">_</span>trusted <span class="underline"> _</span>certificate <span class="underline">_</span>add*, в соответствии с цепочкой издателей X.509. Удаленный клиент должен предоставить цепочку, которая связывает удостоверяющий сертификат с сертификатом в доверенном хранилище, иначе произойдет сбой подтверждения TLS. Кроме того, если происходит сбой обработки сообщения CertificateVerify, то подтверждение TLS также завершается ошибкой.
 
 Методы сигнатур, используемые для метода CertificateVerify, являются фиксированными для протоколов TLS 1.0 и TLS 1.1 и задаются сервером TLS в протоколе TLS 1.2. Для протокола TLS 1.2 поддерживаются методы сигнатур, которые, как правило, соответствуют методам, передаваемым в таблице криптографических методов, но обычно это RSA с SHA-256 (ознакомьтесь с разделом "Шифрование в NetX Secure TLS", чтобы получить дополнительные сведения об инициализации TLS с помощью криптографических методов).
 

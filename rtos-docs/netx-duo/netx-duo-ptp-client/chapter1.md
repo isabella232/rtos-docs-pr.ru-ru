@@ -6,12 +6,12 @@ ms.author: v-condav
 ms.date: 01/27/2021
 ms.topic: article
 ms.service: rtos
-ms.openlocfilehash: 5beec64bd6d74e3bed06be15255d6bd4a940ba64
-ms.sourcegitcommit: e3d42e1f2920ec9cb002634b542bc20754f9544e
+ms.openlocfilehash: cf7210529121c8e49ff3cabbb7c673288b803f24760096396f32f33d4a9fb7e6
+ms.sourcegitcommit: 93d716cf7e3d735b18246d659ec9ec7f82c336de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "104814591"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "116798050"
 ---
 # <a name="chapter-1---introduction-to-azure-rtos-netx-duo-ptp-client"></a>Глава 1. Введение в PTP-клиент в NetX Duo для ОСРВ Azure
 
@@ -58,12 +58,12 @@ UINT ptp_clock_callback(
 * *client_ptr* — указывает на PTP-клиент.
 * *operation* — определяет операцию обратного вызова, допустимые значения которой приведены ниже.
   * **NX_PTP_CLIENT_CLOCK_INIT** — инициализация часов.
-  * **NX_PTP_CLIENT_CLOCK_SET** — настройка текущей метки времени, которая задана `time_ptr`.
-  * **NX_PTP_CLIENT_CLOCK_GET** — передача текущей метки времени в `time_ptr`.
-  * **NX_PTP_CLIENT_CLOCK_PACKET_TS_EXTRACT** — извлечение метки времени из `packet_ptr` в `time_ptr`.
-  * **NX_PTP_CLIENT_CLOCK_ADJUST** — корректировка текущей метки времени менее чем на *1* секунду.
-  * **NX_PTP_CLIENT_CLOCK_PACKET_TS_PREPARE** — пометка `packet_ptr`, для которой нужно известить PTP-клиента о метке времени при ее передаче.
-  * **NX_PTP_CLIENT_CLOCK_SOFT_TIMER_UPDATE** — обновление программного таймера. Может игнорироваться аппаратными часами.
+  * **NX_PTP_CLIENT_CLOCK_SET** — настройка текущей метки времени, которая задана `time_ptr`.
+  * **NX_PTP_CLIENT_CLOCK_GET** — передача текущей метки времени в `time_ptr`.
+  * **NX_PTP_CLIENT_CLOCK_PACKET_TS_EXTRACT** — извлечение метки времени из `packet_ptr` в `time_ptr`.
+  * **NX_PTP_CLIENT_CLOCK_ADJUST** — корректировка текущей метки времени менее чем на *1* секунду.
+  * **NX_PTP_CLIENT_CLOCK_PACKET_TS_PREPARE** — отметка `packet_ptr`, предписывающая уведомить клиента PTP о метке времени при ее передаче.
+  * **NX_PTP_CLIENT_CLOCK_SOFT_TIMER_UPDATE** — обновление программного таймера. Может игнорироваться аппаратными часами.
 * *time_ptr* — указывает на метку времени.
 * *packet_ptr* — указывает на пакет.
 * *callback_data* — указывает на непрозрачные данные обратного вызова.
