@@ -6,12 +6,12 @@ ms.author: philmea
 ms.date: 05/19/2020
 ms.topic: article
 ms.service: rtos
-ms.openlocfilehash: cde19a0e84f369f1199ea4027fa09e6bd038e837
-ms.sourcegitcommit: e3d42e1f2920ec9cb002634b542bc20754f9544e
+ms.openlocfilehash: faf9d84b8b2bce12a99a72198a396b121055a8eef975349f53833a180092e0a3
+ms.sourcegitcommit: 93d716cf7e3d735b18246d659ec9ec7f82c336de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "104814659"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "116797540"
 ---
 # <a name="chapter-2---installation-and-use-of-azure-rtos-netx-duo-mqtt-client"></a>Глава 2. Установка и использование клиента MQTT для NetX Duo (ОСРВ Azure)
 
@@ -47,6 +47,7 @@ ms.locfileid: "104814659"
 Если определен этот символ, необходимо установить модуль NetX Secure TLS.
 *NX_SECURE_ENABLE*: по умолчанию отключен.**
 - **NXD_MQTT_REQUIRE_TLS**: определен; приложение должно использовать TLS для подключения к брокеру MQTT. Для использования этой возможности нужно определить *NX_SECURE_ENABLE*. По умолчанию этот символ не определен.
+- **NXD_MQTT_MAXIMUM_TRANSMIT_QUEUE_DEPTH**: определено, глубина очереди передачи MQTT включена. Значение должно быть положительным целым числом.
 - **NXD_MQTT_MAX_TOPIC_NAME_LENGTH**: не рекомендуется использовать.
 - **NXD_MQTT_MAX_MESSAGE_LENGTH**: не рекомендуется использовать.
 - **NXD_MQTT_KEEPALIVE_TIMER_RATE**: определяет частоту таймера MQTT в тактах таймера ThreadX. Этот таймер используется для контроля за отсчетом времени с момента отправки последнего управляющего сообщения MQTT, чтобы отправить сообщение MQTT PINGREQ до истечения периода активности. Этот таймер активируется, если клиент подключается к брокеру с установленным значением таймера периода активности. По умолчанию используется значение TX_TIMER_TICKS_PER_SECOND, что соответствует длительности таймера в одну секунду.
