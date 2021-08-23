@@ -127,6 +127,14 @@
           href: netx-duo-http/chapter2.md
         - name: "Глава\_3.\_Описание служб HTTP для NetX"
           href: netx-duo-http/chapter3.md
+    - name: Руководство пользователя по Iperf для NetX Duo
+      items:
+        - name: "Глава\_1.\_Знакомство с Iperf для NetX Duo"
+          href: netx-duo-iperf/chapter1.md
+        - name: "Глава\_2.\_Установка и использование Iperf для Azure NetX Duo"
+          href: netx-duo-iperf/chapter2.md
+        - name: "Глава\_3.\_Запуск демонстрации"
+          href: netx-duo-iperf/chapter3.md
     - name: Руководство пользователя по mDNS/DNS-SD для NetX Duo
       items:
         - name: "Гл. 1.\_Знакомство с mDNS/DNS-SD для NetX Duo"
