@@ -6,12 +6,12 @@ ms.author: philmea
 ms.date: 05/19/2020
 ms.topic: article
 ms.service: rtos
-ms.openlocfilehash: 32af483db1f97b45bfe3d334b8c79d984dedc8470a37ce1d4164331549b6954c
-ms.sourcegitcommit: 93d716cf7e3d735b18246d659ec9ec7f82c336de
+ms.openlocfilehash: c96e6e422ea570085f5d7c6aeaaaa697a2393b5e
+ms.sourcegitcommit: 20a136b06a25e31bbde718b4d12a03ddd8db9051
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "116789054"
+ms.lasthandoff: 09/07/2021
+ms.locfileid: "123552387"
 ---
 # <a name="chapter-3---functional-components-of-azure-rtos-netx-duo"></a>Глава 3. Функциональные компоненты ОСРВ Azure NetX Duo
 
@@ -759,7 +759,7 @@ FE80::5632:10FF:FE1A:BC67
 
 Существует несколько специальных адресов многоадресной рассылки для отправки многоадресных сообщений на один или несколько узлов в IPv6:
 
-| Группа  | Адрес   | Описание  |
+| Group  | Адрес   | Описание  |
 |---|---|---|
 |Группа всех узлов |**FF02::1** |Все узлы в локальной сети|
 |Группа всех маршрутизаторов |**FF02::2** |Все маршрутизаторы в локальной сети|
@@ -1104,7 +1104,7 @@ NetX Duo не может связаться с сетью IPv6, пока его 
 ### <a name="udp-enable"></a>Включение UDP   
 Перед передачей UDP-пакетов приложение должно сначала включить протокол UDP, вызвав службу ***nx_udp_enable***. После включения приложение может отправлять и получать UDP-пакеты.  
 
-### <a name="udp-socket-create"></a>Создание сокета UDP    
+### <a name="udp-socket-create"></a>Создание UDP-сокета    
 Сокеты UDP создаются во время инициализации или выполнения потоками приложения. Начальный тип службы, срок жизни и длина очереди получения определяются службой ***nx_udp_socket_create***. Число сокетов UDP в приложении не ограничено.
 
 ### <a name="udp-checksum"></a>Контрольная сумма UDP   
@@ -1177,7 +1177,7 @@ UDP Fast Path&trade; — это название пути с низкими из
 ### <a name="udp-socket-control-block-nx_udp_socket"></a>NX_UDP_SOCKET: блок управления сокетом UDP
 Характеристики каждого UDP-сокета находятся в связанном блоке управления NX_UDP_SOCKET. Он содержит такие полезные сведения, как ссылка на структуру данных IP, сетевой интерфейс для путей отправки и получения, привязанный порт и очередь получения пакетов. Эта структура определена в файле ***nx_api.h***.
 
-## <a name="transmission-control-protocol-tcp"></a>Протокол TCP
+## <a name="transmission-control-protocol-tcp"></a>Управляющий протокол передачи (TCP)
 
 Управляющий протокол передачи (TCP) обеспечивает надежную потоковую передачу данных между двумя элементами сети (RFC 793). Все данные, отправленные одним элементом сети, проверяются и подтверждаются получающим элементом. Кроме того, перед любой передачей данных эти два элемента должны установить соединение. Все это обеспечивает надежную передачу данных, однако требует значительно больших временных затрат, чем описанная ранее передача данных UDP.
 
@@ -1388,3 +1388,84 @@ while(1)
 
 ### <a name="tcp-socket-control-block-nx_tcp_socket"></a>Блок управления сокетом TCP NX_TCP_SOCKET      
 Характеристики каждого из сокетов TCP находятся в связанном блоке управления *NX_TCP_SOCKET*, который содержит полезную информацию, такую как ссылка на структуру данных IP, интерфейс сетевого подключения, связанный порт и очередь получения пакетов. Эта структура определена в файле ***nx_api.h***.
+
+## <a name="tcpip-offload"></a>Разгрузка TCP/IP
+Эта функция позволяет NetX Duo поддерживать сетевую карту, которая предлагает службу TCP/IP на оборудовании. Некоторые модули Wi-Fi обеспечивают обработку TCP/IP в модуле, а приложения, работающие на основе MCU, отправляют и получают пакеты через API для получения доступа к стеку TCP/IP. Если эта функция включена, разработчики могут запускать собственные приложения NetX Duo напрямую.
+
+Чтобы включить функцию разгрузки TCP/IP, при сборке NetX Duo нужно определить `NX_ENABLE_TCPIP_OFFLOAD` и `NX_ENABLE_INTERFACE_CAPABILITY`.
+
+### <a name="tcpip-offload-handler"></a>Обработчик разгрузки TCP/IP
+NetX Duo обменивается данными с сетевым драйвером с помощью функции обратного вызова, которая обрабатывает операции сокета TCP или UDP. Функция обратного вызова определяется в `NX_INTERFACE_STRUCT`. Сетевому драйверу необходимо задать функцию обратного вызова TCP/IP во время выполнения команды драйвера `NX_LINK_ENABLE`. Ниже представлен прототип функции обратного вызова TCP/IP.
+
+``` C
+UINT (*nx_interface_tcpip_offload_handler)(struct NX_IP_STRUCT *ip_ptr,
+                                           struct NX_INTERFACE_STRUCT *interface_ptr,
+                                           VOID *socket_ptr, UINT operation, NX_PACKET *packet_ptr,
+                                           NXD_ADDRESS *local_ip, NXD_ADDRESS *remote_ip,
+                                           UINT local_port, UINT *remote_port, UINT wait_option);
+```
+Описание параметров:
+* `ip_ptr` — указатель на экземпляр IP-адреса;
+* `interface_ptr` — указатель на интерфейс;
+* `socket_ptr` — указатель на `NX_TCP_SOCKET` или `NX_UDP_SOCKET`, зависит от значения `operation`;
+* `operation` — операция текущего вызова функции; Значения определяются следующим образом:
+``` C
+#define NX_TCPIP_OFFLOAD_TCP_CLIENT_SOCKET_CONNECT  0
+#define NX_TCPIP_OFFLOAD_TCP_SERVER_SOCKET_LISTEN   1
+#define NX_TCPIP_OFFLOAD_TCP_SERVER_SOCKET_ACCEPT   2
+#define NX_TCPIP_OFFLOAD_TCP_SERVER_SOCKET_UNLISTEN 3
+#define NX_TCPIP_OFFLOAD_TCP_SOCKET_DISCONNECT      4
+#define NX_TCPIP_OFFLOAD_TCP_SOCKET_SEND            5
+#define NX_TCPIP_OFFLOAD_UDP_SOCKET_BIND            6
+#define NX_TCPIP_OFFLOAD_UDP_SOCKET_UNBIND          7
+#define NX_TCPIP_OFFLOAD_UDP_SOCKET_SEND            8
+```
+* `packet_ptr` — указатель на пакет. Значение задается, если для `operation` установлено значение `TCP_SOCKET_SEND` или `UDP_SOCKET_SEND`.
+* `local_ip` — указатель на локальный IP-адрес. Значение задается, если для `operation` установлено значение `UDP_SOCKET_SEND`.
+* `remote_ip` — указатель на удаленный IP-адрес. Значение задается, если для `operation` установлено значение `TCP_CLIENT_SOCKET_CONNECT` или `UDP_SOCKET_SEND`. Если для операции задано значение `TCP_SERVER_SOCKET_ACCEPT`, оно должно возвращаться функцией обратного вызова.
+* `local_port` — локальный порт. Значение задается, если для `operation` установлено значение `TCP_CLIENT_SOCKET_CONNECT`, `TCP_SERVER_SOCKET_LISTEN`, `TCP_SERVER_SOCKET_ACCEPT`, `TCP_SERVER_SOCKET_UNLISTEN` или UDP
+* `remote_port` — удаленный порт. Значение задается, если для `operation` установлено значение `TCP_CLIENT_SOCKET_CONNECT` или `UDP_SOCKET_SEND`. Если для операции задано значение `TCP_SERVER_SOCKET_ACCEPT`, оно должно возвращаться функцией обратного вызова.
+* `wait_option` — параметр ожидания в тактах. Значение задается для всех операций.
+
+### <a name="tcpip-offload-context"></a>Контекст разгрузки TCP/IP
+Указатель добавляется в структуру `NX_TCP_SOCKET`, используемую драйвером разгрузки TCP/IP.
+```
+typedef struct NX_TCP_SOCKET_STRUCT
+{
+    // ...
+
+    /* This pointer is designed to be accessed by TCP/IP offload directly.  */
+    VOID *nx_tcp_socket_tcpip_offload_context;
+} NX_TCP_SOCKET;
+```
+
+Указатель добавляется в структуру `NX_UDP_SOCKET`, используемую драйвером разгрузки TCP/IP.
+```
+typedef struct NX_UDP_SOCKET_STRUCT
+{
+    // ...
+
+    /* This pointer is designed to be accessed by TCP/IP offload directly.  */
+    VOID *nx_udp_socket_tcpip_offload_context;
+} NX_UDP_SOCKET;
+```
+
+### <a name="apis-for-tcpip-offload-network-driver"></a>API для сетевого драйвера разгрузки TCP/IP
+``` C
+/* Invoked when TCP packet is receive or connection error.  */
+VOID _nx_tcp_socket_driver_packet_receive(NX_TCP_SOCKET *socket_ptr, NX_PACKET *packet_ptr);
+
+/* Invoked when TCP connection is establish.  */
+UINT _nx_tcp_socket_driver_establish(NX_TCP_SOCKET *socket_ptr, NX_INTERFACE *interface_ptr, UINT remote_port);
+
+/* Invoked when UDP packet is receive.  */
+VOID _nx_udp_socket_driver_packet_receive(NX_UDP_SOCKET *socket_ptr, NX_PACKET *packet_ptr,
+                                          NXD_ADDRESS *local_ip, NXD_ADDRESS *remote_ip, UINT remote_port);
+```
+### <a name="tcpip-offload-driver"></a>Драйвер разгрузки TCP/IP
+Для каждого интерфейса IP требуется функция драйвера. Дополнительные сведения о разработке функций драйвера NetX Duo см. в [главе 5](chapter5.md#tcpip-offload-driver-guidance).
+
+### <a name="tcpip-offload-known-limitations"></a>Известные ограничения для разгрузки TCP/IP
+- Поддерживаются только сокеты TCP и UDP.
+- Обычно DHCP выполняет стек TCP/IP нижнего уровня, а не NetX Duo.
+- Другие ограничения для стека TCP/IP нижнего уровня.
