@@ -6,12 +6,12 @@ ms.author: philmea
 ms.date: 05/19/2020
 ms.topic: article
 ms.service: rtos
-ms.openlocfilehash: dabc1603423d8422ed6f8f540f8a06e80d14ec0098c886ca8731ac8ce981f15d
-ms.sourcegitcommit: 93d716cf7e3d735b18246d659ec9ec7f82c336de
+ms.openlocfilehash: 42ca29b0c3c4e45330b02e0b9eb93de422c8c235
+ms.sourcegitcommit: 74d1e48424370d565617f3a1e868150ab0bdbd88
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "116783413"
+ms.lasthandoff: 10/01/2021
+ms.locfileid: "129319229"
 ---
 # <a name="chapter-4---description-of-azure-rtos-threadx-services"></a>Глава 4. Описание служб ThreadX для ОСРВ Azure
 
@@ -138,7 +138,7 @@ UINT tx_block_pool_create(
 
 ### <a name="preemption-possible"></a>Возможно вытеснение
 
-нет
+Нет
 
 ### <a name="example"></a>Пример
 
@@ -266,6 +266,10 @@ UINT tx_block_pool_info_get(
 
 Инициализация, потоки, таймеры, запросы ISR
 
+### <a name="preemption-possible"></a>Возможно вытеснение
+
+Нет
+
 ### <a name="example"></a>Пример
 
 ```c
@@ -341,6 +345,10 @@ UINT tx_block_pool_performance_info_get(
 
 Инициализация, потоки, таймеры, запросы ISR
 
+### <a name="preemption-possible"></a>Возможно вытеснение
+
+Нет
+
 ### <a name="example"></a>Пример
 
 ```c
@@ -409,6 +417,10 @@ UINT tx_block_pool_performance_system_info_get(
 ### <a name="allowed-from"></a>Допустимые источники
 
 Инициализация, потоки, таймеры, запросы ISR
+
+### <a name="preemption-possible"></a>Возможно вытеснение
+
+Нет
 
 ### <a name="example"></a>Пример
 
@@ -500,12 +512,15 @@ next tx_block_release call will wake up this thread. */
 
 ```c
 UINT tx_block_release(VOID *block_ptr);
-``````
+```
 
 ### <a name="description"></a>Описание
 
-Эта служба освобождает ранее выделенный блок обратно в соответствующий пул памяти. Если один или несколько потоков приостановили работу в ожидании блоков памяти из этого пула, первый приостановленный поток получает этот блок памяти и возобновляет работу.
+Эта служба освобождает ранее выделенный блок обратно в соответствующий пул памяти. Если один или несколько потоков приостановлены в ожидании блоков памяти из этого пула, первый приостановленный поток получает этот блок памяти и возобновляется.
 
+>[!NOTE]
+> *Возможно, перед освобождением блока памяти приложению потребуется очистить его, чтобы предотвратить утечку данных.*
+ 
 >[!IMPORTANT]
 >*Приложение должно предотвратить использование области блока памяти после ее освобождения в пул.*
 
@@ -882,6 +897,10 @@ UINT tx_byte_pool_performance_info_get(
 
 Инициализация, потоки, таймеры, запросы ISR
 
+### <a name="preemption-possible"></a>Возможно вытеснение
+
+Нет
+
 ### <a name="example"></a>Пример
 
 ```c
@@ -959,6 +978,10 @@ UINT tx_byte_pool_performance_system_info_get(
 ### <a name="allowed-from"></a>Допустимые источники
 
  Инициализация, потоки, таймеры, запросы ISR
+
+### <a name="preemption-possible"></a>Возможно вытеснение
+
+Нет
 
 ### <a name="example"></a>Пример
 
@@ -1061,6 +1084,9 @@ UINT tx_byte_release(VOID *memory_ptr);
 ### <a name="description"></a>Описание
 
 Эта служба освобождает ранее выделенную память обратно в соответствующий пул. Если один или несколько потоков приостановили работу в ожидании памяти из этого пула, то каждому приостановленному потоку выделяется память и он возобновляет работу. Этот процесс продолжается, пока не исчерпается память или не закончатся все приостановленные потоки. Этот процесс выделения памяти для приостановленных потоков всегда начинается с первого приостановленного потока.
+
+>[!NOTE]
+> *Возможно, перед освобождением области памяти приложению потребуется очистить ее, чтобы предотвратить утечку данных.*
 
 > [!IMPORTANT]
 > *Приложение должно предотвращать использование области памяти после ее освобождения.*
@@ -1301,7 +1327,7 @@ status = tx_event_flags_get(&my_event_flags_group, 0x111,
 actual events obtained. */
 ```
 
-**См. также:**
+### <a name="see-also"></a>См. также:
 
 - tx_event_flags_create
 - tx_event_flags_delete
@@ -1311,11 +1337,11 @@ actual events obtained. */
 - tx_event_flags_set
 - tx_event_flags_set_notify
 
-### <a name="tx_event_flags_info_get"></a>tx_event_flags_info_get
+## <a name="tx_event_flags_info_get"></a>tx_event_flags_info_get
 
 Получение сведений о группе флагов событий
 
-**Прототип**
+### <a name="prototype"></a>Прототип
 
 ```c
 UINT tx_event_flags_info_get(
@@ -1326,11 +1352,11 @@ UINT tx_event_flags_info_get(
     TX_EVENT_FLAGS_GROUP **next_group);
 ```
 
-**Описание**
+### <a name="description"></a>Описание
 
 Эта служба получает сведения об указанной группе флагов событий.
 
-**Параметры**
+### <a name="parameters"></a>Параметры
 
 - **group_ptr** — указатель на блок управления группы флагов событий.
 - **name** — указатель на назначение для указателя на имя группы флагов событий.
@@ -1375,7 +1401,7 @@ status = tx_event_flags_info_get(&my_event_group, &name,
 /* If status equals TX_SUCCESS, the information requested is
 valid. */
 ```
-**См. также:**
+### <a name="see-also"></a>См. также:
 
 - tx_event_flags_create
 - tx_event_flags_delete
@@ -1426,6 +1452,10 @@ UINT tx_event_flags_performance_info_get(
 ### <a name="allowed-from"></a>Допустимые источники
 
 Инициализация, потоки, таймеры, запросы ISR
+
+### <a name="preemption-possible"></a>Возможно вытеснение
+
+Нет
 
 ### <a name="example"></a>Пример
 
@@ -1492,6 +1522,14 @@ UINT tx_event_flags_performance_system_info_get(
 - **TX_SUCCESS** (0x00) — успешное получение сведений о производительности системы флагов событий.
 - **TX_FEATURE_NOT_ENABLED** (0xFF) — система не была скомпилирована с включением информации о производительности.
 
+### <a name="allowed-from"></a>Допустимые источники
+
+Инициализация, потоки, таймеры, запросы ISR
+
+### <a name="preemption-possible"></a>Возможно вытеснение
+
+Нет
+
 ### <a name="example"></a>Пример
 
 ```c
@@ -1551,6 +1589,10 @@ UINT tx_event_flags_set(
 - **TX_GROUP_ERROR** (0x06) — недопустимый указатель на группу флагов событий.
 - **TX_OPTION_ERROR** (0x08) — указан недопустимый параметр set_option.
 
+### <a name="allowed-from"></a>Допустимые источники
+
+Инициализация, потоки, таймеры, запросы ISR
+
 ### <a name="preemption-possible"></a>Возможно вытеснение
 
 Да
@@ -1605,6 +1647,14 @@ UINT tx_event_flags_set_notify(
 - **TX_SUCCESS** (0x00) — успешная регистрация уведомлений задания флагов событий.
 - **TX_GROUP_ERROR** (0x06) — недопустимый указатель на группу флагов событий.
 - **TX_FEATURE_NOT_ENABLED** (0xFF) — система была скомпилирована с отключенными возможностями уведомлений.
+
+### <a name="allowed-from"></a>Допустимые источники
+
+Инициализация, потоки, таймеры, запросы ISR
+
+### <a name="preemption-possible"></a>Возможно вытеснение
+
+Нет
 
 ### <a name="example"></a>Пример
 
@@ -1665,7 +1715,7 @@ UINT tx_interrupt_control(UINT new_posture);
 
 ### <a name="preemption-possible"></a>Возможно вытеснение
 
-нет
+Нет
 
 ### <a name="example"></a>Пример
 
@@ -1722,7 +1772,7 @@ UINT tx_mutex_create(
 
 ### <a name="preemption-possible"></a>Возможно вытеснение
 
-нет
+Нет
 
 ### <a name="example"></a>Пример
 
@@ -1924,7 +1974,7 @@ UINT tx_mutex_info_get(
 
 Нет
 
-**Пример**
+### <a name="example"></a>Пример
 
 ```c
 TX_MUTEX my_mutex;
@@ -2004,6 +2054,10 @@ UINT tx_mutex_performance_info_get(
 
 Инициализация, потоки, таймеры, запросы ISR
 
+### <a name="preemption-possible"></a>Возможно вытеснение
+
+Нет
+
 ### <a name="example"></a>Пример
 
 ```c
@@ -2077,6 +2131,10 @@ UINT tx_mutex_performance_system_info_get(
 ### <a name="allowed-from"></a>Допустимые источники
 
 Инициализация, потоки, таймеры, запросы ISR
+
+### <a name="preemption-possible"></a>Возможно вытеснение
+
+Нет
 
 ### <a name="example"></a>Пример
 
@@ -2543,7 +2601,7 @@ UINT tx_queue_info_get(
 
 ### <a name="preemption-possible"></a>Возможно вытеснение
 
-нет
+Нет
 
 ### <a name="example"></a>Пример
 
@@ -2628,6 +2686,10 @@ UINT tx_queue_performance_info_get(
 
 Инициализация, потоки, таймеры, запросы ISR
 
+### <a name="preemption-possible"></a>Возможно вытеснение
+
+Нет
+
 ### <a name="example"></a>Пример
 
 ```c
@@ -2697,7 +2759,7 @@ UINT tx_queue_performance_system_info_get(
 > [!NOTE]
 > *Указание TX_NULL для любого параметра сообщает, что этот параметр не является обязательным.*
 
-**Возвращаемые значения**
+### <a name="return-values"></a>Возвращаемые значения
 
 - **TX_SUCCESS** (0x00) — успешное получение сведений о производительности системы очередей.
 - **TX_FEATURE_NOT_ENABLED** (0xFF) — система не была скомпилирована с включением информации о производительности.
@@ -2705,6 +2767,10 @@ UINT tx_queue_performance_system_info_get(
 ### <a name="allowed-from"></a>Допустимые источники
 
 Инициализация, потоки, таймеры, запросы ISR
+
+### <a name="preemption-possible"></a>Возможно вытеснение
+
+Нет
 
 ### <a name="example"></a>Пример
 
@@ -2938,7 +3004,7 @@ status = tx_queue_send(&my_queue, my_message, TX_NO_WAIT);
 queue. */
 ```
 
-**См. также:**
+### <a name="see-also"></a>См. также:
 
 - tx_queue_create
 - tx_queue_delete
@@ -2984,6 +3050,10 @@ UINT tx_queue_send_notify(
 ### <a name="allowed-from"></a>Допустимые источники
 
 Инициализация, потоки, таймеры, запросы ISR
+
+### <a name="preemption-possible"></a>Возможно вытеснение
+
+Нет
 
 ### <a name="example"></a>Пример
 
@@ -3045,6 +3115,10 @@ UINT tx_semaphore_ceiling_put(
 ### <a name="allowed-from"></a>Допустимые источники
 
 Инициализация, потоки, таймеры, запросы ISR
+
+### <a name="preemption-possible"></a>Возможно вытеснение
+
+Да
 
 ### <a name="example"></a>Пример
 
@@ -3185,7 +3259,7 @@ status = tx_semaphore_delete(&my_semaphore);
 deleted. */
 ```
 
-**См. также:**
+### <a name="see-also"></a>См. также:
 
 - tx_semaphore_ceiling_put
 - tx_semaphore_create
@@ -3367,7 +3441,7 @@ UINT tx_semaphore_performance_info_get(
 > [!IMPORTANT]
 > *Библиотека ThreadX и приложение должны быть построены с определенным параметром* ***TX_SEMAPHORE_ENABLE_PERFORMANCE_INFO** _ _, чтобы служба могла вернуть сведения о производительности*.
 
-**Параметры**
+### <a name="parameters"></a>Параметры
 
 -  **semaphore_ptr** — указатель на ранее созданный семафор.
 -  **puts** — указатель на место назначения для количества запросов на размещение, выполненных в этом семафоре.
@@ -3387,6 +3461,10 @@ UINT tx_semaphore_performance_info_get(
 ### <a name="allowed-from"></a>Допустимые источники
 
 Инициализация, потоки, таймеры, запросы ISR
+
+### <a name="preemption-possible"></a>Возможно вытеснение
+
+Нет
 
 ### <a name="example"></a>Пример
 
@@ -3457,6 +3535,10 @@ UINT tx_semaphore_performance_system_info_get(
 ### <a name="allowed-from"></a>Допустимые источники
 
 Инициализация, потоки, таймеры, запросы ISR
+
+### <a name="preemption-possible"></a>Возможно вытеснение
+
+Нет
 
 ### <a name="example"></a>Пример
 
@@ -3636,6 +3718,10 @@ UINT tx_semaphore_put_notify(
 
 Инициализация, потоки, таймеры, запросы ISR
 
+### <a name="preemption-possible"></a>Возможно вытеснение
+
+Нет
+
 ### <a name="example"></a>Пример
 
 ```c
@@ -3687,9 +3773,9 @@ UINT tx_thread_create(
 
 ### <a name="description"></a>Описание
 
-Эта служба создает поток приложения, который начинает выполнение с указанной функции входа в задачу. Стек, приоритет, порог вытеснения и интервал времени являются атрибутами, задаваемыми входными параметрами. Кроме того, также указывается начальное состояние выполнения потока.
+Эта служба создает поток приложения, который начинает выполнение с указанной функции входа в задачу. Стек, приоритет, порог вытеснения и интервал времени являются атрибутами, задаваемыми входными параметрами. Кроме того, указывается также начальное состояние выполнения потока.
 
-**Параметры**
+### <a name="parameters"></a>Параметры
 
 - **thread_ptr** — указатель на блок управления потоком.
 - **name_ptr** — указатель на имя потока.
@@ -3819,7 +3905,7 @@ UINT tx_thread_delete(TX_THREAD *thread_ptr);
 
 ### <a name="preemption-possible"></a>Возможно вытеснение
 
-нет
+Нет
 
 ### <a name="example"></a>Пример
 
@@ -3890,6 +3976,10 @@ UINT tx_thread_entry_exit_notify(
 
 Инициализация, потоки, таймеры, запросы ISR
 
+### <a name="preemption-possible"></a>Возможно вытеснение
+
+Нет
+
 ### <a name="example"></a>Пример
 
 ```c
@@ -3952,7 +4042,7 @@ TX_THREAD* tx_thread_identify(VOID);
 
 None
 
-### <a name="retuen-values"></a>Возвращаемые значения
+### <a name="return-values"></a>Возвращаемые значения
 
 - **указатель на поток** — указатель на выполняющийся в данный момент поток. Если ни один поток не выполняется, возвращается значение **TX_NULL**.
 
@@ -3965,9 +4055,6 @@ None
 Нет
 
 ### <a name="example"></a>Пример
-
-TX_THREAD *my_thread_ptr;
-
 ```c
 TX_THREAD *my_thread_ptr;
 
@@ -4043,10 +4130,9 @@ UINT tx_thread_info_get(
 - **run_count** — указатель на назначение для счетчика выполнения потока.
 - **priority** — указатель на место назначения для приоритета потока.
 - **preemption_threshold** — указатель на назначение для порога вытеснения потока.
-**time_slice** — указатель на назначение для временного среза потока.
-**next_thread** — указатель на назначение для указателя на следующий созданный поток.
-
-**suspended_thread** — указатель на назначение для указателя на следующий поток в списке приостановки.
+- **time_slice** — указатель на назначение для временного среза потока.
+- **next_thread** — указатель на назначение для указателя на следующий созданный поток.
+- **suspended_thread** — указатель на назначение для указателя на следующий поток в списке приостановки.
 
 > [!NOTE]
 > *Указание TX_NULL для любого параметра сообщает, что этот параметр не является обязательным.*
@@ -4164,6 +4250,10 @@ UINT tx_thread_performance_info_get(
 
 Инициализация, потоки, таймеры, запросы ISR
 
+### <a name="preemption-possible"></a>Возможно вытеснение
+
+Нет
+
 ### <a name="example"></a>Пример
 
 ```c
@@ -4267,6 +4357,10 @@ UINT tx_thread_performance_system_info_get(
 ### <a name="allowed-from"></a>Допустимые источники
 
 Инициализация, потоки, таймеры, запросы ISR
+
+### <a name="preemption-possible"></a>Возможно вытеснение
+
+Нет
 
 ### <a name="example"></a>Пример
 
@@ -4509,7 +4603,7 @@ None
 
 Да
 
-### <a name="examples"></a>Примеры
+### <a name="example"></a>Пример
 
 ```c
 ULONG run_counter_1 = 0;
@@ -4601,10 +4695,11 @@ UINT tx_thread_reset(TX_THREAD *thread_ptr);
 
 Потоки
 
-### <a name="example"></a>Например, .
+### <a name="preemption-possible"></a>Возможно вытеснение
 
-TX_THREAD my_thread;
+Да
 
+### <a name="example"></a>Пример
 ```c
 TX_THREAD my_thread;
 
@@ -4796,6 +4891,10 @@ UINT tx_thread_stack_error_notify(VOID (*error_handler)(TX_THREAD *));
 ### <a name="allowed-from"></a>Допустимые источники
 
 Инициализация, потоки, таймеры, запросы ISR
+
+### <a name="preemption-possible"></a>Возможно вытеснение
+
+Нет
 
 ### <a name="example"></a>Пример
 
@@ -5136,9 +5235,9 @@ ULONG tx_time_get(VOID);
 > [!NOTE]
 > *Фактическое время, которое представляет каждый такт таймера, зависит от конкретного приложения.*
 
-**Параметры**
+### <a name="parameters"></a>Параметры
 
-Нет
+None
 
 ### <a name="return-values"></a>Возвращаемые значения
 
@@ -5235,7 +5334,7 @@ UINT tx_timer_activate(TX_TIMER *timer_ptr);
 
 - **timer_ptr** — указатель на ранее созданный таймер приложения.
 
-**Возвращаемые значения**
+### <a name="return-values"></a>Возвращаемые значения
 
 - **TX_SUCCESS** (0x00) — успешная активация таймера приложения.
 - **TX_TIMER_ERROR** (0x15) — недопустимый указатель на таймер приложения.
@@ -5247,7 +5346,7 @@ UINT tx_timer_activate(TX_TIMER *timer_ptr);
 
 ### <a name="preemption-possible"></a>Возможно вытеснение
 
-нет
+Нет
 
 ### <a name="example"></a>Пример
 
@@ -5584,7 +5683,7 @@ UINT tx_timer_info_get(
 
 ### <a name="preemption-possible"></a>Возможно вытеснение
 
-нет
+Нет
 
 ### <a name="example"></a>Пример
 
@@ -5662,6 +5761,10 @@ UINT tx_timer_performance_info_get(
 
 Инициализация, потоки, таймеры, запросы ISR
 
+### <a name="preemption-possible"></a>Возможно вытеснение
+
+Нет
+
 ### <a name="example"></a>Пример
 
 ```c
@@ -5714,7 +5817,7 @@ UINT tx_timer_performance_system_info_get(
 > [!IMPORTANT]
 > *Библиотека ThreadX и приложение должны быть построены с определенным параметром* **TX_TIMER_ENABLE_PERFORMANCE_INFO**, *чтобы служба могла вернуть сведения о производительности.*
 
-**Параметры**
+### <a name="parameters"></a>Параметры
 
 - **activates** — указатель на место назначения для общего количества запросов на активацию, выполненных для всех таймеров.
 - **reactivates** — указатель на место назначения для общего количества автоматических повторных активаций, выполненных для всех периодических таймеров.
@@ -5733,6 +5836,10 @@ UINT tx_timer_performance_system_info_get(
 ### <a name="allowed-from"></a>Допустимые источники
 
 Инициализация, потоки, таймеры, запросы ISR
+
+### <a name="preemption-possible"></a>Возможно вытеснение
+
+Нет
 
 ### <a name="example"></a>Пример
 
